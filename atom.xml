@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>爬行者小Y</title>
+  <subtitle>上善若水</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://developeryang.top/"/>
+  <updated>2017-08-15T09:17:31.000Z</updated>
+  <id>http://developeryang.top/</id>
+  
+  <author>
+    <name>Yang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>牛客20170809算法总结</title>
+    <link href="http://developeryang.top/2017/08/15/%E7%89%9B%E5%AE%A220170809%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"/>
+    <id>http://developeryang.top/2017/08/15/牛客20170809算法总结/</id>
+    <published>2017-08-15T08:49:44.000Z</published>
+    <updated>2017-08-15T09:17:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="0-铺垫：数组中的最大子数组"><a href="#0-铺垫：数组中的最大子数组" class="headerlink" title="0.铺垫：数组中的最大子数组"></a>0.铺垫：数组中的最大子数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public class SubArrayMaxSum &#123;</div><div class="line">    public static int maxSum(int[] arr) &#123;</div><div class="line">        if (arr == null || arr.length == 0)&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">        int max = Integer.MIN_VALUE;</div><div class="line">        int cur = 0;</div><div class="line">        for (int i = 0; i != arr.length; i++)&#123;</div><div class="line">            cur += arr[i];</div><div class="line">            max = Math.max(max, cur);</div><div class="line">            cur = cur &lt; 0 ? 0:cur;</div><div class="line">        &#125;</div><div class="line">        return max;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String[] args)&#123;</div><div class="line">        int[] arr1 = &#123;-2, -3, -5, 40, -10, -10, 100, 1&#125;;</div><div class="line">        System.out.println(maxSum(arr1));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="1-给定一个矩阵matrix，其中的值有正、有负、有0，返回子矩阵-的最大累加和。"><a href="#1-给定一个矩阵matrix，其中的值有正、有负、有0，返回子矩阵-的最大累加和。" class="headerlink" title="1.给定一个矩阵matrix，其中的值有正、有负、有0，返回子矩阵 的最大累加和。"></a>1.给定一个矩阵matrix，其中的值有正、有负、有0，返回子矩阵 的最大累加和。</h4><p>例如，矩阵matrix为:</p>
+<p>-90 48  78</p>
+<p>64  -40 64</p>
+<p>-81 -7  66</p>
+<p>其中，最大累加和的子矩阵为:</p>
+<p>48  78</p>
+<p>-40 64</p>
+<p>-7  66</p>
+<p>所以返回累加和209。 例如，matrix为:</p>
+<p>-1 -1 -1</p>
+<p>-1  2  2</p>
+<p>-1 -1 -1</p>
+<p>其中，最大累加和的子矩阵为: </p>
+<p>2 2</p>
+<p>所以返回累加和4。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public class SubMatrixMaxSum &#123;</div><div class="line">    public static int maxSum(int[][] m)&#123;</div><div class="line">        if (m == null || m.length == 0 || m[0].length ==0)&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">        int max = Integer.MIN_VALUE;</div><div class="line">        int cur = 0;</div><div class="line">        int[] s = null;</div><div class="line">        for (int i = 0; i != m.length; i++)&#123;</div><div class="line">            s = new int[m[0].length];</div><div class="line">            for (int j = i; j != m[0].length; j++)&#123;</div><div class="line">                cur = 0;</div><div class="line">                for (int k =0; k != s.length; k++)&#123;</div><div class="line">                    s[k] += m[j][k];</div><div class="line">                    cur += s[k];</div><div class="line">                    max = Math.max(max, cur);</div><div class="line">                    cur = cur &lt; 0 ? 0 : cur;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return max;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String[] args)&#123;</div><div class="line">        int[][] matrix =&#123;&#123; -90, 48, 78 &#125;, &#123; 64, -40, 64 &#125;, &#123; -81, -7, 66 &#125;&#125;;</div><div class="line">        System.out.println(maxSum(matrix));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>关键点：累加</p>
+<h4 id="2-给定一个数组，每个位置的值代表一个高度。那么整个数组可以看过是一个直方图。如果把这个直方图当做容器的话，求这个容器能装多少水。"><a href="#2-给定一个数组，每个位置的值代表一个高度。那么整个数组可以看过是一个直方图。如果把这个直方图当做容器的话，求这个容器能装多少水。" class="headerlink" title="2.给定一个数组，每个位置的值代表一个高度。那么整个数组可以看过是一个直方图。如果把这个直方图当做容器的话，求这个容器能装多少水。"></a>2.给定一个数组，每个位置的值代表一个高度。那么整个数组可以看过是一个直方图。如果把这个直方图当做容器的话，求这个容器能装多少水。</h4><p>例如:<br>3,1,2,4 代表第一个位置高度为3，第二个位置高度为1，第三个位置高度为2， 第四个位置高度为4。<br>3,1,2,4这个数组代表的容器可以装3格的水。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public class WaterMaxProblem &#123;</div><div class="line">    public static int getWater(int[] arr)&#123;</div><div class="line">        if (arr == null || arr.length &lt; 3)&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">        int value = 0;</div><div class="line">        int leftMax = arr[0];</div><div class="line">        int rightMax = arr[arr.length - 1];</div><div class="line">        int l = 1;</div><div class="line">        int r = arr.length - 2;</div><div class="line">        while ( l &lt;= r)&#123;</div><div class="line">            if (leftMax &lt;= rightMax)&#123;</div><div class="line">                value += Math.max(0, leftMax - arr[l]);</div><div class="line">                leftMax = Math.max(leftMax, arr[l++]);</div><div class="line">            &#125;else&#123;</div><div class="line">                value += Math.max(0, rightMax - arr[r]);</div><div class="line">                rightMax = Math.max(rightMax, arr[r--]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return value;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    public static void main(String[] args)&#123;</div><div class="line">        int[] arr = &#123;3, 1, 2, 4&#125;;</div><div class="line">        System.out.println(getWater(arr));</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="3-给定一个数组，长度大于2。找出不相交的两个子数组，情况是-很多的。请返回这么多情况中，两个不相交子数组最大的和。"><a href="#3-给定一个数组，长度大于2。找出不相交的两个子数组，情况是-很多的。请返回这么多情况中，两个不相交子数组最大的和。" class="headerlink" title="3.给定一个数组，长度大于2。找出不相交的两个子数组，情况是 很多的。请返回这么多情况中，两个不相交子数组最大的和。"></a>3.给定一个数组，长度大于2。找出不相交的两个子数组，情况是 很多的。请返回这么多情况中，两个不相交子数组最大的和。</h4><p>例如:<br>-1,3,4,-9,1,2<br>当两个不相交子数组为[3,4]和[1,2]时，可以得到最大的和为 10。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public class TwoSubArrayMaxSum &#123;</div><div class="line">    public static int twoSubArrayMaxSum(int[] arr)&#123;</div><div class="line">        if (arr == null || arr.length &lt; 2)&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">        int[] rArray = new int[arr.length];</div><div class="line">        int max = Integer.MIN_VALUE;</div><div class="line">        int cur = 0;</div><div class="line">        for (int i = arr.length - 1; i &gt; 0; i--)&#123;</div><div class="line">            cur += arr[i];</div><div class="line">            max = Math.max(cur, max);</div><div class="line">            rArray[i] = max;</div><div class="line">            cur = cur &lt; 0 ? 0 : cur;</div><div class="line">        &#125;</div><div class="line">        int res = Integer.MIN_VALUE;</div><div class="line">        max = Integer.MIN_VALUE;</div><div class="line">        cur = 0;</div><div class="line">        for (int i = 0; i &lt; arr.length - 1; i++)&#123;</div><div class="line">            cur += arr[i];</div><div class="line">            max = Math.max(max, cur);</div><div class="line">            res = Math.max(res, max + rArray[i + 1]);</div><div class="line">            cur = cur &lt; 0 ? 0 : cur;</div><div class="line">        &#125;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        int[] arr = &#123;-1, 3, 4, -9, 1, 2&#125;;</div><div class="line">        System.out.println(twoSubArrayMaxSum(arr));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用预处理数组rArray[]，得到从右往左的最大子数组</p>
+<h4 id="4-给定一个长度为N-N-gt-1-的整型数组arr，可以划分成左右两个部分，左部分为arr-0-K-，右部分为arr-K-1-N-1-，K可以取-值的范围是-0-N-2-。求这么多划分方案中，左部分中的最大值-减去右部分最大值的绝对值中，最大是多少"><a href="#4-给定一个长度为N-N-gt-1-的整型数组arr，可以划分成左右两个部分，左部分为arr-0-K-，右部分为arr-K-1-N-1-，K可以取-值的范围是-0-N-2-。求这么多划分方案中，左部分中的最大值-减去右部分最大值的绝对值中，最大是多少" class="headerlink" title="4.给定一个长度为N(N&gt;1)的整型数组arr，可以划分成左右两个部分，左部分为arr[0..K]，右部分为arr[K+1..N-1]，K可以取 值的范围是[0,N-2]。求这么多划分方案中，左部分中的最大值 减去右部分最大值的绝对值中，最大是多少?"></a>4.给定一个长度为N(N&gt;1)的整型数组arr，可以划分成左右两个部分，左部分为arr[0..K]，右部分为arr[K+1..N-1]，K可以取 值的范围是[0,N-2]。求这么多划分方案中，左部分中的最大值 减去右部分最大值的绝对值中，最大是多少?</h4><p>例如:[2,7,3,1,1]，当左部分为[2,7]，右部分为[3,1,1]时， 左部分中的最大值减去右部分最大值的绝对值为4。当左部分为 [2,7,3]，右部分为[1,1]时，左部分中的最大值减去右部分最 大值的绝对值为6。还有很多划分方案，但最终返回6。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public class MaxABSBetweenLeftAndRight &#123;</div><div class="line">    public static int maxABS(int[] arr)&#123;</div><div class="line">        int max = Integer.MIN_VALUE;</div><div class="line">        for (int i = 0; i &lt; arr.length; i++)&#123;</div><div class="line">            max = Math.max(arr[i], max);</div><div class="line">        &#125;</div><div class="line">        return max - Math.min(arr[0], arr[arr.length - 1]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String[] args)&#123;</div><div class="line">        int[] arr = &#123;2, 7, 3, 1, 1&#125;;</div><div class="line">        System.out.println(maxABS(arr));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>理解其中的诀窍：Max在左，则与最右边的数相减取MaxABS;Max在右，则与最左边的数相减取MaxABS。两者比较去大数。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;0-铺垫：数组中的最大子数组&quot;&gt;&lt;a href=&quot;#0-铺垫：数组中的最大子数组&quot; class=&quot;headerlink&quot; title=&quot;0.铺垫：数组中的最大子数组&quot;&gt;&lt;/a&gt;0.铺垫：数组中的最大子数组&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;public class SubArrayMaxSum &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    public static int maxSum(int[] arr) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if (arr == null || arr.length == 0)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            return 0;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int max = Integer.MIN_VALUE;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int cur = 0;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        for (int i = 0; i != arr.length; i++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            cur += arr[i];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            max = Math.max(max, cur);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            cur = cur &amp;lt; 0 ? 0:cur;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        return max;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    public static void main(String[] args)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        int[] arr1 = &amp;#123;-2, -3, -5, 40, -10, -10, 100, 1&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        System.out.println(maxSum(arr1));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="算法" scheme="http://developeryang.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生活感悟</title>
+    <link href="http://developeryang.top/2017/08/05/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
+    <id>http://developeryang.top/2017/08/05/生活感悟/</id>
+    <published>2017-08-05T14:20:18.000Z</published>
+    <updated>2017-08-06T06:11:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>研究生生活已经过了大半，从当初的后悔读研，不喜欢老师分配的项目，不喜欢被困在实验室枯燥的过日子，到现在的淡然面对，可能是因为离毕业不远了吧。现在想想当初自己考研应该是有逃离工作的念想，也有对自己能力的不信任。现在想想，我应该首先让自己强大起来，拥有追求梦想和决定生活的能力。</p>
+<p>说说这研究生学到的，主要是掌握了时间和分析解决问题的能力</p>
+<a id="more"></a>
+<h3 id="1-掌握时间：学自水湄物语的《30岁前的每一天》，使用记事本来规划自己的时间和生活"><a href="#1-掌握时间：学自水湄物语的《30岁前的每一天》，使用记事本来规划自己的时间和生活" class="headerlink" title="1.掌握时间：学自水湄物语的《30岁前的每一天》，使用记事本来规划自己的时间和生活"></a>1.掌握时间：学自水湄物语的《30岁前的每一天》，使用记事本来规划自己的时间和生活</h3><pre><code>1.至少连续7天忠实记录下每天超过30分钟的活动，几点到几点，干了什么，找出自己的时间都用去了哪里，接下来就可以根据PDCA模型循环调整每天的活动（Plan计划-D执行-Check反馈-Adjust调整）
+2.在一天的开始写下自己今天要做的每一件事，记得任务不要排太慢，要预留时间空间，并且把任务分解成2小时内能完成的
+3.估算每一件事需要用到的时间
+4.对写下的事情进行取舍，做出排序，人的时间是有限的，一定要为重要的事情留出最多的时间和精力
+5.根据排序一件件完成笔记本上写下的事情，并记录下实际使用的时间（重要的是执行！）
+6.反馈和调整，记录当日需要反省的事情，找出自认为不足的地方，根据反馈内容，提出小小的改进意见，并在第二天就执行
+7.学习和实践，记录当天对自己有所触动的事情或收获，并结合自己的情况想想可不可以移到自己的身上实践
+
+***每天重复2~7***
+
+8.一个月后，一年后，根据6、7建立自己的经验库
+9.每月的计划可以分为几大模块，比如工作计划、生活与健康、学习计划等
+
+其他的么，学会给自己的生活增加一点仪式感，努力让生活慢一点，庄严一点，色彩丰富一点。
+</code></pre><h3 id="2-分析解决问题的能力"><a href="#2-分析解决问题的能力" class="headerlink" title="2.分析解决问题的能力"></a>2.分析解决问题的能力</h3><pre><code>1.分析问题不要着急，先把问题搞明白
+2.把大问题分成一个个小问题（这是要学习的）
+3.分清楚具体需求，一步一步实现（反而这个是最简单的）
+————这在编程开发里很实用
+</code></pre><h3 id="3-对于朋友"><a href="#3-对于朋友" class="headerlink" title="3.对于朋友"></a>3.对于朋友</h3><pre><code>友情的终极目的是理解、默契。
+无论什么时候，无论怎样的心情，换位思考一下。
+决定帮助朋友的时候，就不会去指望着他来回报。
+</code></pre><h2 id="我羡慕你，但我还是做我自己"><a href="#我羡慕你，但我还是做我自己" class="headerlink" title="我羡慕你，但我还是做我自己"></a>我羡慕你，但我还是做我自己</h2><h2 id="—————————————————————————end"><a href="#—————————————————————————end" class="headerlink" title="—————————————————————————end"></a>—————————————————————————end</h2><h3 id="这个是分享给看见这篇文章的你，希望对你有用。"><a href="#这个是分享给看见这篇文章的你，希望对你有用。" class="headerlink" title="这个是分享给看见这篇文章的你，希望对你有用。"></a>这个是分享给看见这篇文章的你，希望对你有用。</h3><hr>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>任务</th>
+<th>对应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>写下任务</td>
+<td>Plan</td>
+</tr>
+<tr>
+<td>2</td>
+<td>估算时间</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>做出取舍（排序）</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>分解任务（分到两小时内）</td>
+<td>Do</td>
+</tr>
+<tr>
+<td>5</td>
+<td>预留时间</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>反馈调整（反省不足，改进，执行）</td>
+<td>Check ＆ Adjust</td>
+</tr>
+<tr>
+<td>7</td>
+<td>学习实践（记录事情与收获）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>优先度</th>
+<th>内容</th>
+<th>计划时间</th>
+<th>完成与否</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1</td>
+<td>A1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td> 2</td>
+<td>A2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td> 3</td>
+<td>A3</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td> 4</td>
+<td>A4</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td> 5</td>
+<td>B1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td> 6</td>
+<td>B2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td> 7</td>
+<td>B3</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><table>
+<thead>
+<tr>
+<th>时间</th>
+<th>内容</th>
+<th>计划时间</th>
+<th>实际时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9：00 - 10:00</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10：00 - 11：00</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11：30 - 1：30</td>
+<td>中饭及午休</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1：40 - 3：00</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3：20 - 5：00</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5：30 - 7：30</td>
+<td>晚饭及休息放松</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7：40 - 9：00</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9：20 - 10：30</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="反省与改进"><a href="#反省与改进" class="headerlink" title="反省与改进:"></a>反省与改进:</h2><hr>
+<h2 id="个人整体学习计划"><a href="#个人整体学习计划" class="headerlink" title="个人整体学习计划:"></a>个人整体学习计划:</h2><h3 id="1-工作与学习知识"><a href="#1-工作与学习知识" class="headerlink" title="1.工作与学习知识"></a>1.工作与学习知识</h3><h3 id="2-生活技能与知识"><a href="#2-生活技能与知识" class="headerlink" title="2.生活技能与知识"></a>2.生活技能与知识</h3><hr>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h2><hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;研究生生活已经过了大半，从当初的后悔读研，不喜欢老师分配的项目，不喜欢被困在实验室枯燥的过日子，到现在的淡然面对，可能是因为离毕业不远了吧。现在想想当初自己考研应该是有逃离工作的念想，也有对自己能力的不信任。现在想想，我应该首先让自己强大起来，拥有追求梦想和决定生活的能力。&lt;/p&gt;
+&lt;p&gt;说说这研究生学到的，主要是掌握了时间和分析解决问题的能力&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="life" scheme="http://developeryang.top/categories/life/"/>
+    
+    
+      <category term="研究生生活" scheme="http://developeryang.top/tags/%E7%A0%94%E7%A9%B6%E7%94%9F%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown语法</title>
+    <link href="http://developeryang.top/2017/08/05/Markdown%E8%AF%AD%E6%B3%95/"/>
+    <id>http://developeryang.top/2017/08/05/Markdown语法/</id>
+    <published>2017-08-05T07:12:18.000Z</published>
+    <updated>2017-08-06T02:02:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="转载网络资源"><a href="#转载网络资源" class="headerlink" title="(转载网络资源)"></a>(转载网络资源)</h1><h1 id="Guide"><a href="#Guide" class="headerlink" title="Guide"></a>Guide</h1><p>这是一篇讲解如何正确使用 <strong>Markdown</strong> 的排版示例，学会这个很有必要，能让你的文章有更佳清晰的排版。</p>
+<blockquote>
+<p>引用文本：Markdown is a text formatting syntax inspired</p>
+</blockquote>
+<h2 id="语法指导"><a href="#语法指导" class="headerlink" title="语法指导"></a>语法指导</h2><a id="more"></a>
+<h3 id="普通内容"><a href="#普通内容" class="headerlink" title="普通内容"></a>普通内容</h3><p>这段内容展示了在内容里面一些小的格式，比如：</p>
+<ul>
+<li><strong>加粗</strong> - <code>**加粗**</code></li>
+<li><em>倾斜</em> - <code>*倾斜*</code></li>
+<li><del>删除线</del> - <code>~~删除线~~</code></li>
+<li><code>Code 标记</code> - <code>Code 标记</code></li>
+<li><a href="http://github.com" target="_blank" rel="external">超级链接</a> - <code>[超级链接](http://github.com)</code></li>
+<li><a href="mailto:username@gmail.com" target="_blank" rel="external">username@gmail.com</a> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
+</ul>
+<h3 id="提及用户"><a href="#提及用户" class="headerlink" title="提及用户"></a>提及用户</h3><p>@foo @bar @someone … 通过 @ 可以在发帖和回帖里面提及用户，信息提交以后，被提及的用户将会收到系统通知。以便让他来关注这个帖子或回帖。</p>
+<h3 id="表情符号-Emoji"><a href="#表情符号-Emoji" class="headerlink" title="表情符号 Emoji"></a>表情符号 Emoji</h3><p>支持表情符号，你可以用系统默认的 Emoji 符号（无法支持 Windows 用户）。<br>也可以用图片的表情，输入 <code>:</code> 将会出现智能提示。</p>
+<h4 id="一些表情例子"><a href="#一些表情例子" class="headerlink" title="一些表情例子"></a>一些表情例子</h4><p>:smile: :laughing: :dizzy_face: :sob: :cold_sweat: :sweat_smile:  :cry: :triumph: :heart_eyes: :relaxed: :sunglasses: :weary:</p>
+<p>:+1: :-1: :100: :clap: :bell: :gift: :question: :bomb: :heart: :coffee: :cyclone: :bow: :kiss: :pray: :sweat_drops: :hankey: :exclamation: :anger:</p>
+<h3 id="大标题-Heading-3"><a href="#大标题-Heading-3" class="headerlink" title="大标题 - Heading 3"></a>大标题 - Heading 3</h3><p>你可以选择使用 H2 至 H6，使用 ##(N) 打头，H1 不能使用，会自动转换成 H2。</p>
+<blockquote>
+<p>NOTE: 别忘了 # 后面需要有空格！</p>
+</blockquote>
+<h4 id="Heading-4"><a href="#Heading-4" class="headerlink" title="Heading 4"></a>Heading 4</h4><h5 id="Heading-5"><a href="#Heading-5" class="headerlink" title="Heading 5"></a>Heading 5</h5><h6 id="Heading-6"><a href="#Heading-6" class="headerlink" title="Heading 6"></a>Heading 6</h6><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">![alt 文本](http://image-path.png)</div><div class="line">![alt 文本](http://image-path.png &quot;图片 Title 值&quot;)</div><div class="line">![设置图片宽度高度](http://image-path.png =300x200)</div><div class="line">![设置图片宽度](http://image-path.png =300x)</div><div class="line">![设置图片高度](http://image-path.png =x200)</div></pre></td></tr></table></figure>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><h4 id="普通"><a href="#普通" class="headerlink" title="普通"></a>普通</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">*emphasize*    **strong**</div><div class="line">_emphasize_    __strong__</div><div class="line">@a = 1</div></pre></td></tr></table></figure>
+<h4 id="语法高亮支持"><a href="#语法高亮支持" class="headerlink" title="语法高亮支持"></a>语法高亮支持</h4><p>如果在 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">##### 演示 Ruby 代码高亮</div><div class="line"></div><div class="line">```ruby</div><div class="line">class PostController &lt; ApplicationController</div><div class="line">  def index</div><div class="line">    @posts = Post.last_actived.limit(10)</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<h5 id="演示-Rails-View-高亮"><a href="#演示-Rails-View-高亮" class="headerlink" title="演示 Rails View 高亮"></a>演示 Rails View 高亮</h5><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%= @posts.each do |post| %&gt;</div><div class="line">&lt;div class="post"&gt;&lt;/div&gt;</div><div class="line">&lt;% end %&gt;</div></pre></td></tr></table></figure>
+<h5 id="演示-YAML-文件"><a href="#演示-YAML-文件" class="headerlink" title="演示 YAML 文件"></a>演示 YAML 文件</h5><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">zh-CN:</span></div><div class="line"><span class="attr">  name:</span> 姓名</div><div class="line"><span class="attr">  age:</span> 年龄</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Tip: 语言名称支持下面这些: <code>ruby</code>, <code>python</code>, <code>js</code>, <code>html</code>, <code>erb</code>, <code>css</code>, <code>coffee</code>, <code>bash</code>, <code>json</code>, <code>yml</code>, <code>xml</code> …</p>
+</blockquote>
+<h3 id="有序、无序列表"><a href="#有序、无序列表" class="headerlink" title="有序、无序列表"></a>有序、无序列表</h3><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><ul>
+<li>Ruby<ul>
+<li>Rails<ul>
+<li>ActiveRecord</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Go<ul>
+<li>Gofmt</li>
+<li>Revel</li>
+</ul>
+</li>
+<li>Node.js<ul>
+<li>Koa</li>
+<li>Express</li>
+</ul>
+</li>
+</ul>
+<h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><ol>
+<li>Node.js<ol>
+<li>Express</li>
+<li>Koa</li>
+<li>Sails</li>
+</ol>
+</li>
+<li>Ruby<ol>
+<li>Rails</li>
+<li>Sinatra</li>
+</ol>
+</li>
+<li>Go</li>
+</ol>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>如果需要展示数据什么的，可以选择使用表格哦</p>
+<table>
+<thead>
+<tr>
+<th>header 1</th>
+<th>header 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cell 1</td>
+<td>cell 2</td>
+</tr>
+<tr>
+<td>cell 3</td>
+<td>cell 4</td>
+</tr>
+<tr>
+<td>cell 5</td>
+<td>cell 6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><p>留空白的换行，将会被自动转换成一个段落，会有一定的段落间距，便于阅读。</p>
+<p>请注意后面 Markdown 源代码的换行留空情况。</p>
+<h3 id="视频插入"><a href="#视频插入" class="headerlink" title="视频插入"></a>视频插入</h3><p>目前支持 Youtube 和 Youku 两家的视频插入，你只需要复制视频播放页面，浏览器地址栏的网页 URL 地址，并粘贴到话题／回复文本框，提交以后将自动转换成视频播放器。</p>
+<h4 id="例如"><a href="#例如" class="headerlink" title="例如"></a>例如</h4><p><strong>Youtube</strong></p>
+<p><a href="https://www.youtube.com/watch?v=CvVvwh3BRq8" target="_blank" rel="external">https://www.youtube.com/watch?v=CvVvwh3BRq8</a></p>
+<p><strong>Vimeo</strong></p>
+<p><a href="https://vimeo.com/199770305" target="_blank" rel="external">https://vimeo.com/199770305</a></p>
+<p><strong>Youku</strong></p>
+<p><a href="http://v.youku.com/v_show/id_XMjQzMTY1MDk3Ng==.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XMjQzMTY1MDk3Ng==.html</a></p>
+<p>···</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;转载网络资源&quot;&gt;&lt;a href=&quot;#转载网络资源&quot; class=&quot;headerlink&quot; title=&quot;(转载网络资源)&quot;&gt;&lt;/a&gt;(转载网络资源)&lt;/h1&gt;&lt;h1 id=&quot;Guide&quot;&gt;&lt;a href=&quot;#Guide&quot; class=&quot;headerlink&quot; title=&quot;Guide&quot;&gt;&lt;/a&gt;Guide&lt;/h1&gt;&lt;p&gt;这是一篇讲解如何正确使用 &lt;strong&gt;Markdown&lt;/strong&gt; 的排版示例，学会这个很有必要，能让你的文章有更佳清晰的排版。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;引用文本：Markdown is a text formatting syntax inspired&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;语法指导&quot;&gt;&lt;a href=&quot;#语法指导&quot; class=&quot;headerlink&quot; title=&quot;语法指导&quot;&gt;&lt;/a&gt;语法指导&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="Markdown" scheme="http://developeryang.top/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>九九乘法表</title>
+    <link href="http://developeryang.top/2017/08/05/%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8/"/>
+    <id>http://developeryang.top/2017/08/05/九九乘法表/</id>
+    <published>2017-08-05T05:43:10.000Z</published>
+    <updated>2017-08-06T02:02:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="使用Python实现九九乘法表"><a href="#使用Python实现九九乘法表" class="headerlink" title="使用Python实现九九乘法表"></a>使用Python实现九九乘法表</h2><h3 id="1-利用循环来实现"><a href="#1-利用循环来实现" class="headerlink" title="1.利用循环来实现"></a>1.利用循环来实现</h3><p>一般方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># !/Library/Frameworks/Python.framework/Versions/3.6/bin/python3</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line"># 9 * 9</div><div class="line">for i in range(1, 10):</div><div class="line">    for j in range(1, i+1):</div><div class="line">        print(&apos;%d * %d = %d&apos; % (i, j, i*j),end = &apos;\t&apos;)</div><div class="line">    print(&apos;\n&apos;)</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>使用format，增强可读性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># !/Library/Frameworks/Python.framework/Versions/3.6/bin/python3</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line"># 9 * 9</div><div class="line">for i in range(1, 10):</div><div class="line">    for j in range(1, i+1):</div><div class="line">        print(&apos;&#123;0&#125; * &#123;1&#125; = &#123;2&#125;&apos;.format(i, j, i*j),end = &apos;\t&apos;)</div><div class="line">    print(&apos;\n&apos;)</div></pre></td></tr></table></figure>
+<h3 id="2-利用递归来实现"><a href="#2-利用递归来实现" class="headerlink" title="2.利用递归来实现"></a>2.利用递归来实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># !/Library/Frameworks/Python.framework/Versions/3.6/bin/python3</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line"># 9 * 9</div><div class="line"></div><div class="line">def f(i):</div><div class="line">    if i&gt;=1:</div><div class="line">        f(i-1)</div><div class="line">        print([&apos;%d * %d = %d&apos; % (j,i,i*j) for j in range(1, i+1)])</div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos;:</div><div class="line">    f(9)</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;使用Python实现九九乘法表&quot;&gt;&lt;a href=&quot;#使用Python实现九九乘法表&quot; class=&quot;headerlink&quot; title=&quot;使用Python实现九九乘法表&quot;&gt;&lt;/a&gt;使用Python实现九九乘法表&lt;/h2&gt;&lt;h3 id=&quot;1-利用循环来实现&quot;&gt;&lt;a href=&quot;#1-利用循环来实现&quot; class=&quot;headerlink&quot; title=&quot;1.利用循环来实现&quot;&gt;&lt;/a&gt;1.利用循环来实现&lt;/h3&gt;&lt;p&gt;一般方法&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# !/Library/Frameworks/Python.framework/Versions/3.6/bin/python3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# -*- coding: utf-8 -*-&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# 9 * 9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;for i in range(1, 10):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    for j in range(1, i+1):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        print(&amp;apos;%d * %d = %d&amp;apos; % (i, j, i*j),end = &amp;apos;\t&amp;apos;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    print(&amp;apos;\n&amp;apos;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="python" scheme="http://developeryang.top/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基本算法整理</title>
+    <link href="http://developeryang.top/2017/08/03/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86/"/>
+    <id>http://developeryang.top/2017/08/03/基本算法整理/</id>
+    <published>2017-08-03T13:34:53.000Z</published>
+    <updated>2017-08-06T05:34:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>开始整理我在其他地方的Blog</p>
+<h1 id="排序算法要素："><a href="#排序算法要素：" class="headerlink" title="排序算法要素："></a>排序算法要素：</h1><h3 id="1-时间性能"><a href="#1-时间性能" class="headerlink" title="1. 时间性能"></a>1. 时间性能</h3><h3 id="2-辅助空间"><a href="#2-辅助空间" class="headerlink" title="2. 辅助空间"></a>2. 辅助空间</h3><h3 id="3-算法的复杂性"><a href="#3-算法的复杂性" class="headerlink" title="3. 算法的复杂性"></a>3. 算法的复杂性</h3><h3 id="4-稳定性"><a href="#4-稳定性" class="headerlink" title="4. 稳定性"></a>4. 稳定性</h3><a id="more"></a>
+<p><img src="http://img.blog.csdn.net/20170518155710315?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2F5bmVjbGFzcw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="基本排序算法"></p>
+<h2 id="1-插入排序："><a href="#1-插入排序：" class="headerlink" title="1. 插入排序："></a>1. 插入排序：</h2><p>插入排序基本操作就是将一个数据插入到已经排好序的有序数据中，从而得到一个新的、个数加一的有序数据，算法适用于少量数据的排序，时间复杂度为O(n^2)。是稳定的排序方法。插入排序的基本思想是：每步将一个待排序的纪录，按其关键码值的大小插入前面已经排序的文件中适当位置上，直到全部插入完为止。<br>通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">//平均时间复杂度O(n^2)</div><div class="line">//最优时间复杂度O(n)</div><div class="line">//最坏时间复杂度O(n^2)</div><div class="line">//空间复杂度O(1)</div><div class="line">//稳定</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">void InsertSort(int a[], int len)&#123;</div><div class="line">    int i, j;</div><div class="line">    int temp;</div><div class="line">    for (i = 1; i &lt; len; i++) &#123;</div><div class="line">        temp = a[i];</div><div class="line">        j = i - 1;</div><div class="line">        while (j &gt;= 0 &amp;&amp; a[j] &gt; temp) &#123;</div><div class="line">            a[j + 1] = a[j];</div><div class="line">            j--;</div><div class="line">        &#125;</div><div class="line">        a[j + 1]= temp;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int a[8];</div><div class="line">    printf(&quot;Please input the number:\n&quot;);</div><div class="line">    for(int i=0;i&lt;8;i++)</div><div class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    InsertSort(a, 8);</div><div class="line">    for (int i=0; i&lt;8; i++) &#123;</div><div class="line">        printf(&quot;%d\n&quot;,a[i]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="2-希尔排序："><a href="#2-希尔排序：" class="headerlink" title="2. 希尔排序："></a>2. 希尔排序：</h2><p>希尔排序(Shell Sort)是插入排序的一种。也称缩小增量排序，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。<br>希尔排序是是插入排序的一种更高效的改进版本</p>
+<p>希尔排序通过将比较的全部元素分为几个区域来提升插入排序的性能。这样可以让一个元素可以一次性地朝最终位置前进一大步。然后算法再取越来越小的步长进行排序，算法的最后一步就是普通的插入排序，但是到了这步，需排序的数据几乎是已排好的了（此时插入排序较快）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">//平均时间复杂度O(n^1.3)</div><div class="line">//空间复杂度O(1)</div><div class="line">//最优时间复杂度O(n)</div><div class="line">//最坏时间复杂度O(n^2)</div><div class="line">//不稳定</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">void shellSort(int a[], int len)&#123;</div><div class="line">    </div><div class="line">    int gap, i, j;</div><div class="line">    int temp;</div><div class="line">    for (gap = len / 2; gap &gt; 0; gap /= 2) &#123;</div><div class="line">        for (i = gap; i &lt; len; i++) &#123;</div><div class="line">            temp = a[i];</div><div class="line">            for (j = i - gap; j &gt;= 0 &amp;&amp; a[j] &gt; temp; j -= gap) &#123;</div><div class="line">                a[j+gap] = a[j];</div><div class="line">            &#125;</div><div class="line">            a[j+gap] = temp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int a[8];</div><div class="line">    printf(&quot;Please input the number:\n&quot;);</div><div class="line">    for(int i=0;i&lt;8;i++)</div><div class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    shellSort(a, 8);</div><div class="line">    for (int i=0; i&lt;8; i++) &#123;</div><div class="line">        printf(&quot;%d\n&quot;,a[i]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="3-冒泡排序："><a href="#3-冒泡排序：" class="headerlink" title="3. 冒泡排序："></a>3. 冒泡排序：</h2><p>冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越大的元素会经由交换慢慢“浮”到数列的顶端。</p>
+<p>一般情况下不要用冒泡排序, 除非 n &lt;= 16</p>
+<p>冒泡排序算法的运作如下：</p>
+<ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">//使用flag来避免因原数组已经有序而进行无意义的判断</div><div class="line">//平均时间复杂度O(n^2)</div><div class="line">//最优时间复杂度O(n)</div><div class="line">//最坏时间复杂度O(n^2)</div><div class="line">//空间复杂度O(1)</div><div class="line">//稳定</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;stdbool.h&gt;</div><div class="line"></div><div class="line">void swap(int *a, int *b)&#123;</div><div class="line">    int temp;</div><div class="line">    temp = *a;</div><div class="line">    *a = *b;</div><div class="line">    *b = temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void BubbleSort(int a[],int n)&#123;</div><div class="line">    </div><div class="line">    int i,j;</div><div class="line">    bool flag = true;</div><div class="line">    for (i = 1; i &lt; n &amp;&amp; flag; i++) &#123;</div><div class="line">        flag = false;</div><div class="line">        for (j = n-1; j &gt;= i; j--) &#123;</div><div class="line">            if (a[j] &gt; a[j+1]) &#123;</div><div class="line">                swap(&amp;a[j], &amp;a[j+1]);</div><div class="line">                flag = true;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int a[8];</div><div class="line">    printf(&quot;Please input the number:\n&quot;);</div><div class="line">    for(int i=0;i&lt;8;i++)</div><div class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    BubbleSort(a,8);</div><div class="line">    for (int i=0; i&lt;8; i++) &#123;</div><div class="line">        printf(&quot;%d\n&quot;,a[i]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="4-快速排序："><a href="#4-快速排序：" class="headerlink" title="4. 快速排序："></a>4. 快速排序：</h2><p>快速排序（Quicksort）是对冒泡排序的一种改进。它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
+<p>快速排序是分区交换，属于交换排序，是冒泡排序的改进。<br>当待排序的关键字是随机分布时，快速排序的平均时间最短。</p>
+<p>快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。步骤为：</p>
+<ol>
+<li>从数列中挑出一个元素，称为”基准”（pivot），</li>
+<li>重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。</li>
+<li>递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序。</li>
+<li>递归到最底部时，数列的大小是零或一，也就是已经排序好了。这个算法一定会结束，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它最后的位置去。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line">//平均时间复杂度O(n^2)</div><div class="line">//空间复杂度O(logn)~O(n)</div><div class="line">//最优时间复杂度O(nlogn)</div><div class="line">//最坏时间复杂度O(n^2)</div><div class="line">//不稳定</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">void swap(int *a, int *b)&#123;</div><div class="line">    int temp = *a;</div><div class="line">    *a = *b;</div><div class="line">    *b = temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int Partition(int a[], int low, int high)&#123;</div><div class="line">    </div><div class="line">    int pivotkey;</div><div class="line">    pivotkey = a[low];</div><div class="line">    while (low &lt; high) &#123;</div><div class="line">        while (low &lt; high &amp;&amp; a[high] &gt;= pivotkey) &#123;</div><div class="line">            high--;</div><div class="line">        &#125;</div><div class="line">        a[low] = a[high];</div><div class="line">        </div><div class="line">        while (low &lt; high &amp;&amp; a[low] &lt;= pivotkey) &#123;</div><div class="line">            low++;</div><div class="line">        &#125;</div><div class="line">        a[high] = a[low];</div><div class="line">    &#125;</div><div class="line">    a[low] = pivotkey;</div><div class="line">    return low;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void QuickSort(int a[], int low, int high)&#123;</div><div class="line">    </div><div class="line">    int pivotkey = a[low];</div><div class="line">    </div><div class="line">    if (low &lt; high) &#123;</div><div class="line">        pivotkey = Partition(a, low, high);</div><div class="line">        QuickSort(a, low, pivotkey-1);</div><div class="line">        QuickSort(a, pivotkey+1, high);</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int a[8];</div><div class="line">    printf(&quot;Please input the number:\n&quot;);</div><div class="line">    for(int i=0;i&lt;8;i++)</div><div class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    QuickSort(a, 0, 7);</div><div class="line">    for (int i=0; i&lt;8; i++) &#123;</div><div class="line">        printf(&quot;%d\n&quot;,a[i]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="5-选择排序："><a href="#5-选择排序：" class="headerlink" title="5. 选择排序："></a>5. 选择排序：</h2><p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法。</p>
+<p>最好最坏的比较次数一样多。</p>
+<p>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">//平均时间复杂度O(n^2)</div><div class="line">//空间复杂度O(1)</div><div class="line">//最优时间复杂度O(n^2)</div><div class="line">//最坏时间复杂度O(n^2)</div><div class="line">//不稳定</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">void swap(int *a, int *b)&#123;</div><div class="line">    int temp = *a;</div><div class="line">    *a = *b;</div><div class="line">    *b = temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void SimpleSelectSort(int a[], int n)&#123;</div><div class="line">    int i, j, min = 0;</div><div class="line">    for (i = 0; i &lt; n; i++) &#123;</div><div class="line">        min = i;</div><div class="line">        for (j = i+1; j &lt;= n; j++) &#123;</div><div class="line">            if (a[min] &gt; a[j]) &#123;</div><div class="line">                min = j;</div><div class="line">            &#125;</div><div class="line">    &#125;</div><div class="line">    if (i != min) &#123;</div><div class="line">        swap(&amp;a[min], &amp;a[i]);</div><div class="line">    &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">    int a[8];</div><div class="line">    printf(&quot;Please input the number:\n&quot;);</div><div class="line">    for(int i=0;i&lt;8;i++)</div><div class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    SimpleSelectSort(a, 8);</div><div class="line">    for (int i=0; i&lt;8; i++) &#123;</div><div class="line">        printf(&quot;%d\n&quot;,a[i]);</div><div class="line">        &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="6-堆排序"><a href="#6-堆排序" class="headerlink" title="6.堆排序:"></a>6.堆排序:</h2><p>在堆的数据结构中，堆中的最大值总是位于根节点(在优先队列中使用堆的话堆中的最小值位于根节点)。堆中定义以下几种操作：</p>
+<p>最大堆调整（Max_Heapify）：将堆的末端子节点作调整，使得子节点永远小于父节点<br>创建最大堆（Build_Max_Heap）：将堆所有数据重新排序<br>堆排序（HeapSort）：移除位在第一个数据的根节点，并做最大堆调整的递归运算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">//平均时间复杂度O(nlog2(n))</div><div class="line">//空间复杂度O(1)</div><div class="line">//最优时间复杂度O(nlog2(n))</div><div class="line">//最坏时间复杂度O(nlog2(n))</div><div class="line">//不稳定</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">void swap(int *a, int *b)&#123;</div><div class="line">    int temp = *a;</div><div class="line">    *a = *b;</div><div class="line">    *b = temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void Max_Heapify(int a[], int start, int end)&#123;</div><div class="line">    int dad = start;</div><div class="line">    int son = dad * 2 + 1;</div><div class="line">    while (son &lt;= end) &#123;</div><div class="line">        if (son + 1 &lt;= end &amp;&amp; a[son] &lt; a[son + 1]) &#123;</div><div class="line">            son++;</div><div class="line">        &#125;</div><div class="line">        if (a[dad] &gt; a[son]) &#123;</div><div class="line">            return;</div><div class="line">        &#125;else&#123;</div><div class="line">            swap(&amp;a[dad], &amp;a[son]);</div><div class="line">            dad = son;</div><div class="line">            son = dad * 2 + 1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">void HeapSort(int a[], int len)&#123;</div><div class="line">    int i;</div><div class="line">    for (i = len / 2 - 1; i &gt;= 0; i--) &#123;</div><div class="line">        Max_Heapify(a, i, len - 1);</div><div class="line">    &#125;</div><div class="line">    for (i = len - 1; i &gt; 0; i--) &#123;</div><div class="line">        swap(&amp;a[0], &amp;a[i]);</div><div class="line">        Max_Heapify(a, 0, i-1);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int a[8];</div><div class="line">    printf(&quot;Please input the number:\n&quot;);</div><div class="line">    for(int i=0;i&lt;8;i++)</div><div class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    HeapSort(a, 8);</div><div class="line">    for (int i=0; i&lt;8; i++) &#123;</div><div class="line">        printf(&quot;%d\n&quot;,a[i]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="7-归并排序："><a href="#7-归并排序：" class="headerlink" title="7. 归并排序："></a>7. 归并排序：</h2><p>归并排序是建立在归并操作上的一种有效的排序算法,该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">待补充</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开始整理我在其他地方的Blog&lt;/p&gt;
+&lt;h1 id=&quot;排序算法要素：&quot;&gt;&lt;a href=&quot;#排序算法要素：&quot; class=&quot;headerlink&quot; title=&quot;排序算法要素：&quot;&gt;&lt;/a&gt;排序算法要素：&lt;/h1&gt;&lt;h3 id=&quot;1-时间性能&quot;&gt;&lt;a href=&quot;#1-时间性能&quot; class=&quot;headerlink&quot; title=&quot;1. 时间性能&quot;&gt;&lt;/a&gt;1. 时间性能&lt;/h3&gt;&lt;h3 id=&quot;2-辅助空间&quot;&gt;&lt;a href=&quot;#2-辅助空间&quot; class=&quot;headerlink&quot; title=&quot;2. 辅助空间&quot;&gt;&lt;/a&gt;2. 辅助空间&lt;/h3&gt;&lt;h3 id=&quot;3-算法的复杂性&quot;&gt;&lt;a href=&quot;#3-算法的复杂性&quot; class=&quot;headerlink&quot; title=&quot;3. 算法的复杂性&quot;&gt;&lt;/a&gt;3. 算法的复杂性&lt;/h3&gt;&lt;h3 id=&quot;4-稳定性&quot;&gt;&lt;a href=&quot;#4-稳定性&quot; class=&quot;headerlink&quot; title=&quot;4. 稳定性&quot;&gt;&lt;/a&gt;4. 稳定性&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="算法" scheme="http://developeryang.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于pickle模块的学生管理系统</title>
+    <link href="http://developeryang.top/2017/08/03/%E5%9F%BA%E4%BA%8Epickle%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://developeryang.top/2017/08/03/基于pickle模块的学生管理系统/</id>
+    <published>2017-08-03T12:54:39.000Z</published>
+    <updated>2017-08-06T02:05:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="利用模块pickle完成学生信息管理系统"><a href="#利用模块pickle完成学生信息管理系统" class="headerlink" title="利用模块pickle完成学生信息管理系统"></a>利用模块pickle完成学生信息管理系统</h1><p>Python的pickle模块实现了基本的数据序列和反序列化。通过pickle模块的序列化操作我们能够将程序中运行的对象信息保存到文件中去，永久存储；通过pickle模块的反序列化操作，我们能够从文件中创建上一次程序保存的对象。</p>
+<p>学生系统功能分为</p>
+<ol>
+<li>Add </li>
+<li>Delect </li>
+<li>Show </li>
+<li>Save </li>
+<li>Read </li>
+<li>Quit</li>
+</ol>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div></pre></td><td class="code"><pre><div class="line"># !/Library/Frameworks/Python.framework/Versions/3.6/bin/python3</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line">import pickle</div><div class="line"></div><div class="line">class Student:</div><div class="line">    def __init__(self, studentID, name, sex, classID):</div><div class="line">        self.studentID = studentID</div><div class="line">        self.name = name</div><div class="line">        self.sex = sex</div><div class="line">        self.classID = classID</div><div class="line"></div><div class="line">class StudentManager:</div><div class="line">    def __init__(self):</div><div class="line">        self.students = []</div><div class="line"></div><div class="line">    def mainMenu(self):</div><div class="line">        print(&apos;\nTips:&apos;)</div><div class="line">        print(&apos;1.Add studentInfo&apos;)</div><div class="line">        print(&apos;2.Delect studentInfo&apos;)</div><div class="line">        print(&apos;3.Show studentInfo&apos;)</div><div class="line">        print(&apos;4.Save studentInfo&apos;)</div><div class="line">        print(&apos;5.Read studentInfo&apos;)</div><div class="line">        print(&apos;0.Quit&apos;)</div><div class="line">        flag = input(&apos;Select Operation:&apos;)</div><div class="line">        while (flag &lt; &apos;0&apos; or flag &gt; &apos;5&apos;):</div><div class="line">            print(&apos;Input Error!&apos;)</div><div class="line">            flag = input(&apos;Select Again:&apos;)</div><div class="line">        print(&apos;------------&apos;)</div><div class="line">        if (flag == &apos;1&apos;):</div><div class="line">            self.addStu()</div><div class="line">            self.mainMenu()</div><div class="line">        if (flag == &apos;2&apos;):</div><div class="line">            self.delStu()</div><div class="line">            self.mainMenu()</div><div class="line">        if (flag == &apos;3&apos;):</div><div class="line">            self.printStu()</div><div class="line">            self.mainMenu()</div><div class="line">        if (flag == &apos;4&apos;):</div><div class="line">            self.writeStu()</div><div class="line">            self.mainMenu()</div><div class="line">        if (flag == &apos;5&apos;):</div><div class="line">            self.readStu()</div><div class="line">            self.mainMenu()</div><div class="line">        if (flag == &apos;0&apos;):</div><div class="line">            self.writeStu() # Save before quit</div><div class="line">            print(&apos;End&apos;)</div><div class="line"></div><div class="line">    def addStu(self):</div><div class="line">        studentID = input(&apos;Plaese input studentID: &apos;)</div><div class="line">        while (self.findByID(studentID) != -1):</div><div class="line">            print(&apos;studentID repeat, please input again&apos;)</div><div class="line">            studentID = input(&apos;Please input studentID again&apos;)</div><div class="line">        name = input(&apos;Please input student name: &apos;)</div><div class="line">        sex = input(&apos;Please input student sex: &apos;)</div><div class="line">        sex</div><div class="line">        while ((sex != &apos;f&apos;) and (sex != &apos;m&apos;)):</div><div class="line">            print(&apos;Sex input error, please input sex again&apos;)</div><div class="line">            sex = input(&apos;Please input student sex again: &apos;)</div><div class="line">        classID = input(&apos;Please input student classID: &apos;)</div><div class="line">        student = Student(studentID, name, sex, classID)</div><div class="line">        self.students.append(student)</div><div class="line">        print(&apos;Add success!&apos;)</div><div class="line"></div><div class="line">    def delStu(self):</div><div class="line">        studentID = input(&apos;Please input the studentID you want to del: &apos;)</div><div class="line">        i = self.findByID(studentID)</div><div class="line">        while (i == -1):</div><div class="line">            print(&apos;No this studentID, please input studentID again!&apos;)</div><div class="line">            studentID = input(&quot;Please input the studentID again: &quot;)</div><div class="line">            i = self.findByID(studentID)</div><div class="line">        del(self.students[i])</div><div class="line">        print(&apos;Del success!&apos;)</div><div class="line"></div><div class="line">    def printStu(self):</div><div class="line">        print(&apos;----------&apos;)</div><div class="line">        print(&apos;%7s%7s%7s%7s&apos;%(&apos;StudentID&apos;, &apos;Name&apos;, &apos;Sex&apos;, &apos; ClassID&apos;))</div><div class="line">        for student in self.students:</div><div class="line">            print(&apos;%7s%7s%7s%7s&apos;%(student[&apos;studentID&apos;], student[&apos;name&apos;], student[&apos;sex&apos;], student[&apos;classID&apos;]))</div><div class="line"></div><div class="line">    def findByID(self, studentID):</div><div class="line">        i = 0;</div><div class="line">        for student in self.students:</div><div class="line">            if (student[&apos;studentID&apos;] == studentID):</div><div class="line">                return i # return number</div><div class="line">            i = i+1</div><div class="line">        return -1 # find fail</div><div class="line"></div><div class="line">    def writeStu(self):</div><div class="line">        try:</div><div class="line">            fout = open(r&apos;/Users/yangyang/Developer/Python/file/save.db&apos;, &apos;wb&apos;)</div><div class="line">        except IOError as e: ###python3</div><div class="line">            print(&apos;No file exist!&apos;)</div><div class="line">        else:</div><div class="line">            pickle.dump(self.students, fout)</div><div class="line">            fout.close()</div><div class="line">            print(&apos;Save success!&apos;)</div><div class="line"></div><div class="line">    def readStu(self):</div><div class="line">        try:</div><div class="line">            fin = open(r&apos;/Users/yangyang/Developer/Python/file/save.db&apos;, &apos;rb&apos;)</div><div class="line">        except FileNotFoundError as e: ### python3: as</div><div class="line">            print(&apos;No file exist, please save first!&apos;)</div><div class="line">        else:</div><div class="line">            print(&apos;On reading&apos;, end=&apos;&apos;)</div><div class="line">            print(&apos;...&apos;, end=&apos;&apos;)</div><div class="line">            self.students = pickle.load(fin)</div><div class="line">            print(&apos;...&apos;)</div><div class="line">            print(&apos;Read file success!&apos;)</div><div class="line">            fin.close()</div><div class="line"></div><div class="line">sm = StudentManager()</div><div class="line">print(&apos;\n\n&apos;)</div><div class="line">print(&apos;===========================&apos;)</div><div class="line">print(&apos;    StudentManagerSystem&apos;)</div><div class="line">print(&apos;===========================&apos;)</div><div class="line">sm.readStu()</div><div class="line">sm.mainMenu()</div></pre></td></tr></table></figure>
+<p>写完后发现一直报错 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">self.students = pickle.load(fin)</div><div class="line">EOFError: Ran out of input</div></pre></td></tr></table></figure>
+<p>最后在<br><a href="https://stackoverflow.com/questions/24791987/why-do-i-get-pickle-eoferror-ran-out-of-input-reading-an-empty-file" target="_blank" rel="external">Stack OverFlow</a>找到答案。因为读取的文件为空。</p>
+<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><p>在save.db里面事先写入数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># !/Library/Frameworks/Python.framework/Versions/3.6/bin/python3</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line">import pickle</div><div class="line"></div><div class="line">student = &#123;&apos;studentID&apos;: &apos;0001&apos;, &apos;name&apos;:&apos;W&apos;, &apos;sex&apos;: &apos;F&apos;, &apos;classID&apos;:&apos;1111&apos;&#125;</div><div class="line"></div><div class="line"></div><div class="line">students = []</div><div class="line">students.append(student)</div><div class="line"></div><div class="line">fout = open(r&apos;/Users/yangyang/Developer/Python/file/save.db&apos;, &apos;wb&apos;)</div><div class="line">pickle.dump(students, fout)</div><div class="line">print(&apos;Save success!&apos;)</div><div class="line">fout.close()</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;利用模块pickle完成学生信息管理系统&quot;&gt;&lt;a href=&quot;#利用模块pickle完成学生信息管理系统&quot; class=&quot;headerlink&quot; title=&quot;利用模块pickle完成学生信息管理系统&quot;&gt;&lt;/a&gt;利用模块pickle完成学生信息管理系统&lt;/h1&gt;&lt;p&gt;Python的pickle模块实现了基本的数据序列和反序列化。通过pickle模块的序列化操作我们能够将程序中运行的对象信息保存到文件中去，永久存储；通过pickle模块的反序列化操作，我们能够从文件中创建上一次程序保存的对象。&lt;/p&gt;
+&lt;p&gt;学生系统功能分为&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Add &lt;/li&gt;
+&lt;li&gt;Delect &lt;/li&gt;
+&lt;li&gt;Show &lt;/li&gt;
+&lt;li&gt;Save &lt;/li&gt;
+&lt;li&gt;Read &lt;/li&gt;
+&lt;li&gt;Quit&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="python" scheme="http://developeryang.top/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试准备-iOS开发</title>
+    <link href="http://developeryang.top/2017/07/27/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87-iOS%E5%BC%80%E5%8F%91/"/>
+    <id>http://developeryang.top/2017/07/27/面试准备-iOS开发/</id>
+    <published>2017-07-27T12:58:10.000Z</published>
+    <updated>2017-08-04T08:15:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="思考问题："><a href="#思考问题：" class="headerlink" title="思考问题："></a>思考问题：</h3><ol>
+<li>RunLoop</li>
+<li>Cell 图片异步加载优化</li>
+<li>iOS 函数式编程的实现 &amp;&amp; 响应式编程概念</li>
+<li>内存恶鬼drawRect</li>
+<li>UIKit 性能调优(主要是UITableView)</li>
+<li>优化UITableViewCell高度计算的那些事</li>
+<li>高性能图片架构与设计</li>
+<li>轻量化视图控制器</li>
+<li>UIView的生命周期</li>
+<li>高效设置圆角</li>
+<li>事件的传递和响应机制</li>
+<li>ReactiveCocoa 和 MVVM 入门</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;思考问题：&quot;&gt;&lt;a href=&quot;#思考问题：&quot; class=&quot;headerlink&quot; title=&quot;思考问题：&quot;&gt;&lt;/a&gt;思考问题：&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;RunLoop&lt;/li&gt;
+&lt;li&gt;Cell 图片异步加载优化&lt;/li&gt;
+&lt;li&gt;iOS 函数式编程的实现
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="iOS" scheme="http://developeryang.top/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试准备-Objective-C</title>
+    <link href="http://developeryang.top/2017/07/27/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87-Objective-C/"/>
+    <id>http://developeryang.top/2017/07/27/面试准备-Objective-C/</id>
+    <published>2017-07-27T12:55:15.000Z</published>
+    <updated>2017-08-04T08:15:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>《Effective Objective-C 2.0》– OC 中各种细节</p>
+<p>《Objective-C 高级编程》– ARC、Block 和 GCD。</p>
+<h3 id="思考问题："><a href="#思考问题：" class="headerlink" title="思考问题："></a>思考问题：</h3><ol>
+<li>检测内存泄露</li>
+<li>KVO与KVC原理、KVO、Notification、Delegate优缺点、最推荐的官方文档</li>
+<li>GCD 与 NSOperation</li>
+<li>Runtime</li>
+<li>block</li>
+<li>atomic 线程安全、@synchronized</li>
+<li>对象的深浅复制</li>
+<li>招聘一个靠谱的iOS</li>
+<li>消息传递机制</li>
+<li>深入理解Objective-C：Category</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;《Effective Objective-C 2.0》– OC 中各种细节&lt;/p&gt;
+&lt;p&gt;《Objective-C 高级编程》– ARC、Block 和 GCD。&lt;/p&gt;
+&lt;h3 id=&quot;思考问题：&quot;&gt;&lt;a href=&quot;#思考问题：&quot; class=&quot;headerlink&quot; 
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="Objective-C" scheme="http://developeryang.top/tags/Objective-C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试准备-操作系统与编译</title>
+    <link href="http://developeryang.top/2017/07/27/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8E%E7%BC%96%E8%AF%91/"/>
+    <id>http://developeryang.top/2017/07/27/面试准备-操作系统与编译/</id>
+    <published>2017-07-27T12:51:10.000Z</published>
+    <updated>2017-08-04T08:15:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>源代码是怎么变成可执行文件的，每一步的作用是什么？（预编译，词法分析，语法分析，语义分析，中间语言生成目标代码生成，汇编，链接）</li>
+<li>应用层、API、运行库、系统调用、操作系统内核之间的关系是什么？</li>
+<li>虚拟内存空间是什么，为什么要有虚拟内存空间。</li>
+<li>静态链接和动态链接分别表示什么，大概是怎么实现的？</li>
+<li>可执行文件的结构如何？（分为哪些段）</li>
+<li>它是怎么装载进内存的，为什么要分段，分页，页错误是什么？</li>
+<li>进程的内存格局是怎样的？（堆、栈、全局/静态区，代码区，常量区）</li>
+<li>堆和栈的区别，函数调用和栈的关系</li>
+<li>进程和线程的区别</li>
+<li>异步和同步，串行，并发，并行的区别</li>
+<li>多并发任务，仅多线程能加快速度么（不能，会变慢，有线程切换的开销）</li>
+<li>多个线程之间可以共享那些数据</li>
+<li>进程之间如何通信</li>
+<li>介绍几种锁，他们的用途和区别<br>多线程——<a href="https://bestswifter.com/multithreadconclusion/" target="_blank" rel="external">《iOS多线程编程——GCD与NSOperation总结》</a><br>操作系统和编译方面——<a href="https://bestswifter.com/app-crack/" target="_blank" rel="external">《修改一个数字破解Mac上的应用》</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;源代码是怎么变成可执行文件的，每一步的作用是什么？（预编译，词法分析，语法分析，语义分析，中间语言生成目标代码生成，汇编，链接）&lt;/li&gt;
+&lt;li&gt;应用层、API、运行库、系统调用、操作系统内核之间的关系是什么？&lt;/li&gt;
+&lt;li&gt;虚拟内存空间是什么，为什么要有
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="操作系统" scheme="http://developeryang.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试准备-网络</title>
+    <link href="http://developeryang.top/2017/07/27/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87-%E7%BD%91%E7%BB%9C/"/>
+    <id>http://developeryang.top/2017/07/27/面试准备-网络/</id>
+    <published>2017-07-27T12:44:46.000Z</published>
+    <updated>2017-08-04T08:15:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>身边的一些资料：<br>    【书】图解 TCP/IP<br>    <a href="http://www.jianshu.com/notebooks/3276500/latest" target="_blank" rel="external">别人的总结</a></p>
+<p>网上的一些问题：</p>
+<ol>
+<li>简介 TCP 和 UDP 区别，他们位于哪一层？</li>
+<li>路由器和交换机的工作原理大概是什么，他们分别用到什么协议，位于哪一层？</li>
+<li>描述TCP 协议三次握手，四次释放的过程。</li>
+<li>TCP 协议是如何进行流量控制，拥塞控制的？</li>
+<li>为什么建立连接时是三次握手，两次行不行？如果第三次握手失败了怎么处理</li>
+<li>关闭连接时，第四次握手失败怎么处理？</li>
+<li>你怎么理解分层和协议？</li>
+<li>HTTP 请求中的 GET 和 POST 的区别，Session 和 Cookie 的区别。</li>
+<li>谈谈你对 HTTP 1.1，2.0 和 HTTPS 的理解。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;身边的一些资料：&lt;br&gt;    【书】图解 TCP/IP&lt;br&gt;    &lt;a href=&quot;http://www.jianshu.com/notebooks/3276500/latest&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;别人的总结&lt;/a&gt;&lt;/p
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="网络" scheme="http://developeryang.top/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试准备-算法</title>
+    <link href="http://developeryang.top/2017/07/26/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87-%E7%AE%97%E6%B3%95/"/>
+    <id>http://developeryang.top/2017/07/26/面试准备-算法/</id>
+    <published>2017-07-26T09:00:04.000Z</published>
+    <updated>2017-08-06T05:36:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="这是我的找工作前的算法复习：准备使用《剑指-Offer》配合Leetcode来巩固知识。"><a href="#这是我的找工作前的算法复习：准备使用《剑指-Offer》配合Leetcode来巩固知识。" class="headerlink" title="这是我的找工作前的算法复习：准备使用《剑指 Offer》配合Leetcode来巩固知识。"></a>这是我的找工作前的算法复习：准备使用《剑指 Offer》配合Leetcode来巩固知识。</h4><h4 id="下面是来源于网上的面试常考题型"><a href="#下面是来源于网上的面试常考题型" class="headerlink" title="下面是来源于网上的面试常考题型"></a>下面是来源于网上的面试常考题型</h4><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ol>
+<li>最长回文子串</li>
+<li>最长无重复子串</li>
+<li>字符串转数字</li>
+<li>KMP 算法</li>
+<li>字符串全排列</li>
+<li>翻转字符串</li>
+</ol>
+<a id="more"></a>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ol>
+<li>求两个等长、有序数组的中位数（二分法）</li>
+<li>求两个不等长、有序数组的中位数</li>
+<li>旋转数组求最小值、旋转数组求查找某个值是否存在（二分法）</li>
+<li>【每行从左到右，每列从上到下递增的二维数组中，判断某个数是否存在（剑指 offer 第 3 题）</li>
+<li>数组中出现次数超过一半的数字</li>
+<li>第 k 大的数（拓展：最大的 k 个数）</li>
+<li>有序数组中某个数字出现的次数（提示：利用二分搜索）<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3></li>
+<li>反转链表（使用递归和迭代两种解法，了解头插法）</li>
+<li>删除链表的当前节点</li>
+<li>删除倒数第 k 个节点</li>
+<li>两个有序链表合并</li>
+<li>复杂链表的复制</li>
+<li>判断链表是否有环</li>
+<li>两个链表的第一个公共节点（提示：考虑链表有环的情况）</li>
+<li>删除链表中重复节点<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3></li>
+<li>根据中序和后序遍历结果重建二叉树、根据中序和前序遍历结果重建二叉树</li>
+<li>翻转二叉树</li>
+<li>从上往下打印二叉树 (BFS 的思想)</li>
+<li>判断某个数组是不是二叉树的后序遍历结果 (剑指 offer 第 24 题)</li>
+<li>二叉树中和为某个值的路径</li>
+<li>二叉树中某个节点的下一个节点 (强烈推荐准备一下，剑指 offer 第 58 题)<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3></li>
+<li>用两个栈实现队列、用两个队列实现栈</li>
+<li>实现一个栈，可以用常数级时间找出栈中的最小值</li>
+<li>判断栈的压栈、弹栈序列是否合法（剑指offer 第 22 题）<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3>了解以下排序的时间、空间复杂度，是否稳定，实现原理</li>
+<li>归并排序、拓展：求数组中的逆序对个数</li>
+<li>快速排序 重点：partion 函数的实现</li>
+<li>堆排序</li>
+<li>数组元素值域已知时，考虑 基数排序 和 桶排序<h3 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h3></li>
+<li>给一个十进制数字，求它的二进制表示中，有多少个 1 (n &amp;= n - 1)</li>
+<li>给一个数组，所有数字都出现了偶数次，只有一个出现了一次，找出这个数</li>
+<li>给一个数组，所有数字都出现了三次，只有一个出现了一次，找出这个数</li>
+<li>给一个数组，所有数组都出现了偶数次，只有两个数字出现了一次，找出这两个数</li>
+</ol>
+<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><ol>
+<li>背包问题</li>
+<li>连续子数组的最大和</li>
+<li>实现简单的正则表达式匹配</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;这是我的找工作前的算法复习：准备使用《剑指-Offer》配合Leetcode来巩固知识。&quot;&gt;&lt;a href=&quot;#这是我的找工作前的算法复习：准备使用《剑指-Offer》配合Leetcode来巩固知识。&quot; class=&quot;headerlink&quot; title=&quot;这是我的找工作前的算法复习：准备使用《剑指 Offer》配合Leetcode来巩固知识。&quot;&gt;&lt;/a&gt;这是我的找工作前的算法复习：准备使用《剑指 Offer》配合Leetcode来巩固知识。&lt;/h4&gt;&lt;h4 id=&quot;下面是来源于网上的面试常考题型&quot;&gt;&lt;a href=&quot;#下面是来源于网上的面试常考题型&quot; class=&quot;headerlink&quot; title=&quot;下面是来源于网上的面试常考题型&quot;&gt;&lt;/a&gt;下面是来源于网上的面试常考题型&lt;/h4&gt;&lt;h3 id=&quot;字符串&quot;&gt;&lt;a href=&quot;#字符串&quot; class=&quot;headerlink&quot; title=&quot;字符串&quot;&gt;&lt;/a&gt;字符串&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;最长回文子串&lt;/li&gt;
+&lt;li&gt;最长无重复子串&lt;/li&gt;
+&lt;li&gt;字符串转数字&lt;/li&gt;
+&lt;li&gt;KMP 算法&lt;/li&gt;
+&lt;li&gt;字符串全排列&lt;/li&gt;
+&lt;li&gt;翻转字符串&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="算法" scheme="http://developeryang.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作准备</title>
+    <link href="http://developeryang.top/2017/02/17/%E5%B7%A5%E4%BD%9C%E5%87%86%E5%A4%87/"/>
+    <id>http://developeryang.top/2017/02/17/工作准备/</id>
+    <published>2017-02-17T08:02:24.000Z</published>
+    <updated>2017-08-06T02:02:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先介绍下自己，一名——普通一本学校——非计算机专业——研二在读——的小硕，研究方向是无线充电。因为导师平时管的比较严没有实习机会，所以自己安排些时间来学习自己喜欢的技术和未来工作可能用到的技术。</p>
+<hr>
+<p>像移动互联网时代已经走入平稳期，不会再有那么多的机会给新人，但我喜欢那一个App做完的成就感。</p>
+<p>研一的时候断断续续看过一些关于iOS开发的blog和文档，自己也写过几个简单的demo。</p>
+<p>目前手上有这几本书，还有一些视频教程。</p>
+<p>准备一点一点重新来吧。<br><a id="more"></a></p>
+<p>Objective-C编程(第2版)（已看过1遍）</p>
+<p>精通iOS开发(第7版)（靠这个基本入门，能完成简单功能实现）</p>
+<p>下面这几本是之后准备看的：</p>
+<p>Objective-C编程之道:iOS设计模式解析</p>
+<p>Effective Objective C 2.0:编写高质量iOS与OS X代码的52个有效方法</p>
+<p>Objective-C高级编程:iOS与OS X多线程和内存管理</p>
+<hr>
+<p>未来的事谁都不知道，但多些准备总是好事。我可能会选择做测试开发，把App开发当做自己的爱好。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先介绍下自己，一名——普通一本学校——非计算机专业——研二在读——的小硕，研究方向是无线充电。因为导师平时管的比较严没有实习机会，所以自己安排些时间来学习自己喜欢的技术和未来工作可能用到的技术。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;像移动互联网时代已经走入平稳期，不会再有那么多的机会给新人，但我喜欢那一个App做完的成就感。&lt;/p&gt;
+&lt;p&gt;研一的时候断断续续看过一些关于iOS开发的blog和文档，自己也写过几个简单的demo。&lt;/p&gt;
+&lt;p&gt;目前手上有这几本书，还有一些视频教程。&lt;/p&gt;
+&lt;p&gt;准备一点一点重新来吧。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="life" scheme="http://developeryang.top/categories/life/"/>
+    
+    
+      <category term="工作" scheme="http://developeryang.top/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://developeryang.top/2017/02/17/hello-world/"/>
+    <id>http://developeryang.top/2017/02/17/hello-world/</id>
+    <published>2017-02-17T00:44:02.000Z</published>
+    <updated>2017-08-06T02:00:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<a id="more"></a>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<h3 id="Error-with-DTrace-Mac-OS-X"><a href="#Error-with-DTrace-Mac-OS-X" class="headerlink" title="Error with DTrace (Mac OS X)"></a>Error with DTrace (Mac OS X)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/default/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/Debug/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div></pre></td></tr></table></figure>
+<p>DTrace install may have issue, use this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo --no-optional</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="Hexo" scheme="http://developeryang.top/tags/Hexo/"/>
+    
+      <category term="Blog" scheme="http://developeryang.top/tags/Blog/"/>
+    
+  </entry>
+  
+</feed>
