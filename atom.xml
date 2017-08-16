@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://developeryang.top/"/>
-  <updated>2017-08-16T08:53:11.000Z</updated>
+  <updated>2017-08-16T08:55:08.000Z</updated>
   <id>http://developeryang.top/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://developeryang.top/2017/08/16/Mac%E5%AE%89%E8%A3%85MySQL%E8%A7%A3%E5%86%B3root%E5%AF%86%E7%A0%81%E9%97%AE%E9%A2%98/"/>
     <id>http://developeryang.top/2017/08/16/Mac安装MySQL解决root密码问题/</id>
     <published>2017-08-16T08:51:30.000Z</published>
-    <updated>2017-08-16T08:53:11.000Z</updated>
+    <updated>2017-08-16T08:55:08.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="mac重置mysql的root密码方法记录"><a href="#mac重置mysql的root密码方法记录" class="headerlink" title="mac重置mysql的root密码方法记录"></a>mac重置mysql的root密码方法记录</h3><h3 id="原因：在MySQL安装过程中，有一步给你一个初始Root密码。由于自己没有记录导致下面的问题👇："><a href="#原因：在MySQL安装过程中，有一步给你一个初始Root密码。由于自己没有记录导致下面的问题👇：" class="headerlink" title="原因：在MySQL安装过程中，有一步给你一个初始Root密码。由于自己没有记录导致下面的问题👇："></a>原因：在MySQL安装过程中，有一步给你一个初始Root密码。由于自己没有记录导致下面的问题👇：</h3><p>ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: NO)</p>
+<a id="more"></a>
 <h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p><a href="http://blog.csdn.net/lisongjia123/article/details/57418989" target="_blank" rel="external">学自别人的blog</a></p>
 <p>MySQL中提供了一种免去密码校验进入数据库的方法，使用这种方法登入到数据库，将默认密码替换掉。</p>
 <h4 id="一、找到Mysql配置文件"><a href="#一、找到Mysql配置文件" class="headerlink" title="一、找到Mysql配置文件"></a>一、找到Mysql配置文件</h4><p>使用指令</p>
@@ -43,7 +44,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;mac重置mysql的root密码方法记录&quot;&gt;&lt;a href=&quot;#mac重置mysql的root密码方法记录&quot; class=&quot;headerlink&quot; title=&quot;mac重置mysql的root密码方法记录&quot;&gt;&lt;/a&gt;mac重置mysql的root密码方法记录&lt;/
+      &lt;h3 id=&quot;mac重置mysql的root密码方法记录&quot;&gt;&lt;a href=&quot;#mac重置mysql的root密码方法记录&quot; class=&quot;headerlink&quot; title=&quot;mac重置mysql的root密码方法记录&quot;&gt;&lt;/a&gt;mac重置mysql的root密码方法记录&lt;/h3&gt;&lt;h3 id=&quot;原因：在MySQL安装过程中，有一步给你一个初始Root密码。由于自己没有记录导致下面的问题👇：&quot;&gt;&lt;a href=&quot;#原因：在MySQL安装过程中，有一步给你一个初始Root密码。由于自己没有记录导致下面的问题👇：&quot; class=&quot;headerlink&quot; title=&quot;原因：在MySQL安装过程中，有一步给你一个初始Root密码。由于自己没有记录导致下面的问题👇：&quot;&gt;&lt;/a&gt;原因：在MySQL安装过程中，有一步给你一个初始Root密码。由于自己没有记录导致下面的问题👇：&lt;/h3&gt;&lt;p&gt;ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: NO)&lt;/p&gt;
     
     </summary>
     

@@ -195,23 +195,9 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="mac重置mysql的root密码方法记录"><a href="#mac重置mysql的root密码方法记录" class="headerlink" title="mac重置mysql的root密码方法记录"></a>mac重置mysql的root密码方法记录</h3><h3 id="原因：在MySQL安装过程中，有一步给你一个初始Root密码。由于自己没有记录导致下面的问题👇："><a href="#原因：在MySQL安装过程中，有一步给你一个初始Root密码。由于自己没有记录导致下面的问题👇：" class="headerlink" title="原因：在MySQL安装过程中，有一步给你一个初始Root密码。由于自己没有记录导致下面的问题👇："></a>原因：在MySQL安装过程中，有一步给你一个初始Root密码。由于自己没有记录导致下面的问题👇：</h3><p>ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: NO)</p>
-<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p><a href="http://blog.csdn.net/lisongjia123/article/details/57418989" target="_blank" rel="external">学自别人的blog</a></p>
-<p>MySQL中提供了一种免去密码校验进入数据库的方法，使用这种方法登入到数据库，将默认密码替换掉。</p>
-<h4 id="一、找到Mysql配置文件"><a href="#一、找到Mysql配置文件" class="headerlink" title="一、找到Mysql配置文件"></a>一、找到Mysql配置文件</h4><p>使用指令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/mysql</div><div class="line">ls</div><div class="line">cd support-files/</div><div class="line">ls</div><div class="line">sudo vim my-default.cnf</div></pre></td></tr></table></figure>
-<p>注意：使用sudo，因为my-default.cnf配置文件不具备写权限。</p>
-<h4 id="二、修改配置文件"><a href="#二、修改配置文件" class="headerlink" title="二、修改配置文件"></a>二、修改配置文件</h4><p>打开刚才我们找到的配置文件，然后在里面找到 [mysqld] 这一项，然后在该配置项下添加 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">skip-grant-tables</div></pre></td></tr></table></figure>
-<p>这个配置，然后保存文件。 </p>
-<h4 id="三、重启mysql服务"><a href="#三、重启mysql服务" class="headerlink" title="三、重启mysql服务"></a>三、重启mysql服务</h4><p>在系统偏好中进行重启</p>
-<h4 id="四、免密登录MySQL"><a href="#四、免密登录MySQL" class="headerlink" title="四、免密登录MySQL"></a>四、免密登录MySQL</h4><p>然后再次进入到终端当中，敲入 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">mysql -u root -p</div></pre></td></tr></table></figure>
-<p>命令然后回车，当需要输入密码时，直接按enter键，便可以不用密码登录到数据库当中</p>
-<h4 id="五、修改默认的密码"><a href="#五、修改默认的密码" class="headerlink" title="五、修改默认的密码"></a>五、修改默认的密码</h4><p>使用 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">set password for &apos;root&apos;@&apos;localhost&apos;=password(&apos;新密码&apos;);</div></pre></td></tr></table></figure>
-<p>命令修改新的密码。</p>
-<h4 id="六、检验成果"><a href="#六、检验成果" class="headerlink" title="六、检验成果"></a>六、检验成果</h4><p>我们改完默认密码后，再次进入到之前的配置文件中，将我们跳过密码的那个配置行给删除掉，变为系统原先的配置。重启MySQL服务，下次再登录的时候便可以解决掉这个问题了。</p>
-
+        
+          <a class="article-more-a" href="/2017/08/16/Mac安装MySQL解决root密码问题/#more">more >></a>
+        
       
 
       
@@ -667,15 +653,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Blog</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
