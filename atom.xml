@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://developeryang.top/"/>
-  <updated>2017-08-16T08:55:08.000Z</updated>
+  <updated>2017-08-22T11:36:57.000Z</updated>
   <id>http://developeryang.top/</id>
   
   <author>
@@ -14,6 +14,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网易测试面试</title>
+    <link href="http://developeryang.top/2017/08/22/%E7%BD%91%E6%98%93%E6%B5%8B%E8%AF%95%E9%9D%A2%E8%AF%95/"/>
+    <id>http://developeryang.top/2017/08/22/网易测试面试/</id>
+    <published>2017-08-22T11:27:13.000Z</published>
+    <updated>2017-08-22T11:36:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。"><a href="#这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。" class="headerlink" title="这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。"></a>这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。</h4><h4 id="面试反省："><a href="#面试反省：" class="headerlink" title="面试反省："></a>面试反省：</h4><ol>
+<li><ul>
+<li>简历上的任何一个字都要完全掌握。</li>
+</ul>
+</li>
+<li><ul>
+<li>面试官的问题没有完全理解的，一定要多问一句。</li>
+</ul>
+</li>
+<li><ul>
+<li>针对性技能一定要多看。</li>
+</ul>
+</li>
+</ol>
+<h4 id="面试题目："><a href="#面试题目：" class="headerlink" title="面试题目："></a>面试题目：</h4><p>自我介绍的流程走完，先介绍了自己的项目，但面试官不怎么关心，因为没有相关性。</p>
+<ul>
+<li><p>1.黑盒测试的场景测试介绍一下</p>
+</li>
+<li><p>2.LoadRunner你是如何使用的</p>
+</li>
+<li><p>3.考拉订单，如何写测试用例。</p>
+</li>
+<li><p>4.数据库会不会 </p>
+</li>
+<li><p>5.Python写一个排序算法，在这个算法上实现去重操作，实现后如何实现测试操作，需要测试哪些特殊字符</p>
+</li>
+<li><p>6.一天24小时，时针分针秒针后重合几次</p>
+</li>
+<li><p>7.最后一直问在为什么投测试而不是开发</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。&quot;&gt;&lt;a href=&quot;#这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。&quot; class=&quot;headerlink&quot; title=&quot;这个人生中第一次正式工作面试，有点紧张。网易整体
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="面试" scheme="http://developeryang.top/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="工作" scheme="http://developeryang.top/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac安装MySQL解决root密码问题</title>
