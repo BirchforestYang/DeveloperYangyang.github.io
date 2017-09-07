@@ -7,18 +7,20 @@
   <meta name="baidu-site-verification" content="Admw2B7vqu" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://developeryang.top">
-  <title>Archives | 爬行者小Y</title>
+  <title>剑指offer-（1-5） | 爬行者小Y</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="iOS/Python/C">
-<meta property="og:type" content="website">
-<meta property="og:title" content="爬行者小Y">
-<meta property="og:url" content="http://developeryang.top/archives/page/3/index.html">
+  <meta name="description" content="1.二维数组中的查找 在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。  考点：数组  1.直接使用两次嵌套遍历。时间复杂度O(n^2)  123456789101112public class Solution &amp;#123;      public boolean Find(in">
+<meta name="keywords" content="算法,剑指offer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="剑指offer-（1-5）">
+<meta property="og:url" content="http://developeryang.top/2017/09/01/剑指offer-（1-5）/index.html">
 <meta property="og:site_name" content="爬行者小Y">
-<meta property="og:description" content="iOS/Python/C">
+<meta property="og:description" content="1.二维数组中的查找 在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。  考点：数组  1.直接使用两次嵌套遍历。时间复杂度O(n^2)  123456789101112public class Solution &amp;#123;      public boolean Find(in">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-07T06:25:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="爬行者小Y">
-<meta name="twitter:description" content="iOS/Python/C">
+<meta name="twitter:title" content="剑指offer-（1-5）">
+<meta name="twitter:description" content="1.二维数组中的查找 在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。  考点：数组  1.直接使用两次嵌套遍历。时间复杂度O(n^2)  123456789101112public class Solution &amp;#123;      public boolean Find(in">
   
     <link rel="alternative" href="/atom.xml" title="爬行者小Y" type="application/atom+xml">
   
@@ -172,183 +174,100 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-剑指offer-（1-5）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      剑指offer-（1-5）
+    </h1>
+  
+
+        
+        <a href="/2017/09/01/剑指offer-（1-5）/" class="archive-article-date">
+  	<time datetime="2017-09-01T14:40:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-01</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-二维数组中的查找"><a href="#1-二维数组中的查找" class="headerlink" title="1.二维数组中的查找"></a>1.二维数组中的查找</h1><blockquote>
+<p>在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+</blockquote>
+<p>考点：数组</p>
+<ul>
+<li>1.直接使用两次嵌套遍历。时间复杂度O(n^2)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;  </div><div class="line">    public boolean Find(int [][] array,int target) &#123;  </div><div class="line">        for(int i=0;i&lt;array.length;i++)&#123;  </div><div class="line">            for(int j=0;j&lt;array[i].length;j++)&#123;  </div><div class="line">                if(array[i][j]==target)&#123;  </div><div class="line">                    return true;  </div><div class="line">                &#125;         </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">       return false;   </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>2.改进：根据题目，每行每列都是递增，则找到矩阵右上角数字，判断它和target大小，它小则行减1，它大则列减一。时间复杂度O(n)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public class Problem_1 &#123;</div><div class="line">    public static boolean Find(int[][] array, int target) &#123;</div><div class="line">        boolean found = false;</div><div class="line">        int rows = array.length;</div><div class="line">        int columns = array[0].length;</div><div class="line">        if (array != null &amp;&amp; rows &gt; 0 &amp;&amp; columns &gt; 0 ) &#123;</div><div class="line">            int row = 0;</div><div class="line">            int column = columns - 1;</div><div class="line">            while (row &lt; rows &amp;&amp; column &gt;= 0) &#123;</div><div class="line">                if (array[row][column] == target) &#123;</div><div class="line">                    found = true;</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">                else if (array[row][column] &gt; target) &#123;</div><div class="line">                    --column;</div><div class="line">                &#125;</div><div class="line">                else</div><div class="line">                    ++row;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return found;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="2-替换空格"><a href="#2-替换空格" class="headerlink" title="2.替换空格"></a>2.替换空格</h1><blockquote>
+<p>请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。<br>考点：字符串</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public String replaceSpace(StringBuffer str) &#123;</div><div class="line">    	 String str1 = str.toString();</div><div class="line">        String str2 = str1.replace(&quot; &quot;, &quot;%20&quot;);</div><div class="line">        return str2;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="3-从尾到头打印链表"><a href="#3-从尾到头打印链表" class="headerlink" title="3.从尾到头打印链表"></a>3.从尾到头打印链表</h1><blockquote>
+<p>输入一个链表，从尾到头打印链表每个节点的值。</p>
+</blockquote>
+<p>考点：链表<br>解题点：先进后出，使用栈。递归的本质就是栈。<br>使用栈</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">*    public class ListNode &#123;</div><div class="line">*        int val;</div><div class="line">*        ListNode next = null;</div><div class="line">*</div><div class="line">*        ListNode(int val) &#123;</div><div class="line">*            this.val = val;</div><div class="line">*        &#125;</div><div class="line">*    &#125;</div><div class="line">*</div><div class="line">*/</div><div class="line">import java.util.Stack;</div><div class="line">import java.util.ArrayList;</div><div class="line">public class Solution &#123;</div><div class="line">    public ArrayList&lt;Integer&gt; printListFromTailToHead(ListNode listNode) &#123;</div><div class="line">         Stack&lt;Integer&gt; sk = new Stack&lt;Integer&gt;();</div><div class="line">        while(listNode!=null)</div><div class="line">        &#123;</div><div class="line">            sk.push(listNode.val);</div><div class="line">            listNode=listNode.next;</div><div class="line">        &#125;</div><div class="line">         ArrayList&lt;Integer&gt; al = new ArrayList&lt;Integer&gt;();</div><div class="line">        while(!sk.isEmpty())</div><div class="line">        &#123;</div><div class="line">            al.add(sk.pop());</div><div class="line">        &#125;</div><div class="line">        return al;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用递归</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">*    public class ListNode &#123;</div><div class="line">*        int val;</div><div class="line">*        ListNode next = null;</div><div class="line">*</div><div class="line">*        ListNode(int val) &#123;</div><div class="line">*            this.val = val;</div><div class="line">*        &#125;</div><div class="line">*    &#125;</div><div class="line">*</div><div class="line">*/</div><div class="line">import java.util.ArrayList;</div><div class="line">public class Solution &#123;</div><div class="line">    public ArrayList&lt;Integer&gt; printListFromTailToHead(ListNode listNode) &#123;</div><div class="line">        ArrayList&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();</div><div class="line">        if (list == null)&#123;</div><div class="line">            return list;</div><div class="line">        &#125;</div><div class="line">        ListNode pnode = listNode;</div><div class="line">        if(pnode != null)&#123;</div><div class="line">            if(pnode.next != null)&#123;</div><div class="line">                list = printListFromTailToHead(pnode.next);</div><div class="line">            &#125;</div><div class="line">            list.add(pnode.val);</div><div class="line">        &#125;</div><div class="line">        return list;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当链表很长时，则函数调用层级很深，导致函数调用栈溢出。</p>
+<h1 id="4-重建二叉树"><a href="#4-重建二叉树" class="headerlink" title="4.重建二叉树"></a>4.重建二叉树</h1><blockquote>
+<p>输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。</p>
+</blockquote>
+<p>考点：二叉树<br>先序中序后序遍历的实现方法都有递归和循环实现方法。<br>求最大（最小值）时可以使用最大（最小）堆来解决。</p>
+<ul>
+<li>1.根据先序和中序的特点，根据先序第一个值找到根节点;</li>
+<li>2.在中序中找到根节点，则根节点前面就是左子树，后面就是右子树；</li>
+<li>3.通过递归，构建新二叉树的左子树和右子树。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for binary tree</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line">public class Solution &#123;</div><div class="line">    public TreeNode reConstructBinaryTree(int [] pre,int [] in) &#123;</div><div class="line">        TreeNode root = inputTree(pre, 0, pre.length-1, in, 0, in.length-1);</div><div class="line">        return root;</div><div class="line">    &#125;</div><div class="line">    public TreeNode inputTree(int[] pre, int startPre, int endPre, int[] in, int startIn, int endIn)&#123;</div><div class="line">        if(startPre &gt; endPre || startIn &gt; endIn)&#123;</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line">        TreeNode root = new TreeNode(pre[startPre]);</div><div class="line">        for(int i=startIn;i&lt;=endIn;i++)&#123;</div><div class="line">            if(in[i]==pre[startPre])&#123;</div><div class="line">                root.left=inputTree(pre,startPre+1,startPre+i-startIn,in,startIn,i-1);</div><div class="line">                root.right=inputTree(pre,startPre+i-startIn+1,endPre,in,i+1,endIn);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return root;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="5-用两个栈实现队列"><a href="#5-用两个栈实现队列" class="headerlink" title="5.用两个栈实现队列"></a>5.用两个栈实现队列</h1><blockquote>
+<p>用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。</p>
+</blockquote>
+<p>考点：栈和队列</p>
+<p>栈：先去后出；队列：先进先出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">import java.util.Stack;</div><div class="line"></div><div class="line">public class Solution &#123;</div><div class="line">    Stack&lt;Integer&gt; stack1 = new Stack&lt;Integer&gt;();</div><div class="line">    Stack&lt;Integer&gt; stack2 = new Stack&lt;Integer&gt;();</div><div class="line">    </div><div class="line">    public void push(int node) &#123;</div><div class="line">        stack1.push(new Integer(node));</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public int pop() &#123;</div><div class="line">    if(stack2.empty())&#123;</div><div class="line">        while(!stack1.empty())&#123;</div><div class="line">            stack2.push(stack1.pop());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    if(stack2.empty())&#123;</div><div class="line">        System.out.println(&quot;null&quot;);</div><div class="line">    &#125;</div><div class="line">    return stack2.pop().intValue();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你的支持<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/27/面试准备-Objective-C/" class="archive-article-date">
-  	<time datetime="2017-07-27T12:55:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/27/面试准备-Objective-C/">面试准备-Objective-C</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Objective-C</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology/" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/27/面试准备-操作系统与编译/" class="archive-article-date">
-  	<time datetime="2017-07-27T12:51:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/27/面试准备-操作系统与编译/">面试准备-操作系统与编译</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology/" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/27/面试准备-网络/" class="archive-article-date">
-  	<time datetime="2017-07-27T12:44:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/27/面试准备-网络/">面试准备-网络</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology/" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/26/面试准备-算法/" class="archive-article-date">
-  	<time datetime="2017-07-26T09:00:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/26/面试准备-算法/">面试准备-算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -356,11 +275,15 @@ var _hmt = _hmt || [];
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
+        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -373,70 +296,87 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://developeryang.top/2017/09/01/剑指offer-（1-5）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/17/工作准备/" class="archive-article-date">
-  	<time datetime="2017-02-17T08:02:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/17/工作准备/">工作准备</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工作</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/life/" class="article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/22/网易测试面试/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网易测试面试</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
+
   
-  
-    </div></section>
+    <div class="duoshuo"></div>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/4/">Next &raquo;</a>
-    </nav>
-  
+
+
 
 
           </div>
@@ -459,8 +399,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
