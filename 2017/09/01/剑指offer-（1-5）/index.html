@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="爬行者小Y">
 <meta property="og:description" content="1.二维数组中的查找 在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。  考点：数组  1.直接使用两次嵌套遍历。时间复杂度O(n^2)  123456789101112public class Solution &amp;#123;      public boolean Find(in">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-07T06:25:44.000Z">
+<meta property="og:updated_time" content="2017-09-07T06:30:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指offer-（1-5）">
 <meta name="twitter:description" content="1.二维数组中的查找 在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。  考点：数组  1.直接使用两次嵌套遍历。时间复杂度O(n^2)  123456789101112public class Solution &amp;#123;      public boolean Find(in">
@@ -202,6 +202,7 @@ var _hmt = _hmt || [];
 <li>1.直接使用两次嵌套遍历。时间复杂度O(n^2)</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;  </div><div class="line">    public boolean Find(int [][] array,int target) &#123;  </div><div class="line">        for(int i=0;i&lt;array.length;i++)&#123;  </div><div class="line">            for(int j=0;j&lt;array[i].length;j++)&#123;  </div><div class="line">                if(array[i][j]==target)&#123;  </div><div class="line">                    return true;  </div><div class="line">                &#125;         </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">       return false;   </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <ul>
 <li>2.改进：根据题目，每行每列都是递增，则找到矩阵右上角数字，判断它和target大小，它小则行减1，它大则列减一。时间复杂度O(n)</li>
 </ul>
@@ -358,6 +359,15 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/2017/09/07/剑指offer-（6-10）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          剑指offer-（6-10）
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/08/22/网易测试面试/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">网易测试面试</div>
@@ -498,15 +508,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">研究生生活</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,11 +520,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
             
             <div class="clearfix"></div>

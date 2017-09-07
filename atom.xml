@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://developeryang.top/"/>
-  <updated>2017-09-07T06:25:44.000Z</updated>
+  <updated>2017-09-07T06:27:57.000Z</updated>
   <id>http://developeryang.top/</id>
   
   <author>
@@ -16,11 +16,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>剑指offer-（6-10）</title>
+    <link href="http://developeryang.top/2017/09/07/%E5%89%91%E6%8C%87offer-%EF%BC%886-10%EF%BC%89/"/>
+    <id>http://developeryang.top/2017/09/07/剑指offer-（6-10）/</id>
+    <published>2017-09-07T06:26:53.000Z</published>
+    <updated>2017-09-07T06:27:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="6-旋转数组的最小数字"><a href="#6-旋转数组的最小数字" class="headerlink" title="6.旋转数组的最小数字"></a>6.旋转数组的最小数字</h1><blockquote>
+<p>题目描述 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。</p>
+</blockquote>
+<p>考点：查找</p>
+<p>一般查找与排序一同出现，掌握二分查找，归并排序和快速排序（必须掌握）。算法比较：额外空间消耗，平均时间复杂度和最差时间复杂度等</p>
+<p>如果在一个已经排序或者部分排序的数组中查找一个数字或者统计数字出现次数，尝试使用二分查找</p>
+<p>本题通过直接遍历能直接得出，时间复杂度为O(n)。利用旋转特性，使用二分法实现O(logn)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">import java.util.ArrayList;</div><div class="line">public class Solution &#123;</div><div class="line">    public int minNumberInRotateArray(int [] array) &#123;</div><div class="line">        if (array.length == 0) &#123;</div><div class="line">            System.out.println(&quot;Invalid parameters&quot;);</div><div class="line">        &#125;</div><div class="line">        int index1 = 0;</div><div class="line">        int index2 = array.length - 1;</div><div class="line">        int indexmid = index1;</div><div class="line">        while (array[index1] &gt;= array[index2]) &#123;</div><div class="line">            if (index2 - index1 == 1) &#123;</div><div class="line">                indexmid = index2;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">            indexmid = (index1 + index2) / 2;</div><div class="line">            if (array[index1] == array[index2] &amp;&amp; array[indexmid] == array[index1]) &#123;</div><div class="line">                return MinInOrder(array, index1, index2);</div><div class="line">            &#125;</div><div class="line">            if (array[indexmid] &gt;= array[index1]) &#123;</div><div class="line">                index1 = indexmid;</div><div class="line">            &#125;</div><div class="line">            else if (array[indexmid] &lt;= array[index2]) &#123;</div><div class="line">                index2 = indexmid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return array[indexmid];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private  static int MinInOrder(int[] array, int index1, int index2)&#123;</div><div class="line">        int result = array[index1];</div><div class="line">        for (int i = index1 +1; i &lt;= index2; ++i)&#123;</div><div class="line">            if (result &gt; array[i]) &#123;</div><div class="line">                result = array[i];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;6-旋转数组的最小数字&quot;&gt;&lt;a href=&quot;#6-旋转数组的最小数字&quot; class=&quot;headerlink&quot; title=&quot;6.旋转数组的最小数字&quot;&gt;&lt;/a&gt;6.旋转数组的最小数字&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;题目描述 把一个数组最开始的若干个元素搬到
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="算法" scheme="http://developeryang.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="剑指offer" scheme="http://developeryang.top/tags/%E5%89%91%E6%8C%87offer/"/>
+    
+  </entry>
+  
+  <entry>
     <title>剑指offer-（1-5）</title>
     <link href="http://developeryang.top/2017/09/01/%E5%89%91%E6%8C%87offer-%EF%BC%881-5%EF%BC%89/"/>
     <id>http://developeryang.top/2017/09/01/剑指offer-（1-5）/</id>
     <published>2017-09-01T14:40:06.000Z</published>
-    <updated>2017-09-07T06:25:44.000Z</updated>
+    <updated>2017-09-07T06:30:05.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-二维数组中的查找"><a href="#1-二维数组中的查找" class="headerlink" title="1.二维数组中的查找"></a>1.二维数组中的查找</h1><blockquote>
 <p>在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
@@ -30,6 +62,7 @@
 <li>1.直接使用两次嵌套遍历。时间复杂度O(n^2)</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;  </div><div class="line">    public boolean Find(int [][] array,int target) &#123;  </div><div class="line">        for(int i=0;i&lt;array.length;i++)&#123;  </div><div class="line">            for(int j=0;j&lt;array[i].length;j++)&#123;  </div><div class="line">                if(array[i][j]==target)&#123;  </div><div class="line">                    return true;  </div><div class="line">                &#125;         </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">       return false;   </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <ul>
 <li>2.改进：根据题目，每行每列都是递增，则找到矩阵右上角数字，判断它和target大小，它小则行减1，它大则列减一。时间复杂度O(n)</li>
 </ul>
@@ -67,7 +100,13 @@
     <summary type="html">
     
       &lt;h1 id=&quot;1-二维数组中的查找&quot;&gt;&lt;a href=&quot;#1-二维数组中的查找&quot; class=&quot;headerlink&quot; title=&quot;1.二维数组中的查找&quot;&gt;&lt;/a&gt;1.二维数组中的查找&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;在一个二维数组中，每一行都按照从左到右递增的顺序排
+&lt;p&gt;在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;考点：数组&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.直接使用两次嵌套遍历。时间复杂度O(n^2)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;public class Solution &amp;#123;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    public boolean Find(int [][] array,int target) &amp;#123;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        for(int i=0;i&amp;lt;array.length;i++)&amp;#123;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            for(int j=0;j&amp;lt;array[i].length;j++)&amp;#123;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                if(array[i][j]==target)&amp;#123;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    return true;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;#125;         &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;       return false;   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     

@@ -174,6 +174,89 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-剑指offer-（6-10）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/07/剑指offer-（6-10）/">剑指offer-（6-10）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/07/剑指offer-（6-10）/" class="archive-article-date">
+  	<time datetime="2017-09-07T06:26:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="6-旋转数组的最小数字"><a href="#6-旋转数组的最小数字" class="headerlink" title="6.旋转数组的最小数字"></a>6.旋转数组的最小数字</h1><blockquote>
+<p>题目描述 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。</p>
+</blockquote>
+<p>考点：查找</p>
+<p>一般查找与排序一同出现，掌握二分查找，归并排序和快速排序（必须掌握）。算法比较：额外空间消耗，平均时间复杂度和最差时间复杂度等</p>
+<p>如果在一个已经排序或者部分排序的数组中查找一个数字或者统计数字出现次数，尝试使用二分查找</p>
+<p>本题通过直接遍历能直接得出，时间复杂度为O(n)。利用旋转特性，使用二分法实现O(logn)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">import java.util.ArrayList;</div><div class="line">public class Solution &#123;</div><div class="line">    public int minNumberInRotateArray(int [] array) &#123;</div><div class="line">        if (array.length == 0) &#123;</div><div class="line">            System.out.println(&quot;Invalid parameters&quot;);</div><div class="line">        &#125;</div><div class="line">        int index1 = 0;</div><div class="line">        int index2 = array.length - 1;</div><div class="line">        int indexmid = index1;</div><div class="line">        while (array[index1] &gt;= array[index2]) &#123;</div><div class="line">            if (index2 - index1 == 1) &#123;</div><div class="line">                indexmid = index2;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">            indexmid = (index1 + index2) / 2;</div><div class="line">            if (array[index1] == array[index2] &amp;&amp; array[indexmid] == array[index1]) &#123;</div><div class="line">                return MinInOrder(array, index1, index2);</div><div class="line">            &#125;</div><div class="line">            if (array[indexmid] &gt;= array[index1]) &#123;</div><div class="line">                index1 = indexmid;</div><div class="line">            &#125;</div><div class="line">            else if (array[indexmid] &lt;= array[index2]) &#123;</div><div class="line">                index2 = indexmid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return array[indexmid];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private  static int MinInOrder(int[] array, int index1, int index2)&#123;</div><div class="line">        int result = array[index1];</div><div class="line">        for (int i = index1 +1; i &lt;= index2; ++i)&#123;</div><div class="line">            if (result &gt; array[i]) &#123;</div><div class="line">                result = array[i];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology/" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/07/剑指offer-（6-10）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-剑指offer-（1-5）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -202,39 +285,9 @@ var _hmt = _hmt || [];
 <li>1.直接使用两次嵌套遍历。时间复杂度O(n^2)</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;  </div><div class="line">    public boolean Find(int [][] array,int target) &#123;  </div><div class="line">        for(int i=0;i&lt;array.length;i++)&#123;  </div><div class="line">            for(int j=0;j&lt;array[i].length;j++)&#123;  </div><div class="line">                if(array[i][j]==target)&#123;  </div><div class="line">                    return true;  </div><div class="line">                &#125;         </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">       return false;   </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>2.改进：根据题目，每行每列都是递增，则找到矩阵右上角数字，判断它和target大小，它小则行减1，它大则列减一。时间复杂度O(n)</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public class Problem_1 &#123;</div><div class="line">    public static boolean Find(int[][] array, int target) &#123;</div><div class="line">        boolean found = false;</div><div class="line">        int rows = array.length;</div><div class="line">        int columns = array[0].length;</div><div class="line">        if (array != null &amp;&amp; rows &gt; 0 &amp;&amp; columns &gt; 0 ) &#123;</div><div class="line">            int row = 0;</div><div class="line">            int column = columns - 1;</div><div class="line">            while (row &lt; rows &amp;&amp; column &gt;= 0) &#123;</div><div class="line">                if (array[row][column] == target) &#123;</div><div class="line">                    found = true;</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">                else if (array[row][column] &gt; target) &#123;</div><div class="line">                    --column;</div><div class="line">                &#125;</div><div class="line">                else</div><div class="line">                    ++row;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return found;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="2-替换空格"><a href="#2-替换空格" class="headerlink" title="2.替换空格"></a>2.替换空格</h1><blockquote>
-<p>请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。<br>考点：字符串</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public String replaceSpace(StringBuffer str) &#123;</div><div class="line">    	 String str1 = str.toString();</div><div class="line">        String str2 = str1.replace(&quot; &quot;, &quot;%20&quot;);</div><div class="line">        return str2;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="3-从尾到头打印链表"><a href="#3-从尾到头打印链表" class="headerlink" title="3.从尾到头打印链表"></a>3.从尾到头打印链表</h1><blockquote>
-<p>输入一个链表，从尾到头打印链表每个节点的值。</p>
-</blockquote>
-<p>考点：链表<br>解题点：先进后出，使用栈。递归的本质就是栈。<br>使用栈</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">*    public class ListNode &#123;</div><div class="line">*        int val;</div><div class="line">*        ListNode next = null;</div><div class="line">*</div><div class="line">*        ListNode(int val) &#123;</div><div class="line">*            this.val = val;</div><div class="line">*        &#125;</div><div class="line">*    &#125;</div><div class="line">*</div><div class="line">*/</div><div class="line">import java.util.Stack;</div><div class="line">import java.util.ArrayList;</div><div class="line">public class Solution &#123;</div><div class="line">    public ArrayList&lt;Integer&gt; printListFromTailToHead(ListNode listNode) &#123;</div><div class="line">         Stack&lt;Integer&gt; sk = new Stack&lt;Integer&gt;();</div><div class="line">        while(listNode!=null)</div><div class="line">        &#123;</div><div class="line">            sk.push(listNode.val);</div><div class="line">            listNode=listNode.next;</div><div class="line">        &#125;</div><div class="line">         ArrayList&lt;Integer&gt; al = new ArrayList&lt;Integer&gt;();</div><div class="line">        while(!sk.isEmpty())</div><div class="line">        &#123;</div><div class="line">            al.add(sk.pop());</div><div class="line">        &#125;</div><div class="line">        return al;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>使用递归</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">*    public class ListNode &#123;</div><div class="line">*        int val;</div><div class="line">*        ListNode next = null;</div><div class="line">*</div><div class="line">*        ListNode(int val) &#123;</div><div class="line">*            this.val = val;</div><div class="line">*        &#125;</div><div class="line">*    &#125;</div><div class="line">*</div><div class="line">*/</div><div class="line">import java.util.ArrayList;</div><div class="line">public class Solution &#123;</div><div class="line">    public ArrayList&lt;Integer&gt; printListFromTailToHead(ListNode listNode) &#123;</div><div class="line">        ArrayList&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();</div><div class="line">        if (list == null)&#123;</div><div class="line">            return list;</div><div class="line">        &#125;</div><div class="line">        ListNode pnode = listNode;</div><div class="line">        if(pnode != null)&#123;</div><div class="line">            if(pnode.next != null)&#123;</div><div class="line">                list = printListFromTailToHead(pnode.next);</div><div class="line">            &#125;</div><div class="line">            list.add(pnode.val);</div><div class="line">        &#125;</div><div class="line">        return list;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当链表很长时，则函数调用层级很深，导致函数调用栈溢出。</p>
-<h1 id="4-重建二叉树"><a href="#4-重建二叉树" class="headerlink" title="4.重建二叉树"></a>4.重建二叉树</h1><blockquote>
-<p>输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。</p>
-</blockquote>
-<p>考点：二叉树<br>先序中序后序遍历的实现方法都有递归和循环实现方法。<br>求最大（最小值）时可以使用最大（最小）堆来解决。</p>
-<ul>
-<li>1.根据先序和中序的特点，根据先序第一个值找到根节点;</li>
-<li>2.在中序中找到根节点，则根节点前面就是左子树，后面就是右子树；</li>
-<li>3.通过递归，构建新二叉树的左子树和右子树。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for binary tree</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line">public class Solution &#123;</div><div class="line">    public TreeNode reConstructBinaryTree(int [] pre,int [] in) &#123;</div><div class="line">        TreeNode root = inputTree(pre, 0, pre.length-1, in, 0, in.length-1);</div><div class="line">        return root;</div><div class="line">    &#125;</div><div class="line">    public TreeNode inputTree(int[] pre, int startPre, int endPre, int[] in, int startIn, int endIn)&#123;</div><div class="line">        if(startPre &gt; endPre || startIn &gt; endIn)&#123;</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line">        TreeNode root = new TreeNode(pre[startPre]);</div><div class="line">        for(int i=startIn;i&lt;=endIn;i++)&#123;</div><div class="line">            if(in[i]==pre[startPre])&#123;</div><div class="line">                root.left=inputTree(pre,startPre+1,startPre+i-startIn,in,startIn,i-1);</div><div class="line">                root.right=inputTree(pre,startPre+i-startIn+1,endPre,in,i+1,endIn);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return root;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="5-用两个栈实现队列"><a href="#5-用两个栈实现队列" class="headerlink" title="5.用两个栈实现队列"></a>5.用两个栈实现队列</h1><blockquote>
-<p>用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。</p>
-</blockquote>
-<p>考点：栈和队列</p>
-<p>栈：先去后出；队列：先进先出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">import java.util.Stack;</div><div class="line"></div><div class="line">public class Solution &#123;</div><div class="line">    Stack&lt;Integer&gt; stack1 = new Stack&lt;Integer&gt;();</div><div class="line">    Stack&lt;Integer&gt; stack2 = new Stack&lt;Integer&gt;();</div><div class="line">    </div><div class="line">    public void push(int node) &#123;</div><div class="line">        stack1.push(new Integer(node));</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public int pop() &#123;</div><div class="line">    if(stack2.empty())&#123;</div><div class="line">        while(!stack1.empty())&#123;</div><div class="line">            stack2.push(stack1.pop());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    if(stack2.empty())&#123;</div><div class="line">        System.out.println(&quot;null&quot;);</div><div class="line">    &#125;</div><div class="line">    return stack2.pop().intValue();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2017/09/01/剑指offer-（1-5）/#more">more >></a>
+        
       
 
       
@@ -547,82 +600,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-生活感悟" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/05/生活感悟/">生活感悟</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/05/生活感悟/" class="archive-article-date">
-  	<time datetime="2017-08-05T14:20:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>研究生生活已经过了大半，从当初的后悔读研，不喜欢老师分配的项目，不喜欢被困在实验室枯燥的过日子，到现在的淡然面对，可能是因为离毕业不远了吧。现在想想当初自己考研应该是有逃离工作的念想，也有对自己能力的不信任。现在想想，我应该首先让自己强大起来，拥有追求梦想和决定生活的能力。</p>
-<p>说说这研究生学到的，主要是掌握了时间和分析解决问题的能力</p>
-        
-          <a class="article-more-a" href="/2017/08/05/生活感悟/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">研究生生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/life/" class="article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/05/生活感悟/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -749,15 +726,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">研究生生活</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -765,11 +738,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
             
             <div class="clearfix"></div>
