@@ -174,6 +174,116 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-前缀，中缀，后缀表达式转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/10/前缀，中缀，后缀表达式转换/">前缀，中缀，后缀表达式转换</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/10/前缀，中缀，后缀表达式转换/" class="archive-article-date">
+  	<time datetime="2017-09-10T11:45:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##1 基本概念</p>
+<p>​         在计算机中表达式有三种，<a href="https://zh.wikipedia.org/wiki/%E6%B3%A2%E5%85%B0%E8%A1%A8%E7%A4%BA%E6%B3%95" target="_blank" rel="external">前缀表达式</a>（波兰式），中缀表达式，<a href="https://zh.wikipedia.org/wiki/%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E7%A4%BA%E6%B3%95" target="_blank" rel="external">后缀表达式</a>（逆波兰式）。</p>
+<p>如表达式：a+b*(c-d)-e/f</p>
+<p>前缀表达式：-+a*b-cd/ef</p>
+<p>中缀表达式：a+b*(c-d)-e/f</p>
+<p>后缀表达式：abcd-*+ef/-</p>
+<h3 id="2-转换原理"><a href="#2-转换原理" class="headerlink" title="2 转换原理"></a>2 转换原理</h3><p>​         原理不难，我们遇到遇到操作数的时候直接输出，当遇到操作符（包括‘（’，‘+’，‘-’，‘*’，‘/’）的时候，我们需要把符号压入到栈中，</p>
+<ul>
+<li>2.1 当遇到‘）’的时候：</li>
+</ul>
+<p>​         我们需要依次从栈顶弹出符号，直到遇到‘（’，并且要将‘（’弹出。如：（a<em>（b+c）），栈中的是（</em>（+，当遇到‘）’的时候，我们要弹出‘+’，‘（’。</p>
+<ul>
+<li>2.2 当遇到‘（’的时候</li>
+</ul>
+<p>​         此时没什么要说的，直接压栈。</p>
+<ul>
+<li>2.3 当遇到‘+’，‘-’，‘*’，‘/’的时候：</li>
+</ul>
+<p>​         我们要把栈顶元素的符号的优先级跟输入的符号的优先级进行对比，如果栈顶优先级高的话，我们就要把栈顶元素依次弹出，直到栈顶的优先级低于输入的优先级或者栈空。</p>
+<p>如：a+b+c+d，跟a+b*c+d得到的符号顺序就不一样，原因就是这个优先级的问题。</p>
+<ul>
+<li>2.4 当遇到操作数的时候：</li>
+</ul>
+<p>​         毫无疑问，直接输出</p>
+<hr>
+<h2 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h2><h4 id="简便方法"><a href="#简便方法" class="headerlink" title="简便方法"></a>简便方法</h4><p>中缀表达式(a+b) <em> c </em> (d-e/f) 转成前缀，后缀表达式</p>
+<blockquote>
+<ul>
+<li><p>第一步：按照运算符的优先级对所有的运算单位加括号：式子变成了：((a+(b*c))-(d+e)) </p>
+</li>
+<li><p>第二步：转换前缀与后缀表达式 </p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>前缀：把运算符号移动到对应的括号前面,则变成拉：-( +(a <em>(bc)) +(de)) 。把括号去掉：-+a</em>bc+de 前缀式子出现 </li>
+<li>后缀：把运算符号移动到对应的括号后面，则变成拉：((a(bc)<em> )+ (de)+ )- 。把括号去掉：abc</em>+de+- 后缀式子出现 </li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology/" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/10/前缀，中缀，后缀表达式转换/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-剑指offer-（6-10）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -195,13 +305,18 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="6-旋转数组的最小数字"><a href="#6-旋转数组的最小数字" class="headerlink" title="6.旋转数组的最小数字"></a>6.旋转数组的最小数字</h1><blockquote>
-<p>题目描述 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。</p>
+<p>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。</p>
 </blockquote>
 <p>考点：查找</p>
 <p>一般查找与排序一同出现，掌握二分查找，归并排序和快速排序（必须掌握）。算法比较：额外空间消耗，平均时间复杂度和最差时间复杂度等</p>
 <p>如果在一个已经排序或者部分排序的数组中查找一个数字或者统计数字出现次数，尝试使用二分查找</p>
 <p>本题通过直接遍历能直接得出，时间复杂度为O(n)。利用旋转特性，使用二分法实现O(logn)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">import java.util.ArrayList;</div><div class="line">public class Solution &#123;</div><div class="line">    public int minNumberInRotateArray(int [] array) &#123;</div><div class="line">        if (array.length == 0) &#123;</div><div class="line">            System.out.println(&quot;Invalid parameters&quot;);</div><div class="line">        &#125;</div><div class="line">        int index1 = 0;</div><div class="line">        int index2 = array.length - 1;</div><div class="line">        int indexmid = index1;</div><div class="line">        while (array[index1] &gt;= array[index2]) &#123;</div><div class="line">            if (index2 - index1 == 1) &#123;</div><div class="line">                indexmid = index2;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">            indexmid = (index1 + index2) / 2;</div><div class="line">            if (array[index1] == array[index2] &amp;&amp; array[indexmid] == array[index1]) &#123;</div><div class="line">                return MinInOrder(array, index1, index2);</div><div class="line">            &#125;</div><div class="line">            if (array[indexmid] &gt;= array[index1]) &#123;</div><div class="line">                index1 = indexmid;</div><div class="line">            &#125;</div><div class="line">            else if (array[indexmid] &lt;= array[index2]) &#123;</div><div class="line">                index2 = indexmid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return array[indexmid];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private  static int MinInOrder(int[] array, int index1, int index2)&#123;</div><div class="line">        int result = array[index1];</div><div class="line">        for (int i = index1 +1; i &lt;= index2; ++i)&#123;</div><div class="line">            if (result &gt; array[i]) &#123;</div><div class="line">                result = array[i];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="7-斐波那契数列"><a href="#7-斐波那契数列" class="headerlink" title="7. 斐波那契数列"></a>7. 斐波那契数列</h1><blockquote>
+<p>大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项。 n&lt;=39</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int Fibonacci(int n) &#123;</div><div class="line">        int[] result = &#123;0, 1&#125;;</div><div class="line">        if (n &lt; 2) &#123;</div><div class="line">            return result[n];</div><div class="line">        &#125;</div><div class="line">        int fibMinusOne = 1;</div><div class="line">        int fibMinusTwo = 0;</div><div class="line">        int fibN = 0;</div><div class="line">        for (int i = 2; i &lt;= n; ++i) &#123;</div><div class="line">            fibN = fibMinusOne + fibMinusTwo;</div><div class="line">            </div><div class="line">            fibMinusTwo = fibMinusOne;</div><div class="line">            fibMinusOne = fibN;</div><div class="line">        &#125;</div><div class="line">        return fibN;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
 
       
@@ -525,81 +640,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-牛客20170809算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/15/牛客20170809算法总结/">牛客20170809算法总结</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/15/牛客20170809算法总结/" class="archive-article-date">
-  	<time datetime="2017-08-15T08:49:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="0-铺垫：数组中的最大子数组"><a href="#0-铺垫：数组中的最大子数组" class="headerlink" title="0.铺垫：数组中的最大子数组"></a>0.铺垫：数组中的最大子数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public class SubArrayMaxSum &#123;</div><div class="line">    public static int maxSum(int[] arr) &#123;</div><div class="line">        if (arr == null || arr.length == 0)&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">        int max = Integer.MIN_VALUE;</div><div class="line">        int cur = 0;</div><div class="line">        for (int i = 0; i != arr.length; i++)&#123;</div><div class="line">            cur += arr[i];</div><div class="line">            max = Math.max(max, cur);</div><div class="line">            cur = cur &lt; 0 ? 0:cur;</div><div class="line">        &#125;</div><div class="line">        return max;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String[] args)&#123;</div><div class="line">        int[] arr1 = &#123;-2, -3, -5, 40, -10, -10, 100, 1&#125;;</div><div class="line">        System.out.println(maxSum(arr1));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/08/15/牛客20170809算法总结/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology/" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/15/牛客20170809算法总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -698,6 +738,10 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
@@ -711,10 +755,6 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
