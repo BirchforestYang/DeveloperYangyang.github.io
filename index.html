@@ -194,45 +194,14 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##1 基本概念</p>
-<p>​         在计算机中表达式有三种，<a href="https://zh.wikipedia.org/wiki/%E6%B3%A2%E5%85%B0%E8%A1%A8%E7%A4%BA%E6%B3%95" target="_blank" rel="external">前缀表达式</a>（波兰式），中缀表达式，<a href="https://zh.wikipedia.org/wiki/%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E7%A4%BA%E6%B3%95" target="_blank" rel="external">后缀表达式</a>（逆波兰式）。</p>
+        <h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1 基本概念"></a>1 基本概念</h3><p>​         在计算机中表达式有三种，<a href="https://zh.wikipedia.org/wiki/%E6%B3%A2%E5%85%B0%E8%A1%A8%E7%A4%BA%E6%B3%95" target="_blank" rel="external">前缀表达式</a>（波兰式），中缀表达式，<a href="https://zh.wikipedia.org/wiki/%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E7%A4%BA%E6%B3%95" target="_blank" rel="external">后缀表达式</a>（逆波兰式）。</p>
 <p>如表达式：a+b*(c-d)-e/f</p>
 <p>前缀表达式：-+a*b-cd/ef</p>
 <p>中缀表达式：a+b*(c-d)-e/f</p>
 <p>后缀表达式：abcd-*+ef/-</p>
-<h3 id="2-转换原理"><a href="#2-转换原理" class="headerlink" title="2 转换原理"></a>2 转换原理</h3><p>​         原理不难，我们遇到遇到操作数的时候直接输出，当遇到操作符（包括‘（’，‘+’，‘-’，‘*’，‘/’）的时候，我们需要把符号压入到栈中，</p>
-<ul>
-<li>2.1 当遇到‘）’的时候：</li>
-</ul>
-<p>​         我们需要依次从栈顶弹出符号，直到遇到‘（’，并且要将‘（’弹出。如：（a<em>（b+c）），栈中的是（</em>（+，当遇到‘）’的时候，我们要弹出‘+’，‘（’。</p>
-<ul>
-<li>2.2 当遇到‘（’的时候</li>
-</ul>
-<p>​         此时没什么要说的，直接压栈。</p>
-<ul>
-<li>2.3 当遇到‘+’，‘-’，‘*’，‘/’的时候：</li>
-</ul>
-<p>​         我们要把栈顶元素的符号的优先级跟输入的符号的优先级进行对比，如果栈顶优先级高的话，我们就要把栈顶元素依次弹出，直到栈顶的优先级低于输入的优先级或者栈空。</p>
-<p>如：a+b+c+d，跟a+b*c+d得到的符号顺序就不一样，原因就是这个优先级的问题。</p>
-<ul>
-<li>2.4 当遇到操作数的时候：</li>
-</ul>
-<p>​         毫无疑问，直接输出</p>
-<hr>
-<h2 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h2><h4 id="简便方法"><a href="#简便方法" class="headerlink" title="简便方法"></a>简便方法</h4><p>中缀表达式(a+b) <em> c </em> (d-e/f) 转成前缀，后缀表达式</p>
-<blockquote>
-<ul>
-<li><p>第一步：按照运算符的优先级对所有的运算单位加括号：式子变成了：((a+(b*c))-(d+e)) </p>
-</li>
-<li><p>第二步：转换前缀与后缀表达式 </p>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li>前缀：把运算符号移动到对应的括号前面,则变成拉：-( +(a <em>(bc)) +(de)) 。把括号去掉：-+a</em>bc+de 前缀式子出现 </li>
-<li>后缀：把运算符号移动到对应的括号后面，则变成拉：((a(bc)<em> )+ (de)+ )- 。把括号去掉：abc</em>+de+- 后缀式子出现 </li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2017/09/10/前缀，中缀，后缀表达式转换/#more">more >></a>
+        
       
 
       
@@ -734,15 +703,15 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -754,7 +723,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
