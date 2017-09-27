@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://developeryang.top/"/>
-  <updated>2017-09-10T13:20:50.000Z</updated>
+  <updated>2017-09-27T14:51:20.000Z</updated>
   <id>http://developeryang.top/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>工作情况</title>
+    <link href="http://developeryang.top/2017/09/27/%E5%B7%A5%E4%BD%9C%E6%83%85%E5%86%B5/"/>
+    <id>http://developeryang.top/2017/09/27/工作情况/</id>
+    <published>2017-09-27T14:38:22.000Z</published>
+    <updated>2017-09-27T14:51:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>找工作难，找一个自己喜欢的工作更加难。</p>
+<p>工作单位：一方面是看基础能力，另一方面是项目。因为平时在实验室，老板不让码代码，更不让实习，所以计算机基础有点薄弱。</p>
+<p>一直在补计算机基础。</p>
+<p>我的投递岗位从原来的iOS，数据挖掘，爬虫工程师，Java开发，到现在的测试开发。</p>
+<hr>
+<p>测试开发的要求：</p>
+<ul>
+<li>熟悉软件工程及网络工程知识，熟悉软件测试一般方法和流程</li>
+<li>熟悉C、C++或Java等一类及以上编程语言，有开发经验者优先</li>
+<li>熟悉sql语言，熟悉mysql等常用数据库</li>
+<li>熟悉Linux或Unix操作系统者优先</li>
+<li>熟悉Shell/Perl /Python/Ruby等至少一种脚本语言</li>
+</ul>
+<hr>
+<p>目前要加强的：</p>
+<ol>
+<li>测试理论的补充。</li>
+<li>Linux系统的基本操作</li>
+<li>sql继续加强</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;找工作难，找一个自己喜欢的工作更加难。&lt;/p&gt;
+&lt;p&gt;工作单位：一方面是看基础能力，另一方面是项目。因为平时在实验室，老板不让码代码，更不让实习，所以计算机基础有点薄弱。&lt;/p&gt;
+&lt;p&gt;一直在补计算机基础。&lt;/p&gt;
+&lt;p&gt;我的投递岗位从原来的iOS，数据挖掘，爬虫工程师，J
+    
+    </summary>
+    
+      <category term="life" scheme="http://developeryang.top/categories/life/"/>
+    
+    
+      <category term="工作" scheme="http://developeryang.top/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+      <category term="测试开发" scheme="http://developeryang.top/tags/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>前缀，中缀，后缀表达式转换</title>
