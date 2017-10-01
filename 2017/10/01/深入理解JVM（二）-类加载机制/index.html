@@ -7,19 +7,20 @@
   <meta name="baidu-site-verification" content="Admw2B7vqu" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://developeryang.top">
-  <title>分类 | 爬行者小Y</title>
+  <title>深入理解JVM（二）-类加载机制 | 爬行者小Y</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="iOS/Python/C">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://developeryang.top/categories/index.html">
+  <meta name="description" content="深入理解JVM（二）类加载机制虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。 类加载过程：类装载器把一个类装入JVM中 (1) 加载：查找和导入Class文件；  (2) 链接：把类的二进制数据合并到JRE中；  (a)校验：检查载入Class文件数据的正确性；  (b)准备：给类的静态变量">
+<meta name="keywords" content="深入理解JVM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解JVM（二）-类加载机制">
+<meta property="og:url" content="http://developeryang.top/2017/10/01/深入理解JVM（二）-类加载机制/index.html">
 <meta property="og:site_name" content="爬行者小Y">
-<meta property="og:description" content="iOS/Python/C">
+<meta property="og:description" content="深入理解JVM（二）类加载机制虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。 类加载过程：类装载器把一个类装入JVM中 (1) 加载：查找和导入Class文件；  (2) 链接：把类的二进制数据合并到JRE中；  (a)校验：检查载入Class文件数据的正确性；  (b)准备：给类的静态变量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-27T09:15:28.000Z">
+<meta property="og:updated_time" content="2017-10-01T07:47:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
-<meta name="twitter:description" content="iOS/Python/C">
+<meta name="twitter:title" content="深入理解JVM（二）-类加载机制">
+<meta name="twitter:description" content="深入理解JVM（二）类加载机制虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。 类加载过程：类装载器把一个类装入JVM中 (1) 加载：查找和导入Class文件；  (2) 链接：把类的二进制数据合并到JRE中；  (a)校验：检查载入Class文件数据的正确性；  (b)准备：给类的静态变量">
   
     <link rel="alternative" href="/atom.xml" title="爬行者小Y" type="application/atom+xml">
   
@@ -173,27 +174,48 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="categories-undefined" class="article article-type-categories " itemscope itemprop="blogPost">
+            <article id="post-深入理解JVM（二）-类加载机制" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      分类
+      深入理解JVM（二）-类加载机制
     </h1>
   
 
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2017-03-29T13:38:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-29</time>
+        <a href="/2017/10/01/深入理解JVM（二）-类加载机制/" class="archive-article-date">
+  	<time datetime="2017-10-01T07:44:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="深入理解JVM（二）"><a href="#深入理解JVM（二）" class="headerlink" title="深入理解JVM（二）"></a>深入理解JVM（二）</h1><h2 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h2><pre><code>虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。
+</code></pre><h4 id="类加载过程：类装载器把一个类装入JVM中"><a href="#类加载过程：类装载器把一个类装入JVM中" class="headerlink" title="类加载过程：类装载器把一个类装入JVM中"></a>类加载过程：类装载器把一个类装入JVM中</h4><ul>
+<li><p>(1) 加载：查找和导入Class文件；</p>
+</li>
+<li><p>(2) 链接：把类的二进制数据合并到JRE中；</p>
+<ul>
+<li><p>(a)校验：检查载入Class文件数据的正确性；</p>
+</li>
+<li><p>(b)准备：给类的静态变量分配存储空间；</p>
+</li>
+<li><p>(c)解析：将符号引用转成直接引用；</p>
+</li>
+</ul>
+</li>
+<li><p>(3) 初始化：对类的静态变量，静态代码块执行初始化操作（执行类构造器clinit()的过程）</p>
+</li>
+</ul>
+<h4 id="动态扩展"><a href="#动态扩展" class="headerlink" title="动态扩展"></a>动态扩展</h4><pre><code>Java程序可以动态扩展是由运行期动态加载和动态链接实现的；比如：如果编写一个使用接口的应用程序，可以等到运行时再指定其实际的实现(多态)，解析过程有时候还可以在初始化之后执行；比如：动态绑定(多态)；
+</code></pre><h4 id="类加载器的代理模式：双亲委托机制"><a href="#类加载器的代理模式：双亲委托机制" class="headerlink" title="类加载器的代理模式：双亲委托机制"></a>类加载器的代理模式：双亲委托机制</h4><pre><code>就是某个特定的类加载器在接收到加载类的请求后，首先将加载任务委托给父类加载器，一次追溯，直到最高的爷爷辈的，如果父类加载器可以完成类加载任务，就成功返回；只要父类加载器无法完成次加载任务时，才自己加载。
+
+双亲机制是为了保证java核心库的类型安全，不会出现用户自己能定义java.lang.Object类的情况。
+</code></pre>
       
 
       
@@ -227,7 +249,29 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">深入理解JVM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology/" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -277,7 +321,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://developeryang.top/categories/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://developeryang.top/2017/10/01/深入理解JVM（二）-类加载机制/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -289,6 +333,16 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/01/深入理解JVM（一）-JVM内存模型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深入理解JVM（一）-JVM内存模型</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -297,6 +351,7 @@ var _hmt = _hmt || [];
   
     <div class="duoshuo"></div>
   
+
 
 
 
@@ -321,7 +376,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
