@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://developeryang.top/"/>
-  <updated>2017-10-01T07:47:52.000Z</updated>
+  <updated>2017-10-01T07:50:51.000Z</updated>
   <id>http://developeryang.top/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://developeryang.top/2017/10/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM%EF%BC%88%E4%BA%8C%EF%BC%89-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
     <id>http://developeryang.top/2017/10/01/深入理解JVM（二）-类加载机制/</id>
     <published>2017-10-01T07:44:04.000Z</published>
-    <updated>2017-10-01T07:47:52.000Z</updated>
+    <updated>2017-10-01T07:50:51.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="深入理解JVM（二）"><a href="#深入理解JVM（二）" class="headerlink" title="深入理解JVM（二）"></a>深入理解JVM（二）</h1><h2 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h2><pre><code>虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。
+    <content type="html"><![CDATA[<h2 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h2><pre><code>虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。
 </code></pre><h4 id="类加载过程：类装载器把一个类装入JVM中"><a href="#类加载过程：类装载器把一个类装入JVM中" class="headerlink" title="类加载过程：类装载器把一个类装入JVM中"></a>类加载过程：类装载器把一个类装入JVM中</h4><ul>
 <li><p>(1) 加载：查找和导入Class文件；</p>
 </li>
@@ -47,7 +47,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;深入理解JVM（二）&quot;&gt;&lt;a href=&quot;#深入理解JVM（二）&quot; class=&quot;headerlink&quot; title=&quot;深入理解JVM（二）&quot;&gt;&lt;/a&gt;深入理解JVM（二）&lt;/h1&gt;&lt;h2 id=&quot;类加载机制&quot;&gt;&lt;a href=&quot;#类加载机制&quot; class=&quot;he
+      &lt;h2 id=&quot;类加载机制&quot;&gt;&lt;a href=&quot;#类加载机制&quot; class=&quot;headerlink&quot; title=&quot;类加载机制&quot;&gt;&lt;/a&gt;类加载机制&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚
     
     </summary>
     
@@ -63,9 +63,9 @@
     <link href="http://developeryang.top/2017/10/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM%EF%BC%88%E4%B8%80%EF%BC%89-JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
     <id>http://developeryang.top/2017/10/01/深入理解JVM（一）-JVM内存模型/</id>
     <published>2017-10-01T07:41:14.000Z</published>
-    <updated>2017-10-01T07:42:46.000Z</updated>
+    <updated>2017-10-01T07:51:19.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="深入理解JVM（一）"><a href="#深入理解JVM（一）" class="headerlink" title="深入理解JVM（一）"></a>深入理解JVM（一）</h1><h2 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h2><p><a href="http://otqmskmhz.bkt.clouddn.com/Java%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.jpg" target="_blank" rel="external">Java程序执行过程</a></p>
+    <content type="html"><![CDATA[<h2 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h2><p><a href="http://otqmskmhz.bkt.clouddn.com/Java%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.jpg" target="_blank" rel="external">Java程序执行过程</a></p>
 <ul>
 <li>Java源代码文件(.java)会被Java编译器编译为字节码文件(.class)</li>
 <li>由JVM中的类加载器加载各个类的字节码文件(.class)</li>
@@ -89,7 +89,7 @@ Java 垃圾收集器管理的主要区域
     
     <summary type="html">
     
-      &lt;h1 id=&quot;深入理解JVM（一）&quot;&gt;&lt;a href=&quot;#深入理解JVM（一）&quot; class=&quot;headerlink&quot; title=&quot;深入理解JVM（一）&quot;&gt;&lt;/a&gt;深入理解JVM（一）&lt;/h1&gt;&lt;h2 id=&quot;JVM内存模型&quot;&gt;&lt;a href=&quot;#JVM内存模型&quot; class
+      &lt;h2 id=&quot;JVM内存模型&quot;&gt;&lt;a href=&quot;#JVM内存模型&quot; class=&quot;headerlink&quot; title=&quot;JVM内存模型&quot;&gt;&lt;/a&gt;JVM内存模型&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://otqmskmhz.bkt.clouddn.com/Java%E7%
     
     </summary>
     

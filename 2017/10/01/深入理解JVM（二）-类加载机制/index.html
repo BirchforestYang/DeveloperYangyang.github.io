@@ -9,18 +9,18 @@
   <link rel="dns-prefetch" href="http://developeryang.top">
   <title>深入理解JVM（二）-类加载机制 | 爬行者小Y</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="深入理解JVM（二）类加载机制虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。 类加载过程：类装载器把一个类装入JVM中 (1) 加载：查找和导入Class文件；  (2) 链接：把类的二进制数据合并到JRE中；  (a)校验：检查载入Class文件数据的正确性；  (b)准备：给类的静态变量">
+  <meta name="description" content="类加载机制虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。 类加载过程：类装载器把一个类装入JVM中 (1) 加载：查找和导入Class文件；  (2) 链接：把类的二进制数据合并到JRE中；  (a)校验：检查载入Class文件数据的正确性；  (b)准备：给类的静态变量分配存储空间；  (">
 <meta name="keywords" content="深入理解JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解JVM（二）-类加载机制">
 <meta property="og:url" content="http://developeryang.top/2017/10/01/深入理解JVM（二）-类加载机制/index.html">
 <meta property="og:site_name" content="爬行者小Y">
-<meta property="og:description" content="深入理解JVM（二）类加载机制虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。 类加载过程：类装载器把一个类装入JVM中 (1) 加载：查找和导入Class文件；  (2) 链接：把类的二进制数据合并到JRE中；  (a)校验：检查载入Class文件数据的正确性；  (b)准备：给类的静态变量">
+<meta property="og:description" content="类加载机制虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。 类加载过程：类装载器把一个类装入JVM中 (1) 加载：查找和导入Class文件；  (2) 链接：把类的二进制数据合并到JRE中；  (a)校验：检查载入Class文件数据的正确性；  (b)准备：给类的静态变量分配存储空间；  (">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-01T07:47:52.000Z">
+<meta property="og:updated_time" content="2017-10-01T07:50:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JVM（二）-类加载机制">
-<meta name="twitter:description" content="深入理解JVM（二）类加载机制虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。 类加载过程：类装载器把一个类装入JVM中 (1) 加载：查找和导入Class文件；  (2) 链接：把类的二进制数据合并到JRE中；  (a)校验：检查载入Class文件数据的正确性；  (b)准备：给类的静态变量">
+<meta name="twitter:description" content="类加载机制虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。 类加载过程：类装载器把一个类装入JVM中 (1) 加载：查找和导入Class文件；  (2) 链接：把类的二进制数据合并到JRE中；  (a)校验：检查载入Class文件数据的正确性；  (b)准备：给类的静态变量分配存储空间；  (">
   
     <link rel="alternative" href="/atom.xml" title="爬行者小Y" type="application/atom+xml">
   
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="深入理解JVM（二）"><a href="#深入理解JVM（二）" class="headerlink" title="深入理解JVM（二）"></a>深入理解JVM（二）</h1><h2 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h2><pre><code>虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。
+        <h2 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h2><pre><code>虚拟机把描述类的数据从class文件加载到内存，并对数据进行校验，转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。
 </code></pre><h4 id="类加载过程：类装载器把一个类装入JVM中"><a href="#类加载过程：类装载器把一个类装入JVM中" class="headerlink" title="类加载过程：类装载器把一个类装入JVM中"></a>类加载过程：类装载器把一个类装入JVM中</h4><ul>
 <li><p>(1) 加载：查找和导入Class文件；</p>
 </li>
@@ -443,10 +443,6 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
@@ -456,6 +452,10 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">

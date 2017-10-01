@@ -9,18 +9,18 @@
   <link rel="dns-prefetch" href="http://developeryang.top">
   <title>深入理解JVM（一）-JVM内存模型 | 爬行者小Y</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="深入理解JVM（一）JVM内存模型Java程序执行过程  Java源代码文件(.java)会被Java编译器编译为字节码文件(.class) 由JVM中的类加载器加载各个类的字节码文件(.class) JVM执行引擎执行  在整个程序执行过程中，JVM会用一段空间来存储程序执行期间需要用到的数据和相关信息，这 段空间一般被称作为Runtime Data Area（运行时数据区），也就是我们常说的J">
+  <meta name="description" content="JVM内存模型Java程序执行过程  Java源代码文件(.java)会被Java编译器编译为字节码文件(.class) 由JVM中的类加载器加载各个类的字节码文件(.class) JVM执行引擎执行  在整个程序执行过程中，JVM会用一段空间来存储程序执行期间需要用到的数据和相关信息，这 段空间一般被称作为Runtime Data Area（运行时数据区），也就是我们常说的JVM内存。 JVM内">
 <meta name="keywords" content="深入理解JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解JVM（一）-JVM内存模型">
 <meta property="og:url" content="http://developeryang.top/2017/10/01/深入理解JVM（一）-JVM内存模型/index.html">
 <meta property="og:site_name" content="爬行者小Y">
-<meta property="og:description" content="深入理解JVM（一）JVM内存模型Java程序执行过程  Java源代码文件(.java)会被Java编译器编译为字节码文件(.class) 由JVM中的类加载器加载各个类的字节码文件(.class) JVM执行引擎执行  在整个程序执行过程中，JVM会用一段空间来存储程序执行期间需要用到的数据和相关信息，这 段空间一般被称作为Runtime Data Area（运行时数据区），也就是我们常说的J">
+<meta property="og:description" content="JVM内存模型Java程序执行过程  Java源代码文件(.java)会被Java编译器编译为字节码文件(.class) 由JVM中的类加载器加载各个类的字节码文件(.class) JVM执行引擎执行  在整个程序执行过程中，JVM会用一段空间来存储程序执行期间需要用到的数据和相关信息，这 段空间一般被称作为Runtime Data Area（运行时数据区），也就是我们常说的JVM内存。 JVM内">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-01T07:42:46.000Z">
+<meta property="og:updated_time" content="2017-10-01T07:51:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解JVM（一）-JVM内存模型">
-<meta name="twitter:description" content="深入理解JVM（一）JVM内存模型Java程序执行过程  Java源代码文件(.java)会被Java编译器编译为字节码文件(.class) 由JVM中的类加载器加载各个类的字节码文件(.class) JVM执行引擎执行  在整个程序执行过程中，JVM会用一段空间来存储程序执行期间需要用到的数据和相关信息，这 段空间一般被称作为Runtime Data Area（运行时数据区），也就是我们常说的J">
+<meta name="twitter:description" content="JVM内存模型Java程序执行过程  Java源代码文件(.java)会被Java编译器编译为字节码文件(.class) 由JVM中的类加载器加载各个类的字节码文件(.class) JVM执行引擎执行  在整个程序执行过程中，JVM会用一段空间来存储程序执行期间需要用到的数据和相关信息，这 段空间一般被称作为Runtime Data Area（运行时数据区），也就是我们常说的JVM内存。 JVM内">
   
     <link rel="alternative" href="/atom.xml" title="爬行者小Y" type="application/atom+xml">
   
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="深入理解JVM（一）"><a href="#深入理解JVM（一）" class="headerlink" title="深入理解JVM（一）"></a>深入理解JVM（一）</h1><h2 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h2><p><a href="http://otqmskmhz.bkt.clouddn.com/Java%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.jpg" target="_blank" rel="external">Java程序执行过程</a></p>
+        <h2 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h2><p><a href="http://otqmskmhz.bkt.clouddn.com/Java%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.jpg" target="_blank" rel="external">Java程序执行过程</a></p>
 <ul>
 <li>Java源代码文件(.java)会被Java编译器编译为字节码文件(.class)</li>
 <li>由JVM中的类加载器加载各个类的字节码文件(.class)</li>
@@ -451,10 +451,6 @@ Java 垃圾收集器管理的主要区域
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
@@ -464,6 +460,10 @@ Java 垃圾收集器管理的主要区域
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
