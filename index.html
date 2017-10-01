@@ -174,6 +174,98 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-深入理解JVM（一）-JVM内存模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/01/深入理解JVM（一）-JVM内存模型/">深入理解JVM（一）-JVM内存模型</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/01/深入理解JVM（一）-JVM内存模型/" class="archive-article-date">
+  	<time datetime="2017-10-01T07:41:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="深入理解JVM（一）"><a href="#深入理解JVM（一）" class="headerlink" title="深入理解JVM（一）"></a>深入理解JVM（一）</h1><h2 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h2><p><a href="http://otqmskmhz.bkt.clouddn.com/Java%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.jpg" target="_blank" rel="external">Java程序执行过程</a></p>
+<ul>
+<li>Java源代码文件(.java)会被Java编译器编译为字节码文件(.class)</li>
+<li>由JVM中的类加载器加载各个类的字节码文件(.class)</li>
+<li>JVM执行引擎执行</li>
+</ul>
+<p>在整个程序执行过程中，JVM会用一段空间来存储程序执行期间需要用到的数据和相关信息，这 段空间一般被称作为Runtime Data Area（运行时数据区），也就是我们常说的JVM内存。</p>
+<p><a href="http://otqmskmhz.bkt.clouddn.com/JVM%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83.jpg" target="_blank" rel="external">JVM内存分布</a></p>
+<p>Runtime Data Area（运行时数据区）包括 ：</p>
+<pre><code>Java栈(VM Stack)、本地方法栈(Native Method Stack)、程序计数器(Program Counter Register)、堆(Heap)、方法区(Method Area)
+</code></pre><h3 id="1-Java栈"><a href="#1-Java栈" class="headerlink" title="1. Java栈"></a>1. Java栈</h3><pre><code>Java栈中存放的是一个个的栈帧，每个栈帧对应一个被调用的方法，在栈帧中包括局部变量表(Local Variables)、操作数栈(Operand Stack)、指向当前方法所属的类的运行时常量池（运行时常量池的概念在方法区部分会谈到）的引用(Reference to runtime constant pool)、方法返回地址(Return Address)和一些额外的附加信息。
+</code></pre><h3 id="2-本地方法栈"><a href="#2-本地方法栈" class="headerlink" title="2. 本地方法栈"></a>2. 本地方法栈</h3><pre><code>本地方法栈则是为执行本地方法（Native Method）服务的
+</code></pre><h3 id="3-程序计数器"><a href="#3-程序计数器" class="headerlink" title="3. 程序计数器"></a>3. 程序计数器</h3><pre><code>用来指示执行哪条指令的，每个线程都需要有自己独立的程序计数器。
+由于程序计数器中存储的数据所占空间的大小不会随程序的执行而发生改变，因此，对于程序计数器是不会发生内存溢出现象(OutOfMemory)的。
+</code></pre><h3 id="4-堆"><a href="#4-堆" class="headerlink" title="4. 堆"></a>4. 堆</h3><pre><code>堆是用来存储对象本身的以及数组
+Java 垃圾收集器管理的主要区域
+堆是被所有线程共享的，在JVM中只有一个堆
+</code></pre><h3 id="5-方法区"><a href="#5-方法区" class="headerlink" title="5. 方法区"></a>5. 方法区</h3><pre><code>方法区是被线程共享的区域。
+在方法区中，存储了每个类的信息（包括类的名称、方法信息、字段信息）、静态变量、常量以及编译器编译后的代码等。
+运行时常量池，它是每一个类或接口的常量池的运行时表示形式，在类和接口被加载到JVM后，对应的运行时常量池就被创建出来
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">深入理解JVM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology/" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/01/深入理解JVM（一）-JVM内存模型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-工作情况" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -523,113 +615,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-网易测试面试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/22/网易测试面试/">网易测试面试</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/22/网易测试面试/" class="archive-article-date">
-  	<time datetime="2017-08-22T11:27:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。"><a href="#这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。" class="headerlink" title="这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。"></a>这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。</h4><h4 id="面试反省："><a href="#面试反省：" class="headerlink" title="面试反省："></a>面试反省：</h4><ol>
-<li><ul>
-<li>简历上的任何一个字都要完全掌握。</li>
-</ul>
-</li>
-<li><ul>
-<li>面试官的问题没有完全理解的，一定要多问一句。</li>
-</ul>
-</li>
-<li><ul>
-<li>针对性技能一定要多看。</li>
-</ul>
-</li>
-</ol>
-<h4 id="面试题目："><a href="#面试题目：" class="headerlink" title="面试题目："></a>面试题目：</h4><p>自我介绍的流程走完，先介绍了自己的项目，但面试官不怎么关心，因为没有相关性。</p>
-<ul>
-<li><p>1.黑盒测试的场景测试介绍一下</p>
-</li>
-<li><p>2.LoadRunner你是如何使用的</p>
-</li>
-<li><p>3.考拉订单，如何写测试用例。</p>
-</li>
-<li><p>4.数据库会不会 </p>
-</li>
-<li><p>5.Python写一个排序算法，在这个算法上实现去重操作，实现后如何实现测试操作，需要测试哪些特殊字符</p>
-</li>
-<li><p>6.一天24小时，时针分针秒针后重合几次</p>
-</li>
-<li><p>7.最后一直问在为什么投测试而不是开发</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工作</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology/" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/22/网易测试面试/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -732,19 +717,19 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -760,6 +745,14 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">深入理解JVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">研究生生活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
@@ -768,15 +761,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">研究生生活</a>
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
