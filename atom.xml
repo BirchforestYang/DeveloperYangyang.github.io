@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://developeryang.top/"/>
-  <updated>2017-10-01T07:50:51.000Z</updated>
+  <updated>2017-10-10T11:56:58.000Z</updated>
   <id>http://developeryang.top/</id>
   
   <author>
@@ -14,6 +14,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>黑盒测试</title>
+    <link href="http://developeryang.top/2017/10/10/%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95/"/>
+    <id>http://developeryang.top/2017/10/10/黑盒测试/</id>
+    <published>2017-10-10T11:55:52.000Z</published>
+    <updated>2017-10-10T11:56:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>黑盒测试用例设计方法包括等价类划分法、边界值分析法、错误推测法、因果图法、判定表驱动法、正交试验设计法、功能图法、场景法等。</p>
+<h3 id="1-等价类划分法"><a href="#1-等价类划分法" class="headerlink" title="1. 等价类划分法"></a>1. 等价类划分法</h3><pre><code>等价类划分法是把程序的输入域划分成若干部分(子集)，然后从每个部分中选取少数代表性数据作为测试用例。每一类的代表性数据在测试中的作用等价于这一类中的其他值。
+</code></pre><h3 id="2-边界值分析法"><a href="#2-边界值分析法" class="headerlink" title="2. 边界值分析法"></a>2. 边界值分析法</h3><pre><code>边界值分析法就是对输入或输出的边界值进行测试的一种黑盒测试方法。通常边界值分析法是作为对等价类划分法的补充，这种情况下，其测试用例来自等价类的边界。
+</code></pre><h3 id="3-错误推测法"><a href="#3-错误推测法" class="headerlink" title="3. 错误推测法"></a>3. 错误推测法</h3><pre><code>基于经验和直觉推测程序中所有可能存在的各种错误, 从而有针对性的设计测试用例的方法。
+</code></pre><h3 id="4-因果图法"><a href="#4-因果图法" class="headerlink" title="4. 因果图法"></a>4. 因果图法</h3><pre><code>因果图法是一种利用图解法分析输入的各种组合情况，从而设计测试用例的方法，它适合 于检查程序输入条件的各种组合情况。
+</code></pre><h3 id="5-判定表驱动法"><a href="#5-判定表驱动法" class="headerlink" title="5. 判定表驱动法"></a>5. 判定表驱动法</h3><pre><code>判定表是分析和表达多逻辑条件下执行不同操作的情况的工具。
+</code></pre><h3 id="6-正交试验设计法"><a href="#6-正交试验设计法" class="headerlink" title="6. 正交试验设计法"></a>6. 正交试验设计法</h3><pre><code>依据 Galois 理论,从大量的(实验)数据(测试例)中挑选适量的,有代表性的点(例),从 而合理地安排实验(测试)的一种科学实验设计方法.类似的方法有:聚类分析方法,因子方法方 法等.
+</code></pre><h3 id="7-功能图法"><a href="#7-功能图法" class="headerlink" title="7. 功能图法"></a>7. 功能图法</h3><pre><code>功能图由状态迁移图和布尔函数组成.状态迁移图用状态和迁移来描述.一个状态指出数据输 入的位置(或时间),而迁移则指明状态的改变.同时要依靠判定表或因果图表示的逻辑功能.例, 一个简化的自动出纳机 ATM 的功能图。
+</code></pre><h3 id="8-场景法"><a href="#8-场景法" class="headerlink" title="8. 场景法"></a>8. 场景法</h3><pre><code>现在的软件几乎都是用事件触发来控制流程的，事件触发时的情景便形成了场景，而同一 事件不同的触发顺序和处理结果就形成事件流。这种在软件设计方面的思想也可以引入到软件 测试中，可以比较生动地描绘出事件触发时的情景，有利于测试设计者设计测试用例，同时使 测试用例更容易理解和执行。
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;黑盒测试用例设计方法包括等价类划分法、边界值分析法、错误推测法、因果图法、判定表驱动法、正交试验设计法、功能图法、场景法等。&lt;/p&gt;
+&lt;h3
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="测试" scheme="http://developeryang.top/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="黑盒测试" scheme="http://developeryang.top/tags/%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>测试思维</title>
+    <link href="http://developeryang.top/2017/10/10/%E6%B5%8B%E8%AF%95%E6%80%9D%E7%BB%B4/"/>
+    <id>http://developeryang.top/2017/10/10/测试思维/</id>
+    <published>2017-10-10T11:53:51.000Z</published>
+    <updated>2017-10-10T11:55:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>真的决定了以后做一名测试开发工程师。</p>
+<h2 id="第一步转变思维："><a href="#第一步转变思维：" class="headerlink" title="第一步转变思维："></a>第一步转变思维：</h2><h3 id="1-测试是什么？"><a href="#1-测试是什么？" class="headerlink" title="1. 测试是什么？"></a>1. 测试是什么？</h3><pre><code>测试是为了发现错误而执行程序的过程。
+
+不是为了证明软件能正确完成预定的功能。 （这是研发干的事）
+</code></pre><h3 id="2-测试用例的理解？"><a href="#2-测试用例的理解？" class="headerlink" title="2. 测试用例的理解？"></a>2. 测试用例的理解？</h3><pre><code>测试用例，一般用成功的和不成功的来修饰，必须对预期输出或结果有定义
+成功的：通过合理的设计测试用例发现了程序的错误，并且这些错误是可以修复的；最终确定没有错误可以检查出来。
+不成功的：找不到错误的测试
+总结：成功的测试用例是能诱发程序发生尚未发现的错误
+设计的关键：覆盖率与冗余
+</code></pre><h3 id="3-测试的主要策略：黑盒测试和白盒测试"><a href="#3-测试的主要策略：黑盒测试和白盒测试" class="headerlink" title="3.测试的主要策略：黑盒测试和白盒测试"></a>3.测试的主要策略：黑盒测试和白盒测试</h3><pre><code>黑盒测试（数据驱动测试）
+测试方法：等价类划分，边界值分析，因果图分析，错误猜测
+
+白盒测试（逻辑驱动测试）
+测试方法：语句覆盖，判定覆盖，条件覆盖，多重条件覆盖
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;真的决定了以后做一名测试开发工程师。&lt;/p&gt;
+&lt;h2 id=&quot;第一步转变思维：&quot;&gt;&lt;a href=&quot;#第一步转变思维：&quot; class=&quot;headerlink&quot; title=&quot;第一步转变思维：&quot;&gt;&lt;/a&gt;第一步转变思维：&lt;/h2&gt;&lt;h3 id=&quot;1-测试是什么？&quot;&gt;&lt;a hr
+    
+    </summary>
+    
+      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+    
+    
+      <category term="测试" scheme="http://developeryang.top/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>深入理解JVM（二）-类加载机制</title>
@@ -1092,124 +1163,6 @@ Java 垃圾收集器管理的主要区域
     
     
       <category term="网络" scheme="http://developeryang.top/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面试准备-算法</title>
-    <link href="http://developeryang.top/2017/07/26/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87-%E7%AE%97%E6%B3%95/"/>
-    <id>http://developeryang.top/2017/07/26/面试准备-算法/</id>
-    <published>2017-07-26T09:00:04.000Z</published>
-    <updated>2017-08-06T05:36:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="这是我的找工作前的算法复习：准备使用《剑指-Offer》配合Leetcode来巩固知识。"><a href="#这是我的找工作前的算法复习：准备使用《剑指-Offer》配合Leetcode来巩固知识。" class="headerlink" title="这是我的找工作前的算法复习：准备使用《剑指 Offer》配合Leetcode来巩固知识。"></a>这是我的找工作前的算法复习：准备使用《剑指 Offer》配合Leetcode来巩固知识。</h4><h4 id="下面是来源于网上的面试常考题型"><a href="#下面是来源于网上的面试常考题型" class="headerlink" title="下面是来源于网上的面试常考题型"></a>下面是来源于网上的面试常考题型</h4><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ol>
-<li>最长回文子串</li>
-<li>最长无重复子串</li>
-<li>字符串转数字</li>
-<li>KMP 算法</li>
-<li>字符串全排列</li>
-<li>翻转字符串</li>
-</ol>
-<a id="more"></a>
-<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ol>
-<li>求两个等长、有序数组的中位数（二分法）</li>
-<li>求两个不等长、有序数组的中位数</li>
-<li>旋转数组求最小值、旋转数组求查找某个值是否存在（二分法）</li>
-<li>【每行从左到右，每列从上到下递增的二维数组中，判断某个数是否存在（剑指 offer 第 3 题）</li>
-<li>数组中出现次数超过一半的数字</li>
-<li>第 k 大的数（拓展：最大的 k 个数）</li>
-<li>有序数组中某个数字出现的次数（提示：利用二分搜索）<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3></li>
-<li>反转链表（使用递归和迭代两种解法，了解头插法）</li>
-<li>删除链表的当前节点</li>
-<li>删除倒数第 k 个节点</li>
-<li>两个有序链表合并</li>
-<li>复杂链表的复制</li>
-<li>判断链表是否有环</li>
-<li>两个链表的第一个公共节点（提示：考虑链表有环的情况）</li>
-<li>删除链表中重复节点<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3></li>
-<li>根据中序和后序遍历结果重建二叉树、根据中序和前序遍历结果重建二叉树</li>
-<li>翻转二叉树</li>
-<li>从上往下打印二叉树 (BFS 的思想)</li>
-<li>判断某个数组是不是二叉树的后序遍历结果 (剑指 offer 第 24 题)</li>
-<li>二叉树中和为某个值的路径</li>
-<li>二叉树中某个节点的下一个节点 (强烈推荐准备一下，剑指 offer 第 58 题)<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3></li>
-<li>用两个栈实现队列、用两个队列实现栈</li>
-<li>实现一个栈，可以用常数级时间找出栈中的最小值</li>
-<li>判断栈的压栈、弹栈序列是否合法（剑指offer 第 22 题）<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3>了解以下排序的时间、空间复杂度，是否稳定，实现原理</li>
-<li>归并排序、拓展：求数组中的逆序对个数</li>
-<li>快速排序 重点：partion 函数的实现</li>
-<li>堆排序</li>
-<li>数组元素值域已知时，考虑 基数排序 和 桶排序<h3 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h3></li>
-<li>给一个十进制数字，求它的二进制表示中，有多少个 1 (n &amp;= n - 1)</li>
-<li>给一个数组，所有数字都出现了偶数次，只有一个出现了一次，找出这个数</li>
-<li>给一个数组，所有数字都出现了三次，只有一个出现了一次，找出这个数</li>
-<li>给一个数组，所有数组都出现了偶数次，只有两个数字出现了一次，找出这两个数</li>
-</ol>
-<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><ol>
-<li>背包问题</li>
-<li>连续子数组的最大和</li>
-<li>实现简单的正则表达式匹配</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;这是我的找工作前的算法复习：准备使用《剑指-Offer》配合Leetcode来巩固知识。&quot;&gt;&lt;a href=&quot;#这是我的找工作前的算法复习：准备使用《剑指-Offer》配合Leetcode来巩固知识。&quot; class=&quot;headerlink&quot; title=&quot;这是我的找工作前的算法复习：准备使用《剑指 Offer》配合Leetcode来巩固知识。&quot;&gt;&lt;/a&gt;这是我的找工作前的算法复习：准备使用《剑指 Offer》配合Leetcode来巩固知识。&lt;/h4&gt;&lt;h4 id=&quot;下面是来源于网上的面试常考题型&quot;&gt;&lt;a href=&quot;#下面是来源于网上的面试常考题型&quot; class=&quot;headerlink&quot; title=&quot;下面是来源于网上的面试常考题型&quot;&gt;&lt;/a&gt;下面是来源于网上的面试常考题型&lt;/h4&gt;&lt;h3 id=&quot;字符串&quot;&gt;&lt;a href=&quot;#字符串&quot; class=&quot;headerlink&quot; title=&quot;字符串&quot;&gt;&lt;/a&gt;字符串&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;最长回文子串&lt;/li&gt;
-&lt;li&gt;最长无重复子串&lt;/li&gt;
-&lt;li&gt;字符串转数字&lt;/li&gt;
-&lt;li&gt;KMP 算法&lt;/li&gt;
-&lt;li&gt;字符串全排列&lt;/li&gt;
-&lt;li&gt;翻转字符串&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
-    
-    
-      <category term="算法" scheme="http://developeryang.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>工作准备</title>
-    <link href="http://developeryang.top/2017/02/17/%E5%B7%A5%E4%BD%9C%E5%87%86%E5%A4%87/"/>
-    <id>http://developeryang.top/2017/02/17/工作准备/</id>
-    <published>2017-02-17T08:02:24.000Z</published>
-    <updated>2017-08-06T02:02:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先介绍下自己，一名——普通一本学校——非计算机专业——研二在读——的小硕，研究方向是无线充电。因为导师平时管的比较严没有实习机会，所以自己安排些时间来学习自己喜欢的技术和未来工作可能用到的技术。</p>
-<hr>
-<p>像移动互联网时代已经走入平稳期，不会再有那么多的机会给新人，但我喜欢那一个App做完的成就感。</p>
-<p>研一的时候断断续续看过一些关于iOS开发的blog和文档，自己也写过几个简单的demo。</p>
-<p>目前手上有这几本书，还有一些视频教程。</p>
-<p>准备一点一点重新来吧。<br><a id="more"></a></p>
-<p>Objective-C编程(第2版)（已看过1遍）</p>
-<p>精通iOS开发(第7版)（靠这个基本入门，能完成简单功能实现）</p>
-<p>下面这几本是之后准备看的：</p>
-<p>Objective-C编程之道:iOS设计模式解析</p>
-<p>Effective Objective C 2.0:编写高质量iOS与OS X代码的52个有效方法</p>
-<p>Objective-C高级编程:iOS与OS X多线程和内存管理</p>
-<hr>
-<p>未来的事谁都不知道，但多些准备总是好事。我可能会选择做测试开发，把App开发当做自己的爱好。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;首先介绍下自己，一名——普通一本学校——非计算机专业——研二在读——的小硕，研究方向是无线充电。因为导师平时管的比较严没有实习机会，所以自己安排些时间来学习自己喜欢的技术和未来工作可能用到的技术。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;像移动互联网时代已经走入平稳期，不会再有那么多的机会给新人，但我喜欢那一个App做完的成就感。&lt;/p&gt;
-&lt;p&gt;研一的时候断断续续看过一些关于iOS开发的blog和文档，自己也写过几个简单的demo。&lt;/p&gt;
-&lt;p&gt;目前手上有这几本书，还有一些视频教程。&lt;/p&gt;
-&lt;p&gt;准备一点一点重新来吧。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="life" scheme="http://developeryang.top/categories/life/"/>
-    
-    
-      <category term="工作" scheme="http://developeryang.top/tags/%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   

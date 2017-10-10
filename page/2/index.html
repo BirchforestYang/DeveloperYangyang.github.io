@@ -174,6 +174,173 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-前缀，中缀，后缀表达式转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/10/前缀，中缀，后缀表达式转换/">前缀，中缀，后缀表达式转换</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/10/前缀，中缀，后缀表达式转换/" class="archive-article-date">
+  	<time datetime="2017-09-10T11:45:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1 基本概念"></a>1 基本概念</h3><p>​         在计算机中表达式有三种，<a href="https://zh.wikipedia.org/wiki/%E6%B3%A2%E5%85%B0%E8%A1%A8%E7%A4%BA%E6%B3%95" target="_blank" rel="external">前缀表达式</a>（波兰式），中缀表达式，<a href="https://zh.wikipedia.org/wiki/%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E7%A4%BA%E6%B3%95" target="_blank" rel="external">后缀表达式</a>（逆波兰式）。</p>
+<p>如表达式：a+b*(c-d)-e/f</p>
+<p>前缀表达式：-+a*b-cd/ef</p>
+<p>中缀表达式：a+b*(c-d)-e/f</p>
+<p>后缀表达式：abcd-*+ef/-</p>
+        
+          <a class="article-more-a" href="/2017/09/10/前缀，中缀，后缀表达式转换/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology/" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/10/前缀，中缀，后缀表达式转换/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-剑指offer-（6-10）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/07/剑指offer-（6-10）/">剑指offer-（6-10）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/07/剑指offer-（6-10）/" class="archive-article-date">
+  	<time datetime="2017-09-07T06:26:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="6-旋转数组的最小数字"><a href="#6-旋转数组的最小数字" class="headerlink" title="6.旋转数组的最小数字"></a>6.旋转数组的最小数字</h1><blockquote>
+<p>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。</p>
+</blockquote>
+<p>考点：查找</p>
+<p>一般查找与排序一同出现，掌握二分查找，归并排序和快速排序（必须掌握）。算法比较：额外空间消耗，平均时间复杂度和最差时间复杂度等</p>
+<p>如果在一个已经排序或者部分排序的数组中查找一个数字或者统计数字出现次数，尝试使用二分查找</p>
+<p>本题通过直接遍历能直接得出，时间复杂度为O(n)。利用旋转特性，使用二分法实现O(logn)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">import java.util.ArrayList;</div><div class="line">public class Solution &#123;</div><div class="line">    public int minNumberInRotateArray(int [] array) &#123;</div><div class="line">        if (array.length == 0) &#123;</div><div class="line">            System.out.println(&quot;Invalid parameters&quot;);</div><div class="line">        &#125;</div><div class="line">        int index1 = 0;</div><div class="line">        int index2 = array.length - 1;</div><div class="line">        int indexmid = index1;</div><div class="line">        while (array[index1] &gt;= array[index2]) &#123;</div><div class="line">            if (index2 - index1 == 1) &#123;</div><div class="line">                indexmid = index2;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">            indexmid = (index1 + index2) / 2;</div><div class="line">            if (array[index1] == array[index2] &amp;&amp; array[indexmid] == array[index1]) &#123;</div><div class="line">                return MinInOrder(array, index1, index2);</div><div class="line">            &#125;</div><div class="line">            if (array[indexmid] &gt;= array[index1]) &#123;</div><div class="line">                index1 = indexmid;</div><div class="line">            &#125;</div><div class="line">            else if (array[indexmid] &lt;= array[index2]) &#123;</div><div class="line">                index2 = indexmid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return array[indexmid];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private  static int MinInOrder(int[] array, int index1, int index2)&#123;</div><div class="line">        int result = array[index1];</div><div class="line">        for (int i = index1 +1; i &lt;= index2; ++i)&#123;</div><div class="line">            if (result &gt; array[i]) &#123;</div><div class="line">                result = array[i];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="7-斐波那契数列"><a href="#7-斐波那契数列" class="headerlink" title="7. 斐波那契数列"></a>7. 斐波那契数列</h1><blockquote>
+<p>大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项。 n&lt;=39</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int Fibonacci(int n) &#123;</div><div class="line">        int[] result = &#123;0, 1&#125;;</div><div class="line">        if (n &lt; 2) &#123;</div><div class="line">            return result[n];</div><div class="line">        &#125;</div><div class="line">        int fibMinusOne = 1;</div><div class="line">        int fibMinusTwo = 0;</div><div class="line">        int fibN = 0;</div><div class="line">        for (int i = 2; i &lt;= n; ++i) &#123;</div><div class="line">            fibN = fibMinusOne + fibMinusTwo;</div><div class="line">            </div><div class="line">            fibMinusTwo = fibMinusOne;</div><div class="line">            fibMinusOne = fibN;</div><div class="line">        &#125;</div><div class="line">        return fibN;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology/" class="article-tag-list-link color1">technology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/07/剑指offer-（6-10）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-剑指offer-（1-5）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -442,157 +609,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-牛客20170809算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/15/牛客20170809算法总结/">牛客20170809算法总结</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/15/牛客20170809算法总结/" class="archive-article-date">
-  	<time datetime="2017-08-15T08:49:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="0-铺垫：数组中的最大子数组"><a href="#0-铺垫：数组中的最大子数组" class="headerlink" title="0.铺垫：数组中的最大子数组"></a>0.铺垫：数组中的最大子数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public class SubArrayMaxSum &#123;</div><div class="line">    public static int maxSum(int[] arr) &#123;</div><div class="line">        if (arr == null || arr.length == 0)&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">        int max = Integer.MIN_VALUE;</div><div class="line">        int cur = 0;</div><div class="line">        for (int i = 0; i != arr.length; i++)&#123;</div><div class="line">            cur += arr[i];</div><div class="line">            max = Math.max(max, cur);</div><div class="line">            cur = cur &lt; 0 ? 0:cur;</div><div class="line">        &#125;</div><div class="line">        return max;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String[] args)&#123;</div><div class="line">        int[] arr1 = &#123;-2, -3, -5, 40, -10, -10, 100, 1&#125;;</div><div class="line">        System.out.println(maxSum(arr1));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/08/15/牛客20170809算法总结/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/technology/" class="article-tag-list-link color1">technology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/15/牛客20170809算法总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-生活感悟" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/05/生活感悟/">生活感悟</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/05/生活感悟/" class="archive-article-date">
-  	<time datetime="2017-08-05T14:20:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>研究生生活已经过了大半，从当初的后悔读研，不喜欢老师分配的项目，不喜欢被困在实验室枯燥的过日子，到现在的淡然面对，可能是因为离毕业不远了吧。现在想想当初自己考研应该是有逃离工作的念想，也有对自己能力的不信任。现在想想，我应该首先让自己强大起来，拥有追求梦想和决定生活的能力。</p>
-<p>说说这研究生学到的，主要是掌握了时间和分析解决问题的能力</p>
-        
-          <a class="article-more-a" href="/2017/08/05/生活感悟/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">研究生生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/life/" class="article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/05/生活感悟/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -723,15 +739,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">深入理解JVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Objective-C</a>
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -739,7 +747,23 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">深入理解JVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Objective-C</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">黑盒测试</a>
               </li>
              
               <li class="article-tag-list-item">
