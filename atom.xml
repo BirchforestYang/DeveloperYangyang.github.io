@@ -1014,83 +1014,6 @@ Java 垃圾收集器管理的主要区域
   </entry>
   
   <entry>
-    <title>面试准备-iOS开发</title>
-    <link href="http://developeryang.top/2017/07/27/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87-iOS%E5%BC%80%E5%8F%91/"/>
-    <id>http://developeryang.top/2017/07/27/面试准备-iOS开发/</id>
-    <published>2017-07-27T12:58:10.000Z</published>
-    <updated>2017-08-04T08:15:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="思考问题："><a href="#思考问题：" class="headerlink" title="思考问题："></a>思考问题：</h3><ol>
-<li>RunLoop</li>
-<li>Cell 图片异步加载优化</li>
-<li>iOS 函数式编程的实现 &amp;&amp; 响应式编程概念</li>
-<li>内存恶鬼drawRect</li>
-<li>UIKit 性能调优(主要是UITableView)</li>
-<li>优化UITableViewCell高度计算的那些事</li>
-<li>高性能图片架构与设计</li>
-<li>轻量化视图控制器</li>
-<li>UIView的生命周期</li>
-<li>高效设置圆角</li>
-<li>事件的传递和响应机制</li>
-<li>ReactiveCocoa 和 MVVM 入门</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;思考问题：&quot;&gt;&lt;a href=&quot;#思考问题：&quot; class=&quot;headerlink&quot; title=&quot;思考问题：&quot;&gt;&lt;/a&gt;思考问题：&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;RunLoop&lt;/li&gt;
-&lt;li&gt;Cell 图片异步加载优化&lt;/li&gt;
-&lt;li&gt;iOS 函数式编程的实现
-    
-    </summary>
-    
-      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
-    
-    
-      <category term="iOS" scheme="http://developeryang.top/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面试准备-Objective-C</title>
-    <link href="http://developeryang.top/2017/07/27/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87-Objective-C/"/>
-    <id>http://developeryang.top/2017/07/27/面试准备-Objective-C/</id>
-    <published>2017-07-27T12:55:15.000Z</published>
-    <updated>2017-08-04T08:15:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>《Effective Objective-C 2.0》– OC 中各种细节</p>
-<p>《Objective-C 高级编程》– ARC、Block 和 GCD。</p>
-<h3 id="思考问题："><a href="#思考问题：" class="headerlink" title="思考问题："></a>思考问题：</h3><ol>
-<li>检测内存泄露</li>
-<li>KVO与KVC原理、KVO、Notification、Delegate优缺点、最推荐的官方文档</li>
-<li>GCD 与 NSOperation</li>
-<li>Runtime</li>
-<li>block</li>
-<li>atomic 线程安全、@synchronized</li>
-<li>对象的深浅复制</li>
-<li>招聘一个靠谱的iOS</li>
-<li>消息传递机制</li>
-<li>深入理解Objective-C：Category</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;《Effective Objective-C 2.0》– OC 中各种细节&lt;/p&gt;
-&lt;p&gt;《Objective-C 高级编程》– ARC、Block 和 GCD。&lt;/p&gt;
-&lt;h3 id=&quot;思考问题：&quot;&gt;&lt;a href=&quot;#思考问题：&quot; class=&quot;headerlink&quot; 
-    
-    </summary>
-    
-      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
-    
-    
-      <category term="Objective-C" scheme="http://developeryang.top/tags/Objective-C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>面试准备-操作系统与编译</title>
     <link href="http://developeryang.top/2017/07/27/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8E%E7%BC%96%E8%AF%91/"/>
     <id>http://developeryang.top/2017/07/27/面试准备-操作系统与编译/</id>
@@ -1132,37 +1055,43 @@ Java 垃圾收集器管理的主要区域
   </entry>
   
   <entry>
-    <title>面试准备-网络</title>
-    <link href="http://developeryang.top/2017/07/27/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87-%E7%BD%91%E7%BB%9C/"/>
-    <id>http://developeryang.top/2017/07/27/面试准备-网络/</id>
-    <published>2017-07-27T12:44:46.000Z</published>
-    <updated>2017-08-04T08:15:20.000Z</updated>
+    <title>工作准备</title>
+    <link href="http://developeryang.top/2017/02/17/%E5%B7%A5%E4%BD%9C%E5%87%86%E5%A4%87/"/>
+    <id>http://developeryang.top/2017/02/17/工作准备/</id>
+    <published>2017-02-17T08:02:24.000Z</published>
+    <updated>2017-08-06T02:02:12.000Z</updated>
     
-    <content type="html"><![CDATA[<p>身边的一些资料：<br>    【书】图解 TCP/IP<br>    <a href="http://www.jianshu.com/notebooks/3276500/latest" target="_blank" rel="external">别人的总结</a></p>
-<p>网上的一些问题：</p>
-<ol>
-<li>简介 TCP 和 UDP 区别，他们位于哪一层？</li>
-<li>路由器和交换机的工作原理大概是什么，他们分别用到什么协议，位于哪一层？</li>
-<li>描述TCP 协议三次握手，四次释放的过程。</li>
-<li>TCP 协议是如何进行流量控制，拥塞控制的？</li>
-<li>为什么建立连接时是三次握手，两次行不行？如果第三次握手失败了怎么处理</li>
-<li>关闭连接时，第四次握手失败怎么处理？</li>
-<li>你怎么理解分层和协议？</li>
-<li>HTTP 请求中的 GET 和 POST 的区别，Session 和 Cookie 的区别。</li>
-<li>谈谈你对 HTTP 1.1，2.0 和 HTTPS 的理解。</li>
-</ol>
+    <content type="html"><![CDATA[<p>首先介绍下自己，一名——普通一本学校——非计算机专业——研二在读——的小硕，研究方向是无线充电。因为导师平时管的比较严没有实习机会，所以自己安排些时间来学习自己喜欢的技术和未来工作可能用到的技术。</p>
+<hr>
+<p>像移动互联网时代已经走入平稳期，不会再有那么多的机会给新人，但我喜欢那一个App做完的成就感。</p>
+<p>研一的时候断断续续看过一些关于iOS开发的blog和文档，自己也写过几个简单的demo。</p>
+<p>目前手上有这几本书，还有一些视频教程。</p>
+<p>准备一点一点重新来吧。<br><a id="more"></a></p>
+<p>Objective-C编程(第2版)（已看过1遍）</p>
+<p>精通iOS开发(第7版)（靠这个基本入门，能完成简单功能实现）</p>
+<p>下面这几本是之后准备看的：</p>
+<p>Objective-C编程之道:iOS设计模式解析</p>
+<p>Effective Objective C 2.0:编写高质量iOS与OS X代码的52个有效方法</p>
+<p>Objective-C高级编程:iOS与OS X多线程和内存管理</p>
+<hr>
+<p>未来的事谁都不知道，但多些准备总是好事。我可能会选择做测试开发，把App开发当做自己的爱好。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;身边的一些资料：&lt;br&gt;    【书】图解 TCP/IP&lt;br&gt;    &lt;a href=&quot;http://www.jianshu.com/notebooks/3276500/latest&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;别人的总结&lt;/a&gt;&lt;/p
+      &lt;p&gt;首先介绍下自己，一名——普通一本学校——非计算机专业——研二在读——的小硕，研究方向是无线充电。因为导师平时管的比较严没有实习机会，所以自己安排些时间来学习自己喜欢的技术和未来工作可能用到的技术。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;像移动互联网时代已经走入平稳期，不会再有那么多的机会给新人，但我喜欢那一个App做完的成就感。&lt;/p&gt;
+&lt;p&gt;研一的时候断断续续看过一些关于iOS开发的blog和文档，自己也写过几个简单的demo。&lt;/p&gt;
+&lt;p&gt;目前手上有这几本书，还有一些视频教程。&lt;/p&gt;
+&lt;p&gt;准备一点一点重新来吧。&lt;br&gt;
     
     </summary>
     
-      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
+      <category term="life" scheme="http://developeryang.top/categories/life/"/>
     
     
-      <category term="网络" scheme="http://developeryang.top/tags/%E7%BD%91%E7%BB%9C/"/>
+      <category term="工作" scheme="http://developeryang.top/tags/%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   
