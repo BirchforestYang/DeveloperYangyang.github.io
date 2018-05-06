@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://developeryang.top/"/>
-  <updated>2017-10-10T11:56:58.000Z</updated>
+  <updated>2017-10-01T07:50:51.000Z</updated>
   <id>http://developeryang.top/</id>
   
   <author>
@@ -14,77 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>黑盒测试</title>
-    <link href="http://developeryang.top/2017/10/10/%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95/"/>
-    <id>http://developeryang.top/2017/10/10/黑盒测试/</id>
-    <published>2017-10-10T11:55:52.000Z</published>
-    <updated>2017-10-10T11:56:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>黑盒测试用例设计方法包括等价类划分法、边界值分析法、错误推测法、因果图法、判定表驱动法、正交试验设计法、功能图法、场景法等。</p>
-<h3 id="1-等价类划分法"><a href="#1-等价类划分法" class="headerlink" title="1. 等价类划分法"></a>1. 等价类划分法</h3><pre><code>等价类划分法是把程序的输入域划分成若干部分(子集)，然后从每个部分中选取少数代表性数据作为测试用例。每一类的代表性数据在测试中的作用等价于这一类中的其他值。
-</code></pre><h3 id="2-边界值分析法"><a href="#2-边界值分析法" class="headerlink" title="2. 边界值分析法"></a>2. 边界值分析法</h3><pre><code>边界值分析法就是对输入或输出的边界值进行测试的一种黑盒测试方法。通常边界值分析法是作为对等价类划分法的补充，这种情况下，其测试用例来自等价类的边界。
-</code></pre><h3 id="3-错误推测法"><a href="#3-错误推测法" class="headerlink" title="3. 错误推测法"></a>3. 错误推测法</h3><pre><code>基于经验和直觉推测程序中所有可能存在的各种错误, 从而有针对性的设计测试用例的方法。
-</code></pre><h3 id="4-因果图法"><a href="#4-因果图法" class="headerlink" title="4. 因果图法"></a>4. 因果图法</h3><pre><code>因果图法是一种利用图解法分析输入的各种组合情况，从而设计测试用例的方法，它适合 于检查程序输入条件的各种组合情况。
-</code></pre><h3 id="5-判定表驱动法"><a href="#5-判定表驱动法" class="headerlink" title="5. 判定表驱动法"></a>5. 判定表驱动法</h3><pre><code>判定表是分析和表达多逻辑条件下执行不同操作的情况的工具。
-</code></pre><h3 id="6-正交试验设计法"><a href="#6-正交试验设计法" class="headerlink" title="6. 正交试验设计法"></a>6. 正交试验设计法</h3><pre><code>依据 Galois 理论,从大量的(实验)数据(测试例)中挑选适量的,有代表性的点(例),从 而合理地安排实验(测试)的一种科学实验设计方法.类似的方法有:聚类分析方法,因子方法方 法等.
-</code></pre><h3 id="7-功能图法"><a href="#7-功能图法" class="headerlink" title="7. 功能图法"></a>7. 功能图法</h3><pre><code>功能图由状态迁移图和布尔函数组成.状态迁移图用状态和迁移来描述.一个状态指出数据输 入的位置(或时间),而迁移则指明状态的改变.同时要依靠判定表或因果图表示的逻辑功能.例, 一个简化的自动出纳机 ATM 的功能图。
-</code></pre><h3 id="8-场景法"><a href="#8-场景法" class="headerlink" title="8. 场景法"></a>8. 场景法</h3><pre><code>现在的软件几乎都是用事件触发来控制流程的，事件触发时的情景便形成了场景，而同一 事件不同的触发顺序和处理结果就形成事件流。这种在软件设计方面的思想也可以引入到软件 测试中，可以比较生动地描绘出事件触发时的情景，有利于测试设计者设计测试用例，同时使 测试用例更容易理解和执行。
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;黑盒测试用例设计方法包括等价类划分法、边界值分析法、错误推测法、因果图法、判定表驱动法、正交试验设计法、功能图法、场景法等。&lt;/p&gt;
-&lt;h3
-    
-    </summary>
-    
-      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
-    
-    
-      <category term="测试" scheme="http://developeryang.top/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="黑盒测试" scheme="http://developeryang.top/tags/%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>测试思维</title>
-    <link href="http://developeryang.top/2017/10/10/%E6%B5%8B%E8%AF%95%E6%80%9D%E7%BB%B4/"/>
-    <id>http://developeryang.top/2017/10/10/测试思维/</id>
-    <published>2017-10-10T11:53:51.000Z</published>
-    <updated>2017-10-10T11:55:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>真的决定了以后做一名测试开发工程师。</p>
-<h2 id="第一步转变思维："><a href="#第一步转变思维：" class="headerlink" title="第一步转变思维："></a>第一步转变思维：</h2><h3 id="1-测试是什么？"><a href="#1-测试是什么？" class="headerlink" title="1. 测试是什么？"></a>1. 测试是什么？</h3><pre><code>测试是为了发现错误而执行程序的过程。
-
-不是为了证明软件能正确完成预定的功能。 （这是研发干的事）
-</code></pre><h3 id="2-测试用例的理解？"><a href="#2-测试用例的理解？" class="headerlink" title="2. 测试用例的理解？"></a>2. 测试用例的理解？</h3><pre><code>测试用例，一般用成功的和不成功的来修饰，必须对预期输出或结果有定义
-成功的：通过合理的设计测试用例发现了程序的错误，并且这些错误是可以修复的；最终确定没有错误可以检查出来。
-不成功的：找不到错误的测试
-总结：成功的测试用例是能诱发程序发生尚未发现的错误
-设计的关键：覆盖率与冗余
-</code></pre><h3 id="3-测试的主要策略：黑盒测试和白盒测试"><a href="#3-测试的主要策略：黑盒测试和白盒测试" class="headerlink" title="3.测试的主要策略：黑盒测试和白盒测试"></a>3.测试的主要策略：黑盒测试和白盒测试</h3><pre><code>黑盒测试（数据驱动测试）
-测试方法：等价类划分，边界值分析，因果图分析，错误猜测
-
-白盒测试（逻辑驱动测试）
-测试方法：语句覆盖，判定覆盖，条件覆盖，多重条件覆盖
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;真的决定了以后做一名测试开发工程师。&lt;/p&gt;
-&lt;h2 id=&quot;第一步转变思维：&quot;&gt;&lt;a href=&quot;#第一步转变思维：&quot; class=&quot;headerlink&quot; title=&quot;第一步转变思维：&quot;&gt;&lt;/a&gt;第一步转变思维：&lt;/h2&gt;&lt;h3 id=&quot;1-测试是什么？&quot;&gt;&lt;a hr
-    
-    </summary>
-    
-      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
-    
-    
-      <category term="测试" scheme="http://developeryang.top/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
   
   <entry>
     <title>深入理解JVM（二）-类加载机制</title>
@@ -168,51 +97,6 @@ Java 垃圾收集器管理的主要区域
     
     
       <category term="深入理解JVM" scheme="http://developeryang.top/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>工作情况</title>
-    <link href="http://developeryang.top/2017/09/27/%E5%B7%A5%E4%BD%9C%E6%83%85%E5%86%B5/"/>
-    <id>http://developeryang.top/2017/09/27/工作情况/</id>
-    <published>2017-09-27T14:38:22.000Z</published>
-    <updated>2017-09-28T13:00:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>找工作难，找一个自己喜欢的工作更加难。精神压力巨大，每天基本12点后睡，5点多醒来，醒来第一件事就是问自己有offer了么。</p>
-<p>工作单位：一方面是看基础能力，另一方面是项目。因为平时在实验室，老板不让码代码，不让实习，所以计算机基础和Coding能力没那么强。我的投递岗位从原来的iOS，数据挖掘，爬虫工程师，Java开发，到测试开发。中间的过程相当坎坷，不过明确自己未来的方向，知道自己现在到底有多少能力还是挺开心的。</p>
-<p>一般公司招聘结束时间在10月底，时间不多不少，继续努力吧。努力的方向看别人的招聘信息</p>
-<hr>
-<p>一般测试开发的要求：</p>
-<ul>
-<li>熟悉软件工程及网络工程知识，熟悉软件测试一般方法和流程</li>
-<li>熟悉C、C++或Java等一类及以上编程语言，有开发经验者优先</li>
-<li>熟悉sql语言，熟悉mysql等常用数据库</li>
-<li>熟悉Linux或Unix操作系统者优先</li>
-<li>熟悉Shell/Perl /Python/Ruby等至少一种脚本语言</li>
-</ul>
-<hr>
-<p>那么我现在要加强的：</p>
-<ol>
-<li>测试理论的补充，特别是白盒测试；</li>
-<li>现在大部分的公司测试用的是Java，在Java测试框架上面再多深入一下；</li>
-<li>Linux系统的基本操作，特意去用一下比较偏的指令</li>
-<li>sql语句还得继续加强</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;找工作难，找一个自己喜欢的工作更加难。精神压力巨大，每天基本12点后睡，5点多醒来，醒来第一件事就是问自己有offer了么。&lt;/p&gt;
-&lt;p&gt;工作单位：一方面是看基础能力，另一方面是项目。因为平时在实验室，老板不让码代码，不让实习，所以计算机基础和Coding能力没那么强。我
-    
-    </summary>
-    
-      <category term="life" scheme="http://developeryang.top/categories/life/"/>
-    
-    
-      <category term="工作" scheme="http://developeryang.top/tags/%E5%B7%A5%E4%BD%9C/"/>
-    
-      <category term="测试开发" scheme="http://developeryang.top/tags/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -386,61 +270,6 @@ Java 垃圾收集器管理的主要区域
       <category term="算法" scheme="http://developeryang.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="剑指offer" scheme="http://developeryang.top/tags/%E5%89%91%E6%8C%87offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网易测试面试</title>
-    <link href="http://developeryang.top/2017/08/22/%E7%BD%91%E6%98%93%E6%B5%8B%E8%AF%95%E9%9D%A2%E8%AF%95/"/>
-    <id>http://developeryang.top/2017/08/22/网易测试面试/</id>
-    <published>2017-08-22T11:27:13.000Z</published>
-    <updated>2017-08-22T11:36:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。"><a href="#这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。" class="headerlink" title="这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。"></a>这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。</h4><h4 id="面试反省："><a href="#面试反省：" class="headerlink" title="面试反省："></a>面试反省：</h4><ol>
-<li><ul>
-<li>简历上的任何一个字都要完全掌握。</li>
-</ul>
-</li>
-<li><ul>
-<li>面试官的问题没有完全理解的，一定要多问一句。</li>
-</ul>
-</li>
-<li><ul>
-<li>针对性技能一定要多看。</li>
-</ul>
-</li>
-</ol>
-<h4 id="面试题目："><a href="#面试题目：" class="headerlink" title="面试题目："></a>面试题目：</h4><p>自我介绍的流程走完，先介绍了自己的项目，但面试官不怎么关心，因为没有相关性。</p>
-<ul>
-<li><p>1.黑盒测试的场景测试介绍一下</p>
-</li>
-<li><p>2.LoadRunner你是如何使用的</p>
-</li>
-<li><p>3.考拉订单，如何写测试用例。</p>
-</li>
-<li><p>4.数据库会不会 </p>
-</li>
-<li><p>5.Python写一个排序算法，在这个算法上实现去重操作，实现后如何实现测试操作，需要测试哪些特殊字符</p>
-</li>
-<li><p>6.一天24小时，时针分针秒针后重合几次</p>
-</li>
-<li><p>7.最后一直问在为什么投测试而不是开发</p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。&quot;&gt;&lt;a href=&quot;#这个人生中第一次正式工作面试，有点紧张。网易整体环境很好，伙食不错。&quot; class=&quot;headerlink&quot; title=&quot;这个人生中第一次正式工作面试，有点紧张。网易整体
-    
-    </summary>
-    
-      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
-    
-    
-      <category term="工作" scheme="http://developeryang.top/tags/%E5%B7%A5%E4%BD%9C/"/>
-    
-      <category term="面试" scheme="http://developeryang.top/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -906,66 +735,6 @@ Java 垃圾收集器管理的主要区域
   </entry>
   
   <entry>
-    <title>基本算法整理</title>
-    <link href="http://developeryang.top/2017/08/03/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95%E6%95%B4%E7%90%86/"/>
-    <id>http://developeryang.top/2017/08/03/基本算法整理/</id>
-    <published>2017-08-03T13:34:53.000Z</published>
-    <updated>2017-10-10T05:19:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>开始整理我在其他地方的Blog</p>
-<h1 id="排序算法要素："><a href="#排序算法要素：" class="headerlink" title="排序算法要素："></a>排序算法要素：</h1><h3 id="1-时间性能"><a href="#1-时间性能" class="headerlink" title="1. 时间性能"></a>1. 时间性能</h3><h3 id="2-辅助空间"><a href="#2-辅助空间" class="headerlink" title="2. 辅助空间"></a>2. 辅助空间</h3><h3 id="3-算法的复杂性"><a href="#3-算法的复杂性" class="headerlink" title="3. 算法的复杂性"></a>3. 算法的复杂性</h3><h3 id="4-稳定性"><a href="#4-稳定性" class="headerlink" title="4. 稳定性"></a>4. 稳定性</h3><a id="more"></a>
-<p><img src="http://img.blog.csdn.net/20170518155710315?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2F5bmVjbGFzcw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="基本排序算法"></p>
-<h2 id="1-插入排序："><a href="#1-插入排序：" class="headerlink" title="1. 插入排序："></a>1. 插入排序：</h2><p>插入排序基本操作就是将一个数据插入到已经排好序的有序数据中，从而得到一个新的、个数加一的有序数据，算法适用于少量数据的排序，时间复杂度为O(n^2)。是稳定的排序方法。插入排序的基本思想是：每步将一个待排序的纪录，按其关键码值的大小插入前面已经排序的文件中适当位置上，直到全部插入完为止。<br>通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">//平均时间复杂度O(n^2)</div><div class="line">//最优时间复杂度O(n)</div><div class="line">//最坏时间复杂度O(n^2)</div><div class="line">//空间复杂度O(1)</div><div class="line">//稳定</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">void InsertSort(int a[], int len)&#123;</div><div class="line">    int i, j;</div><div class="line">    int temp;</div><div class="line">    for (i = 1; i &lt; len; i++) &#123;</div><div class="line">        temp = a[i];</div><div class="line">        j = i - 1;</div><div class="line">        while (j &gt;= 0 &amp;&amp; a[j] &gt; temp) &#123;</div><div class="line">            a[j + 1] = a[j];</div><div class="line">            j--;</div><div class="line">        &#125;</div><div class="line">        a[j + 1]= temp;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int a[8];</div><div class="line">    printf(&quot;Please input the number:\n&quot;);</div><div class="line">    for(int i=0;i&lt;8;i++)</div><div class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    InsertSort(a, 8);</div><div class="line">    for (int i=0; i&lt;8; i++) &#123;</div><div class="line">        printf(&quot;%d\n&quot;,a[i]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="2-希尔排序："><a href="#2-希尔排序：" class="headerlink" title="2. 希尔排序："></a>2. 希尔排序：</h2><p>希尔排序(Shell Sort)是插入排序的一种。也称缩小增量排序，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。<br>希尔排序是是插入排序的一种更高效的改进版本</p>
-<p>希尔排序通过将比较的全部元素分为几个区域来提升插入排序的性能。这样可以让一个元素可以一次性地朝最终位置前进一大步。然后算法再取越来越小的步长进行排序，算法的最后一步就是普通的插入排序，但是到了这步，需排序的数据几乎是已排好的了（此时插入排序较快）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">//平均时间复杂度O(n^1.3)</div><div class="line">//空间复杂度O(1)</div><div class="line">//最优时间复杂度O(n)</div><div class="line">//最坏时间复杂度O(n^2)</div><div class="line">//不稳定</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">void shellSort(int a[], int len)&#123;</div><div class="line">    </div><div class="line">    int gap, i, j;</div><div class="line">    int temp;</div><div class="line">    for (gap = len / 2; gap &gt; 0; gap /= 2) &#123;</div><div class="line">        for (i = gap; i &lt; len; i++) &#123;</div><div class="line">            temp = a[i];</div><div class="line">            for (j = i - gap; j &gt;= 0 &amp;&amp; a[j] &gt; temp; j -= gap) &#123;</div><div class="line">                a[j+gap] = a[j];</div><div class="line">            &#125;</div><div class="line">            a[j+gap] = temp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int a[8];</div><div class="line">    printf(&quot;Please input the number:\n&quot;);</div><div class="line">    for(int i=0;i&lt;8;i++)</div><div class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    shellSort(a, 8);</div><div class="line">    for (int i=0; i&lt;8; i++) &#123;</div><div class="line">        printf(&quot;%d\n&quot;,a[i]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="3-冒泡排序："><a href="#3-冒泡排序：" class="headerlink" title="3. 冒泡排序："></a>3. 冒泡排序：</h2><p>冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越大的元素会经由交换慢慢“浮”到数列的顶端。</p>
-<p>一般情况下不要用冒泡排序, 除非 n &lt;= 16</p>
-<p>冒泡排序算法的运作如下：</p>
-<ol>
-<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
-<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
-<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
-<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">//使用flag来避免因原数组已经有序而进行无意义的判断</div><div class="line">//平均时间复杂度O(n^2)</div><div class="line">//最优时间复杂度O(n)</div><div class="line">//最坏时间复杂度O(n^2)</div><div class="line">//空间复杂度O(1)</div><div class="line">//稳定</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;stdbool.h&gt;</div><div class="line"></div><div class="line">void swap(int *a, int *b)&#123;</div><div class="line">    int temp;</div><div class="line">    temp = *a;</div><div class="line">    *a = *b;</div><div class="line">    *b = temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void BubbleSort(int a[],int n)&#123;</div><div class="line">    </div><div class="line">    int i,j;</div><div class="line">    bool flag = true;</div><div class="line">    for (i = 1; i &lt; n &amp;&amp; flag; i++) &#123;</div><div class="line">        flag = false;</div><div class="line">        for (j = n-1; j &gt;= i; j--) &#123;</div><div class="line">            if (a[j] &gt; a[j+1]) &#123;</div><div class="line">                swap(&amp;a[j], &amp;a[j+1]);</div><div class="line">                flag = true;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int a[8];</div><div class="line">    printf(&quot;Please input the number:\n&quot;);</div><div class="line">    for(int i=0;i&lt;8;i++)</div><div class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    BubbleSort(a,8);</div><div class="line">    for (int i=0; i&lt;8; i++) &#123;</div><div class="line">        printf(&quot;%d\n&quot;,a[i]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="4-快速排序："><a href="#4-快速排序：" class="headerlink" title="4. 快速排序："></a>4. 快速排序：</h2><p>快速排序（Quicksort）是对冒泡排序的一种改进。它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
-<p>快速排序是分区交换，属于交换排序，是冒泡排序的改进。<br>当待排序的关键字是随机分布时，快速排序的平均时间最短。</p>
-<p>快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。步骤为：</p>
-<ol>
-<li>从数列中挑出一个元素，称为”基准”（pivot），</li>
-<li>重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。</li>
-<li>递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序。</li>
-<li>递归到最底部时，数列的大小是零或一，也就是已经排序好了。这个算法一定会结束，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它最后的位置去。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line">//平均时间复杂度O(nlogn)</div><div class="line">//空间复杂度O(logn)~O(n)</div><div class="line">//最优时间复杂度O(nlogn)</div><div class="line">//最坏时间复杂度O(n^2)</div><div class="line">//不稳定</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">void swap(int *a, int *b)&#123;</div><div class="line">    int temp = *a;</div><div class="line">    *a = *b;</div><div class="line">    *b = temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int Partition(int a[], int low, int high)&#123;</div><div class="line">    </div><div class="line">    int pivotkey;</div><div class="line">    pivotkey = a[low];</div><div class="line">    while (low &lt; high) &#123;</div><div class="line">        while (low &lt; high &amp;&amp; a[high] &gt;= pivotkey) &#123;</div><div class="line">            high--;</div><div class="line">        &#125;</div><div class="line">        swap(a[low],a[high]);</div><div class="line">        </div><div class="line">        while (low &lt; high &amp;&amp; a[low] &lt;= pivotkey) &#123;</div><div class="line">            low++;</div><div class="line">        &#125;</div><div class="line">        swap(a[low],a[high]);</div><div class="line">    &#125;</div><div class="line">    a[low] = pivotkey;</div><div class="line">    return low;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void QuickSort(int a[], int low, int high)&#123;</div><div class="line">    </div><div class="line">    int pivotkey = a[low];</div><div class="line">    </div><div class="line">    if (low &lt; high) &#123;</div><div class="line">        pivotkey = Partition(a, low, high);</div><div class="line">        QuickSort(a, low, pivotkey-1);</div><div class="line">        QuickSort(a, pivotkey+1, high);</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        return;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int a[8];</div><div class="line">    printf(&quot;Please input the number:\n&quot;);</div><div class="line">    for(int i=0;i&lt;8;i++)</div><div class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    QuickSort(a, 0, 7);</div><div class="line">    for (int i=0; i&lt;8; i++) &#123;</div><div class="line">        printf(&quot;%d\n&quot;,a[i]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="5-选择排序："><a href="#5-选择排序：" class="headerlink" title="5. 选择排序："></a>5. 选择排序：</h2><p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法。</p>
-<p>最好最坏的比较次数一样多。</p>
-<p>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">//平均时间复杂度O(n^2)</div><div class="line">//空间复杂度O(1)</div><div class="line">//最优时间复杂度O(n^2)</div><div class="line">//最坏时间复杂度O(n^2)</div><div class="line">//不稳定</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">void swap(int *a, int *b)&#123;</div><div class="line">    int temp = *a;</div><div class="line">    *a = *b;</div><div class="line">    *b = temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void SimpleSelectSort(int a[], int n)&#123;</div><div class="line">    int i, j, min = 0;</div><div class="line">    for (i = 0; i &lt; n; i++) &#123;</div><div class="line">        min = i;</div><div class="line">        for (j = i+1; j &lt;= n; j++) &#123;</div><div class="line">            if (a[min] &gt; a[j]) &#123;</div><div class="line">                min = j;</div><div class="line">            &#125;</div><div class="line">    &#125;</div><div class="line">    if (i != min) &#123;</div><div class="line">        swap(&amp;a[min], &amp;a[i]);</div><div class="line">    &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">    int a[8];</div><div class="line">    printf(&quot;Please input the number:\n&quot;);</div><div class="line">    for(int i=0;i&lt;8;i++)</div><div class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    SimpleSelectSort(a, 8);</div><div class="line">    for (int i=0; i&lt;8; i++) &#123;</div><div class="line">        printf(&quot;%d\n&quot;,a[i]);</div><div class="line">        &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="6-堆排序"><a href="#6-堆排序" class="headerlink" title="6.堆排序:"></a>6.堆排序:</h2><p>在堆的数据结构中，堆中的最大值总是位于根节点(在优先队列中使用堆的话堆中的最小值位于根节点)。堆中定义以下几种操作：</p>
-<p>最大堆调整（Max_Heapify）：将堆的末端子节点作调整，使得子节点永远小于父节点<br>创建最大堆（Build_Max_Heap）：将堆所有数据重新排序<br>堆排序（HeapSort）：移除位在第一个数据的根节点，并做最大堆调整的递归运算</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">//平均时间复杂度O(nlog2(n))</div><div class="line">//空间复杂度O(1)</div><div class="line">//最优时间复杂度O(nlog2(n))</div><div class="line">//最坏时间复杂度O(nlog2(n))</div><div class="line">//不稳定</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">void swap(int *a, int *b)&#123;</div><div class="line">    int temp = *a;</div><div class="line">    *a = *b;</div><div class="line">    *b = temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void Max_Heapify(int a[], int start, int end)&#123;</div><div class="line">    int dad = start;</div><div class="line">    int son = dad * 2 + 1;</div><div class="line">    while (son &lt;= end) &#123;</div><div class="line">        if (son + 1 &lt;= end &amp;&amp; a[son] &lt; a[son + 1]) &#123;</div><div class="line">            son++;</div><div class="line">        &#125;</div><div class="line">        if (a[dad] &gt; a[son]) &#123;</div><div class="line">            return;</div><div class="line">        &#125;else&#123;</div><div class="line">            swap(&amp;a[dad], &amp;a[son]);</div><div class="line">            dad = son;</div><div class="line">            son = dad * 2 + 1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">void HeapSort(int a[], int len)&#123;</div><div class="line">    int i;</div><div class="line">    for (i = len / 2 - 1; i &gt;= 0; i--) &#123;</div><div class="line">        Max_Heapify(a, i, len - 1);</div><div class="line">    &#125;</div><div class="line">    for (i = len - 1; i &gt; 0; i--) &#123;</div><div class="line">        swap(&amp;a[0], &amp;a[i]);</div><div class="line">        Max_Heapify(a, 0, i-1);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int a[8];</div><div class="line">    printf(&quot;Please input the number:\n&quot;);</div><div class="line">    for(int i=0;i&lt;8;i++)</div><div class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</div><div class="line">    HeapSort(a, 8);</div><div class="line">    for (int i=0; i&lt;8; i++) &#123;</div><div class="line">        printf(&quot;%d\n&quot;,a[i]);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="7-归并排序："><a href="#7-归并排序：" class="headerlink" title="7. 归并排序："></a>7. 归并排序：</h2><p>归并排序是建立在归并操作上的一种有效的排序算法,该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">待补充</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;开始整理我在其他地方的Blog&lt;/p&gt;
-&lt;h1 id=&quot;排序算法要素：&quot;&gt;&lt;a href=&quot;#排序算法要素：&quot; class=&quot;headerlink&quot; title=&quot;排序算法要素：&quot;&gt;&lt;/a&gt;排序算法要素：&lt;/h1&gt;&lt;h3 id=&quot;1-时间性能&quot;&gt;&lt;a href=&quot;#1-时间性能&quot; class=&quot;headerlink&quot; title=&quot;1. 时间性能&quot;&gt;&lt;/a&gt;1. 时间性能&lt;/h3&gt;&lt;h3 id=&quot;2-辅助空间&quot;&gt;&lt;a href=&quot;#2-辅助空间&quot; class=&quot;headerlink&quot; title=&quot;2. 辅助空间&quot;&gt;&lt;/a&gt;2. 辅助空间&lt;/h3&gt;&lt;h3 id=&quot;3-算法的复杂性&quot;&gt;&lt;a href=&quot;#3-算法的复杂性&quot; class=&quot;headerlink&quot; title=&quot;3. 算法的复杂性&quot;&gt;&lt;/a&gt;3. 算法的复杂性&lt;/h3&gt;&lt;h3 id=&quot;4-稳定性&quot;&gt;&lt;a href=&quot;#4-稳定性&quot; class=&quot;headerlink&quot; title=&quot;4. 稳定性&quot;&gt;&lt;/a&gt;4. 稳定性&lt;/h3&gt;
-    
-    </summary>
-    
-      <category term="technology" scheme="http://developeryang.top/categories/technology/"/>
-    
-    
-      <category term="算法" scheme="http://developeryang.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>基于pickle模块的学生管理系统</title>
     <link href="http://developeryang.top/2017/08/03/%E5%9F%BA%E4%BA%8Epickle%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
     <id>http://developeryang.top/2017/08/03/基于pickle模块的学生管理系统/</id>
@@ -1010,47 +779,6 @@ Java 垃圾收集器管理的主要区域
     
     
       <category term="python" scheme="http://developeryang.top/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>工作准备</title>
-    <link href="http://developeryang.top/2017/02/17/%E5%B7%A5%E4%BD%9C%E5%87%86%E5%A4%87/"/>
-    <id>http://developeryang.top/2017/02/17/工作准备/</id>
-    <published>2017-02-17T08:02:24.000Z</published>
-    <updated>2017-08-06T02:02:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先介绍下自己，一名——普通一本学校——非计算机专业——研二在读——的小硕，研究方向是无线充电。因为导师平时管的比较严没有实习机会，所以自己安排些时间来学习自己喜欢的技术和未来工作可能用到的技术。</p>
-<hr>
-<p>像移动互联网时代已经走入平稳期，不会再有那么多的机会给新人，但我喜欢那一个App做完的成就感。</p>
-<p>研一的时候断断续续看过一些关于iOS开发的blog和文档，自己也写过几个简单的demo。</p>
-<p>目前手上有这几本书，还有一些视频教程。</p>
-<p>准备一点一点重新来吧。<br><a id="more"></a></p>
-<p>Objective-C编程(第2版)（已看过1遍）</p>
-<p>精通iOS开发(第7版)（靠这个基本入门，能完成简单功能实现）</p>
-<p>下面这几本是之后准备看的：</p>
-<p>Objective-C编程之道:iOS设计模式解析</p>
-<p>Effective Objective C 2.0:编写高质量iOS与OS X代码的52个有效方法</p>
-<p>Objective-C高级编程:iOS与OS X多线程和内存管理</p>
-<hr>
-<p>未来的事谁都不知道，但多些准备总是好事。我可能会选择做测试开发，把App开发当做自己的爱好。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;首先介绍下自己，一名——普通一本学校——非计算机专业——研二在读——的小硕，研究方向是无线充电。因为导师平时管的比较严没有实习机会，所以自己安排些时间来学习自己喜欢的技术和未来工作可能用到的技术。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;像移动互联网时代已经走入平稳期，不会再有那么多的机会给新人，但我喜欢那一个App做完的成就感。&lt;/p&gt;
-&lt;p&gt;研一的时候断断续续看过一些关于iOS开发的blog和文档，自己也写过几个简单的demo。&lt;/p&gt;
-&lt;p&gt;目前手上有这几本书，还有一些视频教程。&lt;/p&gt;
-&lt;p&gt;准备一点一点重新来吧。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="life" scheme="http://developeryang.top/categories/life/"/>
-    
-    
-      <category term="工作" scheme="http://developeryang.top/tags/%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   
