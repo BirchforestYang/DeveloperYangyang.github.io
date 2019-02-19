@@ -4,12 +4,12 @@
   <subtitle>上善若水</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yang.github.io/"/>
+  <link href="http://DeveloperYangyang.github.io/"/>
   <updated>2017-10-01T07:50:51.000Z</updated>
-  <id>http://yang.github.io/</id>
+  <id>http://DeveloperYangyang.github.io/</id>
   
   <author>
-    <name>Yang</name>
+    <name>Yangyang</name>
     
   </author>
   
@@ -17,8 +17,8 @@
   
   <entry>
     <title>深入理解JVM（二）-类加载机制</title>
-    <link href="http://yang.github.io/2017/10/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM%EF%BC%88%E4%BA%8C%EF%BC%89-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
-    <id>http://yang.github.io/2017/10/01/深入理解JVM（二）-类加载机制/</id>
+    <link href="http://DeveloperYangyang.github.io/2017/10/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM%EF%BC%88%E4%BA%8C%EF%BC%89-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
+    <id>http://DeveloperYangyang.github.io/2017/10/01/深入理解JVM（二）-类加载机制/</id>
     <published>2017-10-01T07:44:04.000Z</published>
     <updated>2017-10-01T07:50:51.000Z</updated>
     
@@ -51,17 +51,17 @@
     
     </summary>
     
-      <category term="technology" scheme="http://yang.github.io/categories/technology/"/>
+      <category term="technology" scheme="http://DeveloperYangyang.github.io/categories/technology/"/>
     
     
-      <category term="深入理解JVM" scheme="http://yang.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM/"/>
+      <category term="深入理解JVM" scheme="http://DeveloperYangyang.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM/"/>
     
   </entry>
   
   <entry>
     <title>深入理解JVM（一）-JVM内存模型</title>
-    <link href="http://yang.github.io/2017/10/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM%EF%BC%88%E4%B8%80%EF%BC%89-JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
-    <id>http://yang.github.io/2017/10/01/深入理解JVM（一）-JVM内存模型/</id>
+    <link href="http://DeveloperYangyang.github.io/2017/10/01/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM%EF%BC%88%E4%B8%80%EF%BC%89-JVM%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://DeveloperYangyang.github.io/2017/10/01/深入理解JVM（一）-JVM内存模型/</id>
     <published>2017-10-01T07:41:14.000Z</published>
     <updated>2017-10-01T07:51:19.000Z</updated>
     
@@ -93,17 +93,17 @@ Java 垃圾收集器管理的主要区域
     
     </summary>
     
-      <category term="technology" scheme="http://yang.github.io/categories/technology/"/>
+      <category term="technology" scheme="http://DeveloperYangyang.github.io/categories/technology/"/>
     
     
-      <category term="深入理解JVM" scheme="http://yang.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM/"/>
+      <category term="深入理解JVM" scheme="http://DeveloperYangyang.github.io/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JVM/"/>
     
   </entry>
   
   <entry>
     <title>前缀，中缀，后缀表达式转换</title>
-    <link href="http://yang.github.io/2017/09/10/%E5%89%8D%E7%BC%80%EF%BC%8C%E4%B8%AD%E7%BC%80%EF%BC%8C%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E6%8D%A2/"/>
-    <id>http://yang.github.io/2017/09/10/前缀，中缀，后缀表达式转换/</id>
+    <link href="http://DeveloperYangyang.github.io/2017/09/10/%E5%89%8D%E7%BC%80%EF%BC%8C%E4%B8%AD%E7%BC%80%EF%BC%8C%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E6%8D%A2/"/>
+    <id>http://DeveloperYangyang.github.io/2017/09/10/前缀，中缀，后缀表达式转换/</id>
     <published>2017-09-10T11:45:09.000Z</published>
     <updated>2017-09-10T13:20:50.000Z</updated>
     
@@ -157,17 +157,17 @@ Java 垃圾收集器管理的主要区域
     
     </summary>
     
-      <category term="technology" scheme="http://yang.github.io/categories/technology/"/>
+      <category term="technology" scheme="http://DeveloperYangyang.github.io/categories/technology/"/>
     
     
-      <category term="算法" scheme="http://yang.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://DeveloperYangyang.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>剑指offer-（6-10）</title>
-    <link href="http://yang.github.io/2017/09/07/%E5%89%91%E6%8C%87offer-%EF%BC%886-10%EF%BC%89/"/>
-    <id>http://yang.github.io/2017/09/07/剑指offer-（6-10）/</id>
+    <link href="http://DeveloperYangyang.github.io/2017/09/07/%E5%89%91%E6%8C%87offer-%EF%BC%886-10%EF%BC%89/"/>
+    <id>http://DeveloperYangyang.github.io/2017/09/07/剑指offer-（6-10）/</id>
     <published>2017-09-07T06:26:53.000Z</published>
     <updated>2017-09-08T12:48:28.000Z</updated>
     
@@ -192,19 +192,19 @@ Java 垃圾收集器管理的主要区域
     
     </summary>
     
-      <category term="technology" scheme="http://yang.github.io/categories/technology/"/>
+      <category term="technology" scheme="http://DeveloperYangyang.github.io/categories/technology/"/>
     
     
-      <category term="算法" scheme="http://yang.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://DeveloperYangyang.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="剑指offer" scheme="http://yang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="http://DeveloperYangyang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
   <entry>
     <title>剑指offer-（1-5）</title>
-    <link href="http://yang.github.io/2017/09/01/%E5%89%91%E6%8C%87offer-%EF%BC%881-5%EF%BC%89/"/>
-    <id>http://yang.github.io/2017/09/01/剑指offer-（1-5）/</id>
+    <link href="http://DeveloperYangyang.github.io/2017/09/01/%E5%89%91%E6%8C%87offer-%EF%BC%881-5%EF%BC%89/"/>
+    <id>http://DeveloperYangyang.github.io/2017/09/01/剑指offer-（1-5）/</id>
     <published>2017-09-01T14:40:06.000Z</published>
     <updated>2017-09-07T06:30:05.000Z</updated>
     
@@ -264,19 +264,19 @@ Java 垃圾收集器管理的主要区域
     
     </summary>
     
-      <category term="technology" scheme="http://yang.github.io/categories/technology/"/>
+      <category term="technology" scheme="http://DeveloperYangyang.github.io/categories/technology/"/>
     
     
-      <category term="算法" scheme="http://yang.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://DeveloperYangyang.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="剑指offer" scheme="http://yang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
+      <category term="剑指offer" scheme="http://DeveloperYangyang.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
   <entry>
     <title>Mac安装MySQL解决root密码问题</title>
-    <link href="http://yang.github.io/2017/08/16/Mac%E5%AE%89%E8%A3%85MySQL%E8%A7%A3%E5%86%B3root%E5%AF%86%E7%A0%81%E9%97%AE%E9%A2%98/"/>
-    <id>http://yang.github.io/2017/08/16/Mac安装MySQL解决root密码问题/</id>
+    <link href="http://DeveloperYangyang.github.io/2017/08/16/Mac%E5%AE%89%E8%A3%85MySQL%E8%A7%A3%E5%86%B3root%E5%AF%86%E7%A0%81%E9%97%AE%E9%A2%98/"/>
+    <id>http://DeveloperYangyang.github.io/2017/08/16/Mac安装MySQL解决root密码问题/</id>
     <published>2017-08-16T08:51:30.000Z</published>
     <updated>2017-08-16T08:55:08.000Z</updated>
     
@@ -306,17 +306,17 @@ Java 垃圾收集器管理的主要区域
     
     </summary>
     
-      <category term="technology" scheme="http://yang.github.io/categories/technology/"/>
+      <category term="technology" scheme="http://DeveloperYangyang.github.io/categories/technology/"/>
     
     
-      <category term="MySQL" scheme="http://yang.github.io/tags/MySQL/"/>
+      <category term="MySQL" scheme="http://DeveloperYangyang.github.io/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>牛客20170809算法总结</title>
-    <link href="http://yang.github.io/2017/08/15/%E7%89%9B%E5%AE%A220170809%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"/>
-    <id>http://yang.github.io/2017/08/15/牛客20170809算法总结/</id>
+    <link href="http://DeveloperYangyang.github.io/2017/08/15/%E7%89%9B%E5%AE%A220170809%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"/>
+    <id>http://DeveloperYangyang.github.io/2017/08/15/牛客20170809算法总结/</id>
     <published>2017-08-15T08:49:44.000Z</published>
     <updated>2017-08-15T09:17:31.000Z</updated>
     
@@ -355,17 +355,17 @@ Java 垃圾收集器管理的主要区域
     
     </summary>
     
-      <category term="technology" scheme="http://yang.github.io/categories/technology/"/>
+      <category term="technology" scheme="http://DeveloperYangyang.github.io/categories/technology/"/>
     
     
-      <category term="算法" scheme="http://yang.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://DeveloperYangyang.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>生活感悟</title>
-    <link href="http://yang.github.io/2017/08/05/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
-    <id>http://yang.github.io/2017/08/05/生活感悟/</id>
+    <link href="http://DeveloperYangyang.github.io/2017/08/05/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
+    <id>http://DeveloperYangyang.github.io/2017/08/05/生活感悟/</id>
     <published>2017-08-05T14:20:18.000Z</published>
     <updated>2017-08-06T06:11:47.000Z</updated>
     
@@ -577,17 +577,17 @@ Java 垃圾收集器管理的主要区域
     
     </summary>
     
-      <category term="life" scheme="http://yang.github.io/categories/life/"/>
+      <category term="life" scheme="http://DeveloperYangyang.github.io/categories/life/"/>
     
     
-      <category term="研究生生活" scheme="http://yang.github.io/tags/%E7%A0%94%E7%A9%B6%E7%94%9F%E7%94%9F%E6%B4%BB/"/>
+      <category term="研究生生活" scheme="http://DeveloperYangyang.github.io/tags/%E7%A0%94%E7%A9%B6%E7%94%9F%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
     <title>Markdown语法</title>
-    <link href="http://yang.github.io/2017/08/05/Markdown%E8%AF%AD%E6%B3%95/"/>
-    <id>http://yang.github.io/2017/08/05/Markdown语法/</id>
+    <link href="http://DeveloperYangyang.github.io/2017/08/05/Markdown%E8%AF%AD%E6%B3%95/"/>
+    <id>http://DeveloperYangyang.github.io/2017/08/05/Markdown语法/</id>
     <published>2017-08-05T07:12:18.000Z</published>
     <updated>2017-08-06T02:02:22.000Z</updated>
     
@@ -699,17 +699,17 @@ Java 垃圾收集器管理的主要区域
     
     </summary>
     
-      <category term="technology" scheme="http://yang.github.io/categories/technology/"/>
+      <category term="technology" scheme="http://DeveloperYangyang.github.io/categories/technology/"/>
     
     
-      <category term="Markdown" scheme="http://yang.github.io/tags/Markdown/"/>
+      <category term="Markdown" scheme="http://DeveloperYangyang.github.io/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>九九乘法表</title>
-    <link href="http://yang.github.io/2017/08/05/%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8/"/>
-    <id>http://yang.github.io/2017/08/05/九九乘法表/</id>
+    <link href="http://DeveloperYangyang.github.io/2017/08/05/%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8/"/>
+    <id>http://DeveloperYangyang.github.io/2017/08/05/九九乘法表/</id>
     <published>2017-08-05T05:43:10.000Z</published>
     <updated>2017-08-06T02:02:40.000Z</updated>
     
@@ -727,17 +727,17 @@ Java 垃圾收集器管理的主要区域
     
     </summary>
     
-      <category term="technology" scheme="http://yang.github.io/categories/technology/"/>
+      <category term="technology" scheme="http://DeveloperYangyang.github.io/categories/technology/"/>
     
     
-      <category term="python" scheme="http://yang.github.io/tags/python/"/>
+      <category term="python" scheme="http://DeveloperYangyang.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>基于pickle模块的学生管理系统</title>
-    <link href="http://yang.github.io/2017/08/03/%E5%9F%BA%E4%BA%8Epickle%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://yang.github.io/2017/08/03/基于pickle模块的学生管理系统/</id>
+    <link href="http://DeveloperYangyang.github.io/2017/08/03/%E5%9F%BA%E4%BA%8Epickle%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://DeveloperYangyang.github.io/2017/08/03/基于pickle模块的学生管理系统/</id>
     <published>2017-08-03T12:54:39.000Z</published>
     <updated>2017-08-06T02:05:28.000Z</updated>
     
@@ -775,10 +775,10 @@ Java 垃圾收集器管理的主要区域
     
     </summary>
     
-      <category term="technology" scheme="http://yang.github.io/categories/technology/"/>
+      <category term="technology" scheme="http://DeveloperYangyang.github.io/categories/technology/"/>
     
     
-      <category term="python" scheme="http://yang.github.io/tags/python/"/>
+      <category term="python" scheme="http://DeveloperYangyang.github.io/tags/python/"/>
     
   </entry>
   
